@@ -1,222 +1,873 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <title>KBO 경기·예매 일정</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>KBO 통합 예매 일정</title>
+
   <style>
-    :root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#172033;background:#f4f7fb}
-    *{box-sizing:border-box}body{margin:0}.wrap{max-width:1200px;margin:auto;padding:24px}
-    header{background:linear-gradient(135deg,#142b55,#2462a8);color:white;padding:28px;border-radius:22px;box-shadow:0 14px 35px #17345b2b}
-    h1{margin:0 0 8px;font-size:clamp(26px,4vw,42px)}header p{margin:0;opacity:.9}
-    .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
-    button,select{border:1px solid #d7deea;background:white;padding:11px 14px;border-radius:12px;font-size:15px}
-    button{cursor:pointer;font-weight:700}.primary{background:#1768c4;color:white;border-color:#1768c4}
-    .meta{margin:10px 2px;color:#56647a;font-size:14px}
-    .status{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-    .badge{background:white;border:1px solid #dce3ee;border-radius:999px;padding:7px 11px;font-size:13px}
-    .tablebox{overflow:auto;background:white;border-radius:18px;box-shadow:0 8px 24px #17203312}
-    table{width:100%;border-collapse:collapse;min-width:980px}
-    th,td{padding:13px 12px;border-bottom:1px solid #edf0f5;text-align:left;white-space:nowrap}
-    th{position:sticky;top:0;background:#eef4fb;font-size:13px;color:#40506a}
-    tr:hover td{background:#fafcff}.site{font-weight:800}.nol{color:#7a3df0}.tl{color:#1768c4}
-    .empty{text-align:center;padding:50px;color:#78869a}a{color:#1768c4;font-weight:700;text-decoration:none}
-    .error{color:#b42318}
-    .state{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800}
-    .state-open{background:#e8f7ee;color:#137a3d}
-    .state-wait{background:#fff4d6;color:#9a6200}
-    .state-sold{background:#ffe7e7;color:#b42318}
-    .state-end{background:#e9edf3;color:#526174}
-    .state-check{background:#eee9ff;color:#6541c1}
-    @media(max-width:640px){.wrap{padding:12px}header{padding:22px 18px;border-radius:16px}}
+    :root {
+      --bg: #f4f6f9;
+      --card: #ffffff;
+      --line: #dfe4ea;
+      --text: #1f2937;
+      --sub: #6b7280;
+      --primary: #0f4c81;
+      --primary-dark: #0a3559;
+      --success-bg: #e8f7ee;
+      --success-text: #157347;
+      --warning-bg: #fff4d6;
+      --warning-text: #9a6700;
+      --danger-bg: #fde8e8;
+      --danger-text: #b42318;
+      --neutral-bg: #eef2f6;
+      --neutral-text: #4b5563;
+      --nol: #7c3aed;
+      --ticketlink: #2563eb;
+      --event-bg: #fff0f5;
+      --event-text: #be185d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Pretendard, "Noto Sans KR", "Apple SD Gothic Neo",
+        "Malgun Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    .page {
+      width: min(1480px, calc(100% - 28px));
+      margin: 24px auto 40px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #123c63, #0f4c81);
+      color: white;
+      border-radius: 20px;
+      padding: 28px 30px;
+      box-shadow: 0 14px 36px rgba(15, 76, 129, 0.18);
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 42px);
+      letter-spacing: -1.2px;
+    }
+
+    .hero p {
+      margin: 10px 0 0;
+      color: rgba(255,255,255,.82);
+      font-size: 15px;
+    }
+
+    .refresh-btn {
+      flex: 0 0 auto;
+      border: 1px solid rgba(255,255,255,.34);
+      background: rgba(255,255,255,.13);
+      color: white;
+      border-radius: 12px;
+      padding: 11px 15px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .refresh-btn:hover {
+      background: rgba(255,255,255,.22);
+      transform: translateY(-1px);
+    }
+
+    .meta-row {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .meta-chip {
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+
+    .controls {
+      margin-top: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 8px 22px rgba(31,41,55,.05);
+    }
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .control label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--sub);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .control select {
+      width: 100%;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0 12px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+
+    .control select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15,76,129,.1);
+    }
+
+    .summary {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .summary-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .summary-label {
+      color: var(--sub);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .summary-value {
+      margin-top: 6px;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .section {
+      margin-top: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(31,41,55,.05);
+    }
+
+    .section-head {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .section-head small {
+      color: var(--sub);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1120px;
+    }
+
+    th,
+    td {
+      padding: 15px 14px;
+      border-bottom: 1px solid #edf0f3;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 800;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tbody tr:hover {
+      background: #fbfdff;
+    }
+
+    .date-cell {
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .match-cell {
+      text-align: left;
+      min-width: 280px;
+    }
+
+    .match-title {
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .match-sub {
+      margin-top: 4px;
+      color: var(--sub);
+      font-size: 12px;
+    }
+
+    .site-badge,
+    .status-badge,
+    .event-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .site-ticketlink {
+      color: var(--ticketlink);
+      background: #eaf1ff;
+    }
+
+    .site-nol {
+      color: var(--nol);
+      background: #f2ebff;
+    }
+
+    .status-sale {
+      color: var(--success-text);
+      background: var(--success-bg);
+    }
+
+    .status-wait {
+      color: var(--warning-text);
+      background: var(--warning-bg);
+    }
+
+    .status-soldout,
+    .status-end,
+    .status-cancel {
+      color: var(--danger-text);
+      background: var(--danger-bg);
+    }
+
+    .status-check {
+      color: var(--neutral-text);
+      background: var(--neutral-bg);
+    }
+
+    .event-badge {
+      color: var(--event-text);
+      background: var(--event-bg);
+      margin-right: 7px;
+    }
+
+    .book-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 84px;
+      height: 36px;
+      padding: 0 13px;
+      border-radius: 9px;
+      border: 0;
+      background: var(--primary);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+
+    .book-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .empty {
+      padding: 56px 20px;
+      text-align: center;
+      color: var(--sub);
+    }
+
+    .source-status {
+      padding: 16px 20px 20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(170px, 1fr));
+      gap: 10px;
+    }
+
+    .source-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 13px;
+      background: #fafbfc;
+    }
+
+    .source-card strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .source-card span {
+      display: block;
+      color: var(--sub);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .source-ok {
+      color: var(--success-text);
+      font-weight: 800;
+    }
+
+    .source-fail {
+      color: var(--danger-text);
+      font-weight: 800;
+    }
+
+    @media (max-width: 920px) {
+      .controls-grid,
+      .summary,
+      .source-status {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-top {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 16px, 1480px);
+        margin-top: 10px;
+      }
+
+      .hero {
+        border-radius: 14px;
+        padding: 22px 18px;
+      }
+
+      .controls-grid,
+      .summary,
+      .source-status {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
+
 <body>
-<div class="wrap">
-  <header>
-    <h1>⚾ KBO 경기·예매 일정</h1>
-    <p>KBO 10개 구단의 경기와 예매 상태를 한 화면에서 확인합니다.</p>
-  </header>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <h1>KBO 통합 예매 일정</h1>
+          <p>NOL 티켓과 티켓링크의 구단별 홈경기 및 행사 일정을 한 화면에서 확인합니다.</p>
+        </div>
 
-  <div class="toolbar">
-    <button class="primary" onclick="hardRefresh()">최신 정보 불러오기</button>
+        <button class="refresh-btn" type="button" onclick="strongRefresh()">
+          강력 새로고침
+        </button>
+      </div>
 
-    <select id="teamFilter" onchange="render()">
-      <option value="">전체 구단</option>
-    </select>
+      <div class="meta-row">
+        <div class="meta-chip" id="updatedAt">업데이트 시간 확인 중</div>
+        <div class="meta-chip" id="queryRange">조회 기간 확인 중</div>
+        <div class="meta-chip" id="dataCount">데이터 불러오는 중</div>
+      </div>
+    </section>
 
-    <select id="siteFilter" onchange="render()">
-      <option value="">전체 예매처</option>
-      <option value="티켓링크">티켓링크</option>
-      <option value="NOL 티켓">NOL 티켓</option>
-    </select>
+    <section class="controls">
+      <div class="controls-grid">
+        <div class="control">
+          <label for="teamFilter">구단</label>
+          <select id="teamFilter">
+            <option value="전체">전체 구단</option>
+          </select>
+        </div>
 
-    <select id="bookingFilter" onchange="render()">
-      <option value="">전체 예매상태</option>
-      <option value="예매예정">예매예정</option>
-      <option value="예매중">예매중</option>
-      <option value="매진">매진</option>
-      <option value="예매종료">예매종료</option>
-      <option value="확인 필요">확인 필요</option>
-    </select>
+        <div class="control">
+          <label for="siteFilter">예매처</label>
+          <select id="siteFilter">
+            <option value="전체">전체 예매처</option>
+            <option value="티켓링크">티켓링크</option>
+            <option value="NOL 티켓">NOL 티켓</option>
+          </select>
+        </div>
 
-    <select id="monthFilter" onchange="render()">
-      <option value="">전체 월</option>
-    </select>
-  </div>
+        <div class="control">
+          <label for="statusFilter">예매 상태</label>
+          <select id="statusFilter">
+            <option value="전체">전체 상태</option>
+            <option value="예매중">예매중</option>
+            <option value="예매예정">예매예정</option>
+            <option value="매진">매진</option>
+            <option value="예매종료">예매종료</option>
+            <option value="확인 필요">확인 필요</option>
+          </select>
+        </div>
 
-  <div id="meta" class="meta">데이터 확인 중…</div>
-  <div id="status" class="status"></div>
+        <div class="control">
+          <label for="typeFilter">일정 구분</label>
+          <select id="typeFilter">
+            <option value="전체">경기 + 행사</option>
+            <option value="경기">경기</option>
+            <option value="행사">행사</option>
+          </select>
+        </div>
+      </div>
+    </section>
 
-  <div class="tablebox">
-    <table>
-      <thead>
-        <tr>
-          <th>예매처</th><th>경기일</th><th>시간</th><th>대진</th>
-          <th>구장</th><th>예매 시작</th><th>예매 상태</th><th>바로가기</th>
-        </tr>
-      </thead>
-      <tbody id="rows">
-        <tr><td colspan="8" class="empty">경기정보를 불러오는 중입니다.</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+    <section class="summary">
+      <div class="summary-card">
+        <div class="summary-label">전체 일정</div>
+        <div class="summary-value" id="summaryTotal">0</div>
+      </div>
 
-<script>
-const ALL_TEAMS = [
-  "KIA 타이거즈",
-  "KT 위즈",
-  "LG 트윈스",
-  "NC 다이노스",
-  "SSG 랜더스",
-  "두산 베어스",
-  "롯데 자이언츠",
-  "삼성 라이온즈",
-  "키움 히어로즈",
-  "한화 이글스"
-];
+      <div class="summary-card">
+        <div class="summary-label">예매중</div>
+        <div class="summary-value" id="summarySale">0</div>
+      </div>
 
-function loadFreshData(){
-  const script=document.createElement("script");
-  script.src="./data.js?v="+Date.now();
-  script.onload=init;
-  script.onerror=()=>{
-    document.getElementById("rows").innerHTML=
-      '<tr><td colspan="8" class="empty error">data.js를 불러오지 못했습니다.</td></tr>';
-  };
-  document.head.appendChild(script);
-}
+      <div class="summary-card">
+        <div class="summary-label">예매예정</div>
+        <div class="summary-value" id="summaryWait">0</div>
+      </div>
 
-function hardRefresh(){
-  location.href=location.pathname+"?refresh="+Date.now();
-}
+      <div class="summary-card">
+        <div class="summary-label">행사</div>
+        <div class="summary-value" id="summaryEvent">0</div>
+      </div>
+    </section>
 
-function esc(value){
-  return String(value??"").replace(/[&<>"']/g,char=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  }[char]));
-}
+    <section class="section">
+      <div class="section-head">
+        <h2>예매 일정</h2>
+        <small id="resultText">데이터를 불러오는 중입니다.</small>
+      </div>
 
-function normalizeTeam(value){
-  const text=String(value||"").replace(/\s+/g,"").toUpperCase();
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>날짜</th>
+              <th>시간</th>
+              <th>구단</th>
+              <th>경기·행사</th>
+              <th>구장</th>
+              <th>예매처</th>
+              <th>예매 시작</th>
+              <th>상태</th>
+              <th>바로가기</th>
+            </tr>
+          </thead>
 
-  const aliases = {
-    "KIA":"KIA타이거즈",
-    "기아":"KIA타이거즈",
-    "KT":"KT위즈",
-    "LG":"LG트윈스",
-    "NC":"NC다이노스",
-    "SSG":"SSG랜더스",
-    "두산":"두산베어스",
-    "롯데":"롯데자이언츠",
-    "삼성":"삼성라이온즈",
-    "키움":"키움히어로즈",
-    "한화":"한화이글스"
-  };
+          <tbody id="scheduleBody"></tbody>
+        </table>
+      </div>
 
-  for(const [key,result] of Object.entries(aliases)){
-    if(text.includes(key.toUpperCase())) return result;
-  }
-  return text;
-}
+      <div class="empty" id="emptyMessage" hidden>
+        조건에 맞는 일정이 없습니다.
+      </div>
+    </section>
 
-function eventHasTeam(event, selectedTeam){
-  if(!selectedTeam) return true;
+    <section class="section">
+      <div class="section-head">
+        <h2>데이터 수집 상태</h2>
+        <small>각 구단별 최신 수집 결과입니다.</small>
+      </div>
+      <div class="source-status" id="sourceStatus"></div>
+    </section>
+  </main>
 
-  const target = normalizeTeam(selectedTeam);
-  const homeTeam = normalizeTeam(event.home);
+  <script>
+    const DATA_VERSION = Date.now();
+    const dataScript = document.createElement("script");
+    dataScript.src = `data.js?v=${DATA_VERSION}`;
+    dataScript.onload = init;
+    dataScript.onerror = () => {
+      document.getElementById("resultText").textContent =
+        "data.js 파일을 불러오지 못했습니다.";
+      document.getElementById("emptyMessage").hidden = false;
+    };
+    document.head.appendChild(dataScript);
 
-  // 선택한 구단의 홈경기만 표시
-  return homeTeam === target || homeTeam.includes(target);
-}
+    let allEvents = [];
 
-function stateClass(status){
-  if(status==="예매중") return "state-open";
-  if(status==="예매예정") return "state-wait";
-  if(status==="매진") return "state-sold";
-  if(status==="예매종료") return "state-end";
-  return "state-check";
-}
+    const teamFilter = document.getElementById("teamFilter");
+    const siteFilter = document.getElementById("siteFilter");
+    const statusFilter = document.getElementById("statusFilter");
+    const typeFilter = document.getElementById("typeFilter");
 
-function init(){
-  const data=window.SPORTS_DATA||{events:[],sourceStatus:[]};
+    function init() {
+      const payload = window.SPORTS_DATA || {};
+      allEvents = Array.isArray(payload.events) ? payload.events : [];
 
-  teamFilter.innerHTML=
-    '<option value="">전체 구단</option>'+
-    ALL_TEAMS.map(team=>`<option value="${esc(team)}">${esc(team)}</option>`).join("");
+      setMeta(payload);
+      populateTeams(allEvents);
+      renderSourceStatus(payload.sourceStatus || []);
+      bindFilters();
+      render();
+    }
 
-  const months=[
-    ...new Set(
-      data.events.map(event=>(event.date||"").slice(0,7)).filter(Boolean)
-    )
-  ].sort();
+    function setMeta(payload) {
+      const updatedAt = formatDateTime(payload.updatedAt);
+      const range = payload.queryRange || {};
 
-  monthFilter.innerHTML=
-    '<option value="">전체 월</option>'+
-    months.map(month=>`<option value="${month}">${month}</option>`).join("");
+      document.getElementById("updatedAt").textContent =
+        `최종 업데이트: ${updatedAt || "확인 불가"}`;
 
-  meta.textContent=
-    `갱신 시각: ${data.updatedAt||"아직 갱신 전"} · 전체 ${data.events.length}경기`;
+      document.getElementById("queryRange").textContent =
+        `조회 기간: ${range.startDate || "-"} ~ ${range.endDate || "-"}`;
 
-  status.innerHTML=(data.sourceStatus||[]).map(source=>
-    `<span class="badge ${source.success?"":"error"}">`+
-    `${esc(source.team)} ${source.success?esc(source.count)+"건":"실패"}</span>`
-  ).join("");
+      document.getElementById("dataCount").textContent =
+        `전체 ${allEvents.length}건`;
+    }
 
-  render();
-}
+    function populateTeams(events) {
+      const teams = [...new Set(
+        events
+          .map(event => event.sourceTeam)
+          .filter(Boolean)
+      )].sort((a, b) => a.localeCompare(b, "ko"));
 
-function render(){
-  const data=window.SPORTS_DATA||{events:[]};
-  const team=teamFilter.value;
-  const site=siteFilter.value;
-  const booking=bookingFilter.value;
-  const month=monthFilter.value;
+      teams.forEach(team => {
+        const option = document.createElement("option");
+        option.value = team;
+        option.textContent = team;
+        teamFilter.appendChild(option);
+      });
+    }
 
-  const list=data.events.filter(event=>
-    eventHasTeam(event,team) &&
-    (!site || event.site===site) &&
-    (!booking || event.bookingStatus===booking) &&
-    (!month || (event.date||"").startsWith(month))
-  );
+    function bindFilters() {
+      [teamFilter, siteFilter, statusFilter, typeFilter]
+        .forEach(element => element.addEventListener("change", render));
+    }
 
-  rows.innerHTML=list.length
-    ? list.map(event=>`<tr>
-        <td class="site ${event.site==="NOL 티켓"?"nol":"tl"}">${esc(event.site)}</td>
-        <td>${esc(event.date)}</td>
-        <td>${esc(event.time)}</td>
-        <td>${esc((event.away||"?")+" vs "+(event.home||"?"))}</td>
-        <td>${esc(event.venue)}</td>
-        <td>${esc(event.bookingOpen||"-")}</td>
-        <td><span class="state ${stateClass(event.bookingStatus)}">${esc(event.bookingStatus||"확인 필요")}</span></td>
-        <td><a href="${esc(event.link)}" target="_blank" rel="noopener">예매처 열기</a></td>
-      </tr>`).join("")
-    : '<tr><td colspan="8" class="empty">조건에 맞는 경기정보가 없습니다.</td></tr>';
-}
+    function render() {
+      const selectedTeam = teamFilter.value;
+      const selectedSite = siteFilter.value;
+      const selectedStatus = statusFilter.value;
+      const selectedType = typeFilter.value;
 
-loadFreshData();
-</script>
+      const filtered = allEvents.filter(event => {
+        const teamMatch =
+          selectedTeam === "전체" || event.sourceTeam === selectedTeam;
+
+        const siteMatch =
+          selectedSite === "전체" || event.site === selectedSite;
+
+        const statusMatch =
+          selectedStatus === "전체" ||
+          normalizeStatus(event.bookingStatus) === selectedStatus;
+
+        const typeMatch =
+          selectedType === "전체" ||
+          normalizeEventType(event) === selectedType;
+
+        return teamMatch && siteMatch && statusMatch && typeMatch;
+      });
+
+      renderSummary(filtered);
+      renderTable(filtered);
+
+      document.getElementById("resultText").textContent =
+        `${filtered.length}건 표시 중`;
+    }
+
+    function renderSummary(events) {
+      document.getElementById("summaryTotal").textContent = events.length;
+
+      document.getElementById("summarySale").textContent =
+        events.filter(event =>
+          normalizeStatus(event.bookingStatus) === "예매중"
+        ).length;
+
+      document.getElementById("summaryWait").textContent =
+        events.filter(event =>
+          normalizeStatus(event.bookingStatus) === "예매예정"
+        ).length;
+
+      document.getElementById("summaryEvent").textContent =
+        events.filter(event =>
+          normalizeEventType(event) === "행사"
+        ).length;
+    }
+
+    function renderTable(events) {
+      const body = document.getElementById("scheduleBody");
+      const empty = document.getElementById("emptyMessage");
+
+      body.innerHTML = "";
+      empty.hidden = events.length !== 0;
+
+      events.forEach(event => {
+        const tr = document.createElement("tr");
+
+        const type = normalizeEventType(event);
+        const matchName = getDisplayName(event);
+        const status = normalizeStatus(event.bookingStatus);
+
+        tr.innerHTML = `
+          <td class="date-cell">${escapeHtml(formatDate(event.date))}</td>
+          <td>${escapeHtml(event.time || "-")}</td>
+          <td>${escapeHtml(event.sourceTeam || "-")}</td>
+          <td class="match-cell">
+            <div class="match-title">
+              ${type === "행사" ? '<span class="event-badge">행사</span>' : ""}
+              ${escapeHtml(matchName)}
+            </div>
+            ${event.title && event.title !== matchName
+              ? `<div class="match-sub">${escapeHtml(event.title)}</div>`
+              : ""}
+          </td>
+          <td>${escapeHtml(event.venue || "-")}</td>
+          <td>
+            <span class="site-badge ${event.site === "NOL 티켓"
+              ? "site-nol"
+              : "site-ticketlink"}">
+              ${escapeHtml(event.site || "-")}
+            </span>
+          </td>
+          <td>${escapeHtml(formatBookingOpen(event.bookingOpen))}</td>
+          <td>
+            <span class="status-badge ${getStatusClass(status)}">
+              ${escapeHtml(status)}
+            </span>
+          </td>
+          <td>
+            ${event.link
+              ? `<a class="book-btn" href="${escapeAttribute(event.link)}"
+                    target="_blank" rel="noopener noreferrer">예매하기</a>`
+              : "-"}
+          </td>
+        `;
+
+        body.appendChild(tr);
+      });
+    }
+
+    function getDisplayName(event) {
+      const type = normalizeEventType(event);
+
+      if (type === "행사") {
+        return (
+          event.displayName ||
+          event.title ||
+          `${event.sourceTeam || ""} 행사`
+        ).trim();
+      }
+
+      const away = (event.away || "").trim();
+      const home = (event.home || "").trim();
+
+      if (away && home) {
+        return `${away} vs ${home}`;
+      }
+
+      if (event.title) {
+        return event.title;
+      }
+
+      return [away, home].filter(Boolean).join(" vs ") || "경기 정보 확인";
+    }
+
+    function normalizeEventType(event) {
+      if (event.eventType === "행사") {
+        return "행사";
+      }
+
+      const title = String(event.title || "");
+      const keywords = [
+        "팬투어",
+        "팬미팅",
+        "팬페스티벌",
+        "페스티벌",
+        "이벤트",
+        "투어",
+        "사인회",
+        "체험"
+      ];
+
+      if (keywords.some(keyword => title.includes(keyword))) {
+        return "행사";
+      }
+
+      return "경기";
+    }
+
+    function normalizeStatus(value) {
+      const status = String(value || "").trim();
+
+      if (!status || status === "예매정보 확인" || status === "확인필요") {
+        return "확인 필요";
+      }
+
+      return status;
+    }
+
+    function getStatusClass(status) {
+      if (status === "예매중") return "status-sale";
+      if (status === "예매예정") return "status-wait";
+      if (status === "매진") return "status-soldout";
+      if (status === "예매종료") return "status-end";
+      if (status === "취소") return "status-cancel";
+      return "status-check";
+    }
+
+    function renderSourceStatus(statusList) {
+      const wrap = document.getElementById("sourceStatus");
+      wrap.innerHTML = "";
+
+      if (!Array.isArray(statusList) || statusList.length === 0) {
+        wrap.innerHTML = `
+          <div class="source-card">
+            <strong>수집 상태 없음</strong>
+            <span>data.js 안에 sourceStatus 정보가 없습니다.</span>
+          </div>
+        `;
+        return;
+      }
+
+      statusList.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "source-card";
+
+        card.innerHTML = `
+          <strong>${escapeHtml(item.team || "-")}</strong>
+          <span>${escapeHtml(item.site || "-")}</span>
+          <span class="${item.success ? "source-ok" : "source-fail"}">
+            ${item.success ? "수집 성공" : "수집 실패"}
+            · ${Number(item.count || 0)}건
+          </span>
+          <span>${escapeHtml(item.message || "")}</span>
+        `;
+
+        wrap.appendChild(card);
+      });
+    }
+
+    function formatDate(value) {
+      if (!value) return "-";
+
+      const parts = String(value).split("-");
+      if (parts.length !== 3) return String(value);
+
+      const date = new Date(
+        Number(parts[0]),
+        Number(parts[1]) - 1,
+        Number(parts[2])
+      );
+
+      const weekday = ["일", "월", "화", "수", "목", "금", "토"][date.getDay()];
+      return `${parts[1]}.${parts[2]} (${weekday})`;
+    }
+
+    function formatDateTime(value) {
+      if (!value) return "";
+
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) {
+        return String(value);
+      }
+
+      return new Intl.DateTimeFormat("ko-KR", {
+        timeZone: "Asia/Seoul",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      }).format(date);
+    }
+
+    function formatBookingOpen(value) {
+      if (!value) return "확인 필요";
+
+      const text = String(value).trim();
+
+      const digits = text.replace(/\D/g, "");
+      if (digits.length >= 12) {
+        return `${digits.slice(4, 6)}.${digits.slice(6, 8)} ${digits.slice(8, 10)}:${digits.slice(10, 12)}`;
+      }
+
+      return text;
+    }
+
+    function strongRefresh() {
+      const url = new URL(window.location.href);
+      url.searchParams.set("refresh", Date.now());
+      window.location.replace(url.toString());
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value);
+    }
+  </script>
 </body>
 </html>
