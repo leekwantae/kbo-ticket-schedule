@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG = json.loads((ROOT / "sources.json").read_text(encoding="utf-8"))
 KST = timezone(timedelta(hours=9), name="KST")
 TICKETLINK_API = "https://mapi.ticketlink.co.kr/mapi/sports/schedules"
-
+ 
 HEADERS_JSON = {
     "User-Agent": "Mozilla/5.0",
     "Accept": "application/json, text/plain, */*",
