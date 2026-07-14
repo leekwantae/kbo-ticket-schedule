@@ -143,6 +143,43 @@ def normalize_time(value: Any) -> str:
         return f"{digits[:2]}:{digits[2:4]}"
     return text[:5]
 
+def parse_booking_open(value: Any):
+    text = str(value or "").strip()
+
+    if not text:
+        return None
+
+    digits = re.sub(r"\D", "", text)
+
+    try:
+        if len(digits) >= 12:
+            return datetime.strptime(
+                digits[:12], "%Y%m%d%H%M"
+            ).replace(tzinfo=KST)
+
+        if len(digits) >= 8:
+            return datetime.strptime(
+                digits[:8], "%Y%m%d"
+            ).replace(tzinfo=KST)
+
+    except ValueError:
+        return None
+
+    return None
+
+
+def get_nol_booking_status(booking_open: Any, now: datetime) -> str:
+    open_datetime = parse_booking_open(booking_open)
+
+    if open_datetime is None:
+        return "확인 필요"
+
+    if now >= open_datetime:
+        return "예매중"
+
+    return "예매예정"
+    
+
 def collect_nol():
     events, status_list = [], []
     for source in CONFIG.get("nol", []):
