@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-15T08:45:11+09:00",
+  "updatedAt": "2026-07-15T08:46:31+09:00",
   "queryRange": {
     "startDate": "2026-07-15",
     "endDate": "2026-11-12"
@@ -64,16 +64,16 @@ window.SPORTS_DATA = {
     {
       "site": "NOL 티켓",
       "team": "두산 베어스",
-      "success": true,
-      "count": 10,
-      "message": "페이지 내 경기 JSON 추출 성공"
+      "success": false,
+      "count": 0,
+      "message": "name 'now' is not defined"
     },
     {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
-      "success": true,
-      "count": 6,
-      "message": "페이지 내 경기 JSON 추출 성공"
+      "success": false,
+      "count": 0,
+      "message": "name 'now' is not defined"
     }
   ],
   "events": [
@@ -350,21 +350,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/baseball/55"
     },
     {
-      "id": "NOL-26004280",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-07-21",
-      "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs 삼성 (7.21)",
-      "bookingOpen": "2026-07-14 11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004280",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
-    },
-    {
       "id": "TL-1427853844",
       "site": "티켓링크",
       "sourceTeam": "SSG 랜더스",
@@ -427,21 +412,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1266392222",
       "productId": "64377",
       "link": "https://www.ticketlink.co.kr/sports/baseball/55"
-    },
-    {
-      "id": "NOL-26004281",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-07-22",
-      "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs 삼성 (7.22)",
-      "bookingOpen": "2026-07-15 11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004281",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "TL-1998451860",
@@ -508,21 +478,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/baseball/55"
     },
     {
-      "id": "NOL-26004282",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-07-23",
-      "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs 삼성 (7.23)",
-      "bookingOpen": "2026-07-16 11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004282",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
-    },
-    {
       "id": "TL-1015088370",
       "site": "티켓링크",
       "sourceTeam": "SSG 랜더스",
@@ -587,21 +542,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/baseball/55"
     },
     {
-      "id": "NOL-26004548",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-07-24",
-      "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 삼성 (7.24)",
-      "bookingOpen": "2026-07-17T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004548",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
       "id": "TL-1750217083",
       "site": "티켓링크",
       "sourceTeam": "SSG 랜더스",
@@ -634,21 +574,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/baseball/58"
     },
     {
-      "id": "NOL-26004549",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-07-25",
-      "time": "18:00",
-      "away": "삼성 라이온즈",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 삼성 (7.25)",
-      "bookingOpen": "2026-07-18T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004549",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
       "id": "TL-475425227",
       "site": "티켓링크",
       "sourceTeam": "SSG 랜더스",
@@ -679,21 +604,6 @@ window.SPORTS_DATA = {
       "scheduleId": "343451874",
       "productId": "62036",
       "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
-      "id": "NOL-26004550",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-07-26",
-      "time": "18:00",
-      "away": "삼성 라이온즈",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 삼성 (7.26)",
-      "bookingOpen": "2026-07-19T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004550",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "TL-1075730823",
@@ -872,36 +782,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/baseball/58"
     },
     {
-      "id": "NOL-26004551",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-07-31",
-      "time": "18:30",
-      "away": "LG 트윈스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs LG (7.31)",
-      "bookingOpen": "2026-07-24T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004551",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
-      "id": "NOL-26004283",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-07-31",
-      "time": "18:30",
-      "away": "SSG 랜더스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs SSG (7.31)",
-      "bookingOpen": "2026-07-24 11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004283",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
-    },
-    {
       "id": "TL-1869069870",
       "site": "티켓링크",
       "sourceTeam": "KT 위즈",
@@ -916,36 +796,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1869069870",
       "productId": "61322",
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
-    },
-    {
-      "id": "NOL-26004552",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-08-01",
-      "time": "18:00",
-      "away": "LG 트윈스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs LG (8.1)",
-      "bookingOpen": "2026-07-25T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004552",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
-      "id": "NOL-26004284",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-08-01",
-      "time": "18:00",
-      "away": "SSG 랜더스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs SSG (8.1)",
-      "bookingOpen": "2026-07-25 11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004284",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "TL-337817554",
@@ -964,36 +814,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
-      "id": "NOL-26004285",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-08-02",
-      "time": "14:00",
-      "away": "SSG 랜더스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs SSG (8.2)",
-      "bookingOpen": "2026-07-26 11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004285",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
-    },
-    {
-      "id": "NOL-26004553",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-08-02",
-      "time": "18:00",
-      "away": "LG 트윈스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs LG (8.2)",
-      "bookingOpen": "2026-07-26T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004553",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
       "id": "TL-1977089188",
       "site": "티켓링크",
       "sourceTeam": "KT 위즈",
@@ -1008,21 +828,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1977089188",
       "productId": "61322",
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
-    },
-    {
-      "id": "NOL-26004554",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-08-04",
-      "time": "18:30",
-      "away": "NC 다이노스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs NC (8.4)",
-      "bookingOpen": "2026-07-28T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004554",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "TL-1694245804",
@@ -1057,21 +862,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/baseball/58"
     },
     {
-      "id": "NOL-26004555",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-08-05",
-      "time": "18:30",
-      "away": "NC 다이노스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs NC (8.5)",
-      "bookingOpen": "2026-07-29T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004555",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
       "id": "TL-1777859835",
       "site": "티켓링크",
       "sourceTeam": "삼성 라이온즈",
@@ -1102,21 +892,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1540989929",
       "productId": "62036",
       "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
-      "id": "NOL-26004556",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-08-06",
-      "time": "18:30",
-      "away": "NC 다이노스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs NC (8.6)",
-      "bookingOpen": "2026-07-30T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004556",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "TL-1486151910",
@@ -1357,21 +1132,6 @@ window.SPORTS_DATA = {
       "scheduleId": "2105921082",
       "productId": "61322",
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
-    },
-    {
-      "id": "NOL-26004557",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-08-11",
-      "time": "18:30",
-      "away": "한화 이글스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 한화 (8.11)",
-      "bookingOpen": "2026-08-04T11:00:00",
-      "bookingStatus": "예매정보 확인",
-      "goodsCode": "26004557",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "TL-363115310",
