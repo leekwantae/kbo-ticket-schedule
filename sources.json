@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>KBO 경기·예매 일정</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#172033;background:#f4f7fb}
+    *{box-sizing:border-box} body{margin:0}.wrap{max-width:1200px;margin:auto;padding:24px}
+    header{background:linear-gradient(135deg,#142b55,#2462a8);color:white;padding:28px;border-radius:22px;box-shadow:0 14px 35px #17345b2b}
+    h1{margin:0 0 8px;font-size:clamp(26px,4vw,42px)} header p{margin:0;opacity:.9}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+    button,select{border:1px solid #d7deea;background:white;padding:11px 14px;border-radius:12px;font-size:15px}
+    button{cursor:pointer;font-weight:700}.primary{background:#1768c4;color:white;border-color:#1768c4}
+    .meta{margin:10px 2px;color:#56647a;font-size:14px}
+    .status{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.badge{background:white;border:1px solid #dce3ee;border-radius:999px;padding:7px 11px;font-size:13px}
+    .tablebox{overflow:auto;background:white;border-radius:18px;box-shadow:0 8px 24px #17203312}
+    table{width:100%;border-collapse:collapse;min-width:920px}th,td{padding:13px 12px;border-bottom:1px solid #edf0f5;text-align:left;white-space:nowrap}
+    th{position:sticky;top:0;background:#eef4fb;font-size:13px;color:#40506a}tr:hover td{background:#fafcff}
+    .site{font-weight:800}.nol{color:#7a3df0}.tl{color:#1768c4}.empty{text-align:center;padding:50px;color:#78869a}
+    a{color:#1768c4;font-weight:700;text-decoration:none}.error{color:#b42318}
+    @media(max-width:640px){.wrap{padding:12px}header{padding:22px 18px;border-radius:16px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>⚾ KBO 경기·예매 일정</h1>
+    <p>티켓링크 구단과 NOL 티켓 두산·키움 일정을 한 화면에서 확인합니다.</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="primary" onclick="hardRefresh()">최신 정보 불러오기</button>
+    <select id="teamFilter" onchange="render()"><option value="">전체 구단</option></select>
+    <select id="siteFilter" onchange="render()">
+      <option value="">전체 예매처</option><option>티켓링크</option><option>NOL 티켓</option>
+    </select>
+    <select id="monthFilter" onchange="render()"><option value="">전체 월</option></select>
+  </div>
+
+  <div id="meta" class="meta">데이터 확인 중…</div>
+  <div id="status" class="status"></div>
+
+  <div class="tablebox">
+    <table>
+      <thead><tr><th>예매처</th><th>경기일</th><th>시간</th><th>대진</th><th>구장</th><th>예매 시작</th><th>상태</th><th>바로가기</th></tr></thead>
+      <tbody id="rows"><tr><td colspan="8" class="empty">경기정보를 불러오는 중입니다.</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+function loadFreshData(){
+  const s=document.createElement("script");
+  s.src="./data.js?v="+Date.now();
+  s.onload=init;
+  s.onerror=()=>document.getElementById("rows").innerHTML='<tr><td colspan="8" class="empty error">data.js를 불러오지 못했습니다.</td></tr>';
+  document.head.appendChild(s);
+}
+function hardRefresh(){location.href=location.pathname+"?refresh="+Date.now()}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function init(){
+  const d=window.SPORTS_DATA||{events:[],sourceStatus:[]};
+  const teams=[...new Set(d.events.map(e=>e.sourceTeam).filter(Boolean))].sort();
+  const months=[...new Set(d.events.map(e=>(e.date||"").slice(0,7)).filter(Boolean))].sort();
+  teamFilter.innerHTML='<option value="">전체 구단</option>'+teams.map(x=>`<option>${esc(x)}</option>`).join("");
+  monthFilter.innerHTML='<option value="">전체 월</option>'+months.map(x=>`<option value="${x}">${x}</option>`).join("");
+  meta.textContent=`갱신 시각: ${d.updatedAt||"아직 갱신 전"} · 전체 ${d.events.length}경기`;
+  status.innerHTML=(d.sourceStatus||[]).map(s=>`<span class="badge ${s.success?"":"error"}">${esc(s.team)} ${s.success?esc(s.count)+"건":"실패"}</span>`).join("");
+  render();
+}
+function render(){
+  const d=window.SPORTS_DATA||{events:[]};
+  const team=teamFilter.value,site=siteFilter.value,month=monthFilter.value;
+  const list=d.events.filter(e=>(!team||e.sourceTeam===team)&&(!site||e.site===site)&&(!month||(e.date||"").startsWith(month)));
+  rows.innerHTML=list.length?list.map(e=>`<tr>
+    <td class="site ${e.site==="NOL 티켓"?"nol":"tl"}">${esc(e.site)}</td>
+    <td>${esc(e.date)}</td><td>${esc(e.time)}</td>
+    <td>${esc((e.away||"?")+" vs "+(e.home||"?"))}</td>
+    <td>${esc(e.venue)}</td><td>${esc(e.bookingOpen)}</td><td>${esc(e.bookingStatus)}</td>
+    <td><a href="${esc(e.link)}" target="_blank" rel="noopener">예매처 열기</a></td>
+  </tr>`).join(""):'<tr><td colspan="8" class="empty">조건에 맞는 경기정보가 없습니다.</td></tr>';
+}
+loadFreshData();
+</script>
+</body>
+</html>
