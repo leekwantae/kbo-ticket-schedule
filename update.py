@@ -208,7 +208,10 @@ def collect_nol():
                     "venue": str(game.get("placeName") or "").strip(),
                     "title": str(game.get("goodsName") or "").strip(),
                     "bookingOpen": str(booking_open),
-                    "bookingStatus": "예매정보 확인",
+                    "bookingStatus": get_nol_booking_status(
+                        booking_open,
+                        now
+                    ),
                     "goodsCode": goods_code,
                     "link": source["pageUrl"],
                 })
