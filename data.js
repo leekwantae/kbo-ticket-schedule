@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-14T15:32:50+09:00",
+  "updatedAt": "2026-07-14T21:51:24+09:00",
   "queryRange": {
     "startDate": "2026-07-14",
     "endDate": "2026-11-11"
@@ -407,7 +407,7 @@ window.SPORTS_DATA = {
       "venue": "수원 케이티위즈파크",
       "title": "2026 KT 워터페스티벌",
       "bookingOpen": "2026-07-14 16:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "scheduleId": "438883549",
       "productId": "61322",
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
