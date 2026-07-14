@@ -1,43 +1,43 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-14T21:51:24+09:00",
+  "updatedAt": "2026-07-15T05:34:21+09:00",
   "queryRange": {
-    "startDate": "2026-07-14",
-    "endDate": "2026-11-11"
+    "startDate": "2026-07-15",
+    "endDate": "2026-11-12"
   },
   "sourceStatus": [
     {
       "site": "티켓링크",
       "team": "LG 트윈스",
       "success": true,
-      "count": 16,
+      "count": 17,
       "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "한화 이글스",
       "success": true,
-      "count": 22,
+      "count": 23,
       "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "삼성 라이온즈",
       "success": true,
-      "count": 22,
+      "count": 23,
       "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "KT 위즈",
       "success": true,
-      "count": 16,
+      "count": 17,
       "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "KIA 타이거즈",
       "success": true,
-      "count": 21,
+      "count": 22,
       "message": "API 조회 성공"
     },
     {
@@ -51,14 +51,14 @@ window.SPORTS_DATA = {
       "site": "티켓링크",
       "team": "SSG 랜더스",
       "success": true,
-      "count": 16,
+      "count": 17,
       "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "NC 다이노스",
       "success": true,
-      "count": 21,
+      "count": 22,
       "message": "API 조회 성공"
     },
     {
@@ -1418,6 +1418,70 @@ window.SPORTS_DATA = {
       "bookingOpen": "2026-08-06 11:00",
       "bookingStatus": "예매예정",
       "scheduleId": "932132753",
+      "productId": "62036",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+    },
+    {
+      "id": "TL-786036050",
+      "site": "티켓링크",
+      "sourceTeam": "SSG 랜더스",
+      "date": "2026-08-14",
+      "time": "18:30",
+      "away": "SSG랜더스",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "bookingOpen": "2026-08-07 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "786036050",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
+      "id": "TL-205736157",
+      "site": "티켓링크",
+      "sourceTeam": "삼성 라이온즈",
+      "date": "2026-08-14",
+      "time": "18:30",
+      "away": "한화이글스",
+      "home": "삼성 라이온즈",
+      "venue": "대구 삼성라이온즈파크",
+      "title": "화이트",
+      "bookingOpen": "2026-08-07 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "205736157",
+      "productId": "62111",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+    },
+    {
+      "id": "TL-946427221",
+      "site": "티켓링크",
+      "sourceTeam": "KT 위즈",
+      "date": "2026-08-14",
+      "time": "18:30",
+      "away": "키움히어로즈",
+      "home": "kt wiz",
+      "venue": "수원 케이티위즈파크",
+      "title": "2026 KT 워터페스티벌",
+      "bookingOpen": "2026-08-07 16:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "946427221",
+      "productId": "61322",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/62"
+    },
+    {
+      "id": "TL-946447542",
+      "site": "티켓링크",
+      "sourceTeam": "NC 다이노스",
+      "date": "2026-08-14",
+      "time": "18:30",
+      "away": "두산베어스",
+      "home": "KIA 타이거즈",
+      "venue": "KIA 챔피언스필드",
+      "title": "",
+      "bookingOpen": "2026-08-07 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "946447542",
       "productId": "62036",
       "link": "https://www.ticketlink.co.kr/sports/baseball/58"
     }
