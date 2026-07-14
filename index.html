@@ -144,14 +144,12 @@ function normalizeTeam(value){
 
 function eventHasTeam(event, selectedTeam){
   if(!selectedTeam) return true;
-  const target=normalizeTeam(selectedTeam);
 
-  return [
-    event.sourceTeam,
-    event.home,
-    event.away,
-    event.title
-  ].some(value=>normalizeTeam(value)===target || normalizeTeam(value).includes(target));
+  const target = normalizeTeam(selectedTeam);
+  const homeTeam = normalizeTeam(event.home);
+
+  // 선택한 구단의 홈경기만 표시
+  return homeTeam === target || homeTeam.includes(target);
 }
 
 function stateClass(status){
