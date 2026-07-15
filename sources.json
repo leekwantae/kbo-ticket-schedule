@@ -32,12 +32,12 @@
       "pageUrl": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
-  "team": "울산웨일즈",
-  "categoryId": 137,
-  "teamId": 721,
-  "pageUrl": "https://www.ticketlink.co.kr/sports/137/721"
-  }
-  ],
+      "team": "울산웨일즈",
+      "categoryId": 137,
+      "teamId": 721,
+      "pageUrl": "https://www.ticketlink.co.kr/sports/137/721"
+    }
+    ],
   "nol": [
     {
       "key": "bears",
