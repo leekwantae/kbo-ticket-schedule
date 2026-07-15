@@ -139,71 +139,7 @@ def is_special_event(title: str, away: str, home: str) -> bool:
     )
 
 
-def load_previous_payload() -> dict[str, Any]:
-    """기존 data.json을 읽어 API가 일시적으로 0건을 반환할 때 보존용으로 사용합니다."""
-    path = ROOT / "data.json"
-    if not path.exists():
-        return {}
-
-    try:
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        return payload if isinstance(payload, dict) else {}
-    except Exception:
-        return {}
-
-
-def previous_ticketlink_events(
-    previous_payload: dict[str, Any],
-    source_team: str,
-) -> list[dict[str, Any]]:
-    events = previous_payload.get("events", [])
-    if not isinstance(events, list):
-        return []
-
-    return [
-        event
-        for event in events
-        if isinstance(event, dict)
-        and event.get("site") == "티켓링크"
-        and event.get("sourceTeam") == source_team
-    ]
-
-
-def extract_schedules(payload: Any) -> list[dict[str, Any]]:
-    """티켓링크 응답 구조가 조금 달라져도 schedules 배열을 찾습니다."""
-    candidates: list[Any] = []
-
-    if isinstance(payload, dict):
-        candidates.append(payload.get("schedules"))
-
-        data = payload.get("data")
-        if isinstance(data, dict):
-            candidates.extend([
-                data.get("schedules"),
-                data.get("scheduleList"),
-                data.get("items"),
-                data.get("list"),
-            ])
-        elif isinstance(data, list):
-            candidates.append(data)
-
-        result = payload.get("result")
-        if isinstance(result, dict):
-            candidates.extend([
-                result.get("schedules"),
-                result.get("scheduleList"),
-                result.get("items"),
-                result.get("list"),
-            ])
-
-    for candidate in candidates:
-        if isinstance(candidate, list):
-            return [item for item in candidate if isinstance(item, dict)]
-
-    return []
-
-
-def collect_ticketlink(now: datetime, end: datetime, previous_payload: dict[str, Any]):
+def collect_ticketlink(now: datetime, end: datetime):
     events, status_list = [], []
 
     for source in CONFIG.get("ticketlink", []):
@@ -227,25 +163,10 @@ def collect_ticketlink(now: datetime, end: datetime, previous_payload: dict[str,
 
         try:
             payload = fetch_json(url)
-            schedules = extract_schedules(payload)
+            schedules = payload.get("data", {}).get("schedules", [])
 
-            # API가 오류 없이 빈 배열을 주는 경우가 있어, 기존 정상 데이터를 보존합니다.
-            if not schedules:
-                previous = previous_ticketlink_events(
-                    previous_payload,
-                    source["team"],
-                )
-                if previous:
-                    events.extend(previous)
-                    status["success"] = True
-                    status["count"] = len(previous)
-                    status["message"] = "API 0건 · 이전 정상 데이터 유지"
-                    status_list.append(status)
-                    continue
-
-                raise RuntimeError("티켓링크 API가 일정 0건을 반환했습니다.")
-
-            source_event_count = 0
+            if not isinstance(schedules, list):
+                raise RuntimeError("data.schedules 배열이 없습니다.")
 
             for item in schedules:
                 game = ms_to_dt(item.get("scheduleDate"))
@@ -297,38 +218,12 @@ def collect_ticketlink(now: datetime, end: datetime, previous_payload: dict[str,
                     }
                 )
 
-                source_event_count += 1
-
-            if source_event_count == 0:
-                previous = previous_ticketlink_events(
-                    previous_payload,
-                    source["team"],
-                )
-                if previous:
-                    events.extend(previous)
-                    status["success"] = True
-                    status["count"] = len(previous)
-                    status["message"] = "일정 해석 0건 · 이전 정상 데이터 유지"
-                    status_list.append(status)
-                    continue
-                raise RuntimeError("일정 배열은 있으나 유효한 경기를 찾지 못했습니다.")
-
             status["success"] = True
-            status["count"] = source_event_count
+            status["count"] = len(schedules)
             status["message"] = "API 조회 성공"
 
         except Exception as exc:
-            previous = previous_ticketlink_events(
-                previous_payload,
-                source["team"],
-            )
-            if previous:
-                events.extend(previous)
-                status["success"] = True
-                status["count"] = len(previous)
-                status["message"] = f"수집 실패 · 이전 정상 데이터 유지: {exc}"
-            else:
-                status["message"] = str(exc)
+            status["message"] = str(exc)
 
         status_list.append(status)
 
@@ -424,44 +319,41 @@ def collect_nol(now: datetime):
                 sport = game.get("sport") or {}
                 home = sport.get("homeOrganization") or {}
                 away = sport.get("awayOrganization") or {}
-
                 pre_sales = game.get("preSales") or []
+                goods_code = str(game.get("goodsCode") or "")
 
-                    # NOL에 등록된 모든 예매 시작 시간을 모읍니다.
-                    booking_candidates = []
-                    
-                    for pre_sale in pre_sales:
-                        if not isinstance(pre_sale, dict):
-                            continue
-                    
-                        value = (
-                            pre_sale.get("minBookingOpenTime")
-                            or pre_sale.get("bookingOpenTime")
-                            or pre_sale.get("openDateTime")
-                        )
-                    
-                        if value:
-                            booking_candidates.append(value)
-                    
-                    # 상품 자체에 일반예매 시간이 있으면 함께 비교합니다.
-                    game_booking_open = game.get("bookingOpenTime")
-                    if game_booking_open:
-                        booking_candidates.append(game_booking_open)
-                    
-                    # 선예매보다 일반예매가 늦게 시작하므로 가장 늦은 시간을 선택합니다.
-                    parsed_candidates = []
-                    
-                    for value in booking_candidates:
-                        parsed = parse_booking_open(value)
-                        if parsed is not None:
-                            parsed_candidates.append((parsed, value))
-                    
-                    if parsed_candidates:
-                        parsed_candidates.sort(key=lambda item: item[0])
-                        booking_open = parsed_candidates[-1][1]
-                    else:
-                        booking_open = game_booking_open or ""
-    
+                # 두산·키움은 선예매가 아닌 일반예매 시간을 표시합니다.
+                # 예매 시작 후보 중 가장 늦은 시간을 일반예매로 판단합니다.
+                booking_candidates: list[Any] = []
+
+                for pre_sale in pre_sales:
+                    if not isinstance(pre_sale, dict):
+                        continue
+
+                    value = (
+                        pre_sale.get("minBookingOpenTime")
+                        or pre_sale.get("bookingOpenTime")
+                        or pre_sale.get("openDateTime")
+                    )
+                    if value:
+                        booking_candidates.append(value)
+
+                game_booking_open = game.get("bookingOpenTime")
+                if game_booking_open:
+                    booking_candidates.append(game_booking_open)
+
+                parsed_candidates: list[tuple[datetime, Any]] = []
+
+                for value in booking_candidates:
+                    parsed = parse_booking_open(value)
+                    if parsed is not None:
+                        parsed_candidates.append((parsed, value))
+
+                if parsed_candidates:
+                    parsed_candidates.sort(key=lambda item: item[0])
+                    booking_open = parsed_candidates[-1][1]
+                else:
+                    booking_open = game_booking_open or ""
                 title = str(game.get("goodsName") or "").strip()
                 away_name = str(away.get("name") or "").strip()
                 home_name = str(home.get("name") or "").strip()
@@ -505,13 +397,7 @@ def main():
     now = datetime.now(KST)
     end = now + timedelta(days=int(CONFIG.get("rangeDays", 120)))
 
-    previous_payload = load_previous_payload()
-
-    tl_events, tl_status = collect_ticketlink(
-        now,
-        end,
-        previous_payload,
-    )
+    tl_events, tl_status = collect_ticketlink(now, end)
     nol_events, nol_status = collect_nol(now)
 
     # scheduleId와 goodsCode는 각각 고유하므로 실제 동일 ID만 제거한다.
@@ -528,17 +414,6 @@ def main():
             e.get("site", ""),
         ),
     )
-
-    previous_tl = [
-        event
-        for event in previous_payload.get("events", [])
-        if isinstance(event, dict) and event.get("site") == "티켓링크"
-    ]
-
-    if not tl_events and previous_tl:
-        raise RuntimeError(
-            "티켓링크 데이터가 0건이어서 기존 data.json/data.js를 보호했습니다."
-        )
 
     payload = {
         "updatedAt": datetime.now(KST).isoformat(timespec="seconds"),
