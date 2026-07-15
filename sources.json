@@ -4,7 +4,7 @@
     {
       "team": "LG 트윈스",
       "categoryId": 137,
-      "teamId": 59,
+      "teamId": 57,
       "pageUrl": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
@@ -16,7 +16,7 @@
     {
       "team": "삼성 라이온즈",
       "categoryId": 137,
-      "teamId": 57,
+      "teamId": 55,
       "pageUrl": "https://www.ticketlink.co.kr/sports/baseball/55"
     },
     {
@@ -28,26 +28,14 @@
     {
       "team": "KIA 타이거즈",
       "categoryId": 137,
-      "teamId": 58,
+      "teamId": 54,
       "pageUrl": "https://www.ticketlink.co.kr/sports/baseball/54"
-    },
-    {
-      "team": "롯데 자이언츠",
-      "categoryId": 137,
-      "teamId": 53,
-      "pageUrl": "https://www.ticketlink.co.kr/sports/baseball/53"
     },
     {
       "team": "SSG 랜더스",
       "categoryId": 137,
       "teamId": 59,
       "pageUrl": "https://www.ticketlink.co.kr/sports/baseball/59"
-    },
-    {
-      "team": "NC 다이노스",
-      "categoryId": 137,
-      "teamId": 58,
-      "pageUrl": "https://www.ticketlink.co.kr/sports/baseball/58"
     }
   ],
   "nol": [
