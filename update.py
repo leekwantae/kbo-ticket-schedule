@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import time
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -13,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG = json.loads((ROOT / "sources.json").read_text(encoding="utf-8"))
 KST = timezone(timedelta(hours=9), name="KST")
 TICKETLINK_API = "https://mapi.ticketlink.co.kr/mapi/sports/schedules"
- 
+
 HEADERS_JSON = {
     "User-Agent": "Mozilla/5.0",
     "Accept": "application/json, text/plain, */*",
@@ -37,10 +38,21 @@ SPECIAL_EVENT_KEYWORDS = (
 )
 
 
-def fetch(url: str, headers: dict[str, str]) -> bytes:
-    request = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(request, timeout=40) as response:
-        return response.read()
+def fetch(url: str, headers: dict[str, str], retries: int = 3) -> bytes:
+    last_error: Exception | None = None
+
+    for attempt in range(retries):
+        try:
+            request = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(request, timeout=40) as response:
+                return response.read()
+        except Exception as exc:
+            last_error = exc
+            if attempt < retries - 1:
+                time.sleep(2 * (attempt + 1))
+
+    assert last_error is not None
+    raise last_error
 
 
 def fetch_json(url: str) -> Any:
@@ -74,8 +86,7 @@ def parse_booking_open(value: Any):
     if isinstance(value, datetime):
         return value.astimezone(KST) if value.tzinfo else value.replace(tzinfo=KST)
 
-    text = str(value).strip()
-    digits = re.sub(r"\D", "", text)
+    digits = re.sub(r"\D", "", str(value).strip())
 
     try:
         if len(digits) >= 14:
@@ -107,7 +118,6 @@ def get_booking_status(
         return "취소"
 
     open_datetime = parse_booking_open(booking_open)
-
     if open_datetime is None:
         return "확인 필요"
 
@@ -115,12 +125,18 @@ def get_booking_status(
 
 
 def is_special_event(title: str, away: str, home: str) -> bool:
-    clean_title = str(title or "").strip()
-    if any(keyword in clean_title for keyword in SPECIAL_EVENT_KEYWORDS):
-        return True
+    """
+    양 팀이 모두 있으면 프로모션 명칭이 있어도 일반 경기로 처리한다.
+    예: '2026 KT 워터페스티벌'은 키움 vs KT 경기의 이벤트명이지 별도 행사가 아님.
+    """
+    if away and home:
+        return False
 
-    # 상대 팀 정보가 없고 행사명이 존재하면 일반 경기로 보지 않음
-    return bool(clean_title and (not away or not home))
+    clean_title = str(title or "").strip()
+    return bool(
+        clean_title
+        and any(keyword in clean_title for keyword in SPECIAL_EVENT_KEYWORDS)
+    )
 
 
 def collect_ticketlink(now: datetime, end: datetime):
@@ -152,8 +168,6 @@ def collect_ticketlink(now: datetime, end: datetime):
             if not isinstance(schedules, list):
                 raise RuntimeError("data.schedules 배열이 없습니다.")
 
-            source_count = 0
-
             for item in schedules:
                 game = ms_to_dt(item.get("scheduleDate"))
                 if not game:
@@ -167,37 +181,45 @@ def collect_ticketlink(now: datetime, end: datetime):
 
                 status_code = str(item.get("reserveButtonStatus") or "").upper()
                 schedule_id = str(item.get("scheduleId") or "")
-                title = str(item.get("matchTitle") or item.get("productName") or "").strip()
+                title = str(
+                    item.get("matchTitle")
+                    or item.get("productName")
+                    or ""
+                ).strip()
                 away = team_name(item.get("awayTeam"))
                 home = team_name(item.get("homeTeam"))
                 special = is_special_event(title, away, home)
 
-                event = {
-                    "id": "TL-" + (
-                        schedule_id or f"{source['team']}-{game.isoformat()}-{title}"
-                    ),
-                    "site": "티켓링크",
-                    "sourceTeam": source["team"],
-                    "date": game.strftime("%Y-%m-%d"),
-                    "time": game.strftime("%H:%M"),
-                    "away": away,
-                    "home": home,
-                    "venue": str(item.get("venueName") or "").strip(),
-                    "title": title,
-                    "eventType": "행사" if special else "경기",
-                    "displayName": title if special else "",
-                    "bookingOpen": reserve.strftime("%Y-%m-%d %H:%M") if reserve else "",
-                    "bookingStatus": get_booking_status(reserve, now, status_code),
-                    "scheduleId": schedule_id,
-                    "productId": str(item.get("productId") or ""),
-                    "link": source["pageUrl"],
-                }
-
-                events.append(event)
-                source_count += 1
+                events.append(
+                    {
+                        "id": "TL-" + (
+                            schedule_id
+                            or f"{source['team']}-{game.isoformat()}-{title}"
+                        ),
+                        "site": "티켓링크",
+                        "sourceTeam": source["team"],
+                        "date": game.strftime("%Y-%m-%d"),
+                        "time": game.strftime("%H:%M"),
+                        "away": away,
+                        "home": home,
+                        "venue": str(item.get("venueName") or "").strip(),
+                        "title": title,
+                        "eventType": "행사" if special else "경기",
+                        "displayName": title if special else "",
+                        "bookingOpen": (
+                            reserve.strftime("%Y-%m-%d %H:%M") if reserve else ""
+                        ),
+                        "bookingStatus": get_booking_status(
+                            reserve, now, status_code
+                        ),
+                        "scheduleId": schedule_id,
+                        "productId": str(item.get("productId") or ""),
+                        "link": source["pageUrl"],
+                    }
+                )
 
             status["success"] = True
-            status["count"] = source_count
+            status["count"] = len(schedules)
             status["message"] = "API 조회 성공"
 
         except Exception as exc:
@@ -265,13 +287,10 @@ def normalize_date(value: Any) -> str:
 
 
 def normalize_time(value: Any) -> str:
-    text = str(value or "")
-    digits = re.sub(r"\D", "", text)
-
+    digits = re.sub(r"\D", "", str(value or ""))
     if len(digits) >= 4:
         return f"{digits[:2]}:{digits[2:4]}"
-
-    return text[:5]
+    return str(value or "")[:5]
 
 
 def collect_nol(now: datetime):
@@ -295,8 +314,6 @@ def collect_nol(now: datetime):
 
             if not raw_games:
                 raise RuntimeError("페이지에서 경기정보를 찾지 못했습니다.")
-
-            source_count = 0
 
             for game in raw_games:
                 sport = game.get("sport") or {}
@@ -336,10 +353,9 @@ def collect_nol(now: datetime):
                         "link": source["pageUrl"],
                     }
                 )
-                source_count += 1
 
             status["success"] = True
-            status["count"] = source_count
+            status["count"] = len(raw_games)
             status["message"] = "페이지 내 경기 JSON 추출 성공"
 
         except Exception as exc:
@@ -357,7 +373,9 @@ def main():
     tl_events, tl_status = collect_ticketlink(now, end)
     nol_events, nol_status = collect_nol(now)
 
-    dedup = {}
+    # scheduleId와 goodsCode는 각각 고유하므로 실제 동일 ID만 제거한다.
+    # 행사명과 경기명이 겹친다는 이유로 서로 다른 경기를 지우지 않는다.
+    dedup: dict[str, dict[str, Any]] = {}
     for event in tl_events + nol_events:
         dedup[event["id"]] = event
 
@@ -381,7 +399,6 @@ def main():
     }
 
     json_text = json.dumps(payload, ensure_ascii=False, indent=2)
-
     (ROOT / "data.json").write_text(json_text + "\n", encoding="utf-8")
     (ROOT / "data.js").write_text(
         "window.SPORTS_DATA = " + json_text + ";\n",
