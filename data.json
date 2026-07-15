@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T11:23:33+09:00",
+  "updatedAt": "2026-07-15T11:34:00+09:00",
   "queryRange": {
     "startDate": "2026-07-15",
     "endDate": "2026-11-12"
@@ -8,44 +8,44 @@
     {
       "site": "티켓링크",
       "team": "LG 트윈스",
-      "success": true,
+      "success": false,
       "count": 0,
-      "message": "API 조회 성공"
+      "message": "티켓링크 API가 일정 0건을 반환했습니다."
     },
     {
       "site": "티켓링크",
       "team": "한화 이글스",
-      "success": true,
+      "success": false,
       "count": 0,
-      "message": "API 조회 성공"
+      "message": "티켓링크 API가 일정 0건을 반환했습니다."
     },
     {
       "site": "티켓링크",
       "team": "삼성 라이온즈",
-      "success": true,
+      "success": false,
       "count": 0,
-      "message": "API 조회 성공"
+      "message": "티켓링크 API가 일정 0건을 반환했습니다."
     },
     {
       "site": "티켓링크",
       "team": "KT 위즈",
-      "success": true,
+      "success": false,
       "count": 0,
-      "message": "API 조회 성공"
+      "message": "티켓링크 API가 일정 0건을 반환했습니다."
     },
     {
       "site": "티켓링크",
       "team": "KIA 타이거즈",
-      "success": true,
+      "success": false,
       "count": 0,
-      "message": "API 조회 성공"
+      "message": "티켓링크 API가 일정 0건을 반환했습니다."
     },
     {
       "site": "티켓링크",
       "team": "울산웨일즈",
-      "success": true,
+      "success": false,
       "count": 0,
-      "message": "API 조회 성공"
+      "message": "티켓링크 API가 일정 0건을 반환했습니다."
     },
     {
       "site": "NOL 티켓",
