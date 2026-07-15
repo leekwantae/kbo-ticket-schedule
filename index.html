@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>KBO 통합 예매 일정(2번통합)</title>
+  <title>KBO 통합 예매 일정</title>
 
   <style>
     :root {
@@ -27,8 +27,8 @@
       --neutral-text: #4b5563;
       --nol: #7c3aed;
       --ticketlink: #2563eb;
-      --event-bg: #fff0f5;
-      --event-text: #be185d;
+      --today-bg: #fff7c8;
+      --today-hover: #ffe98a;
     }
 
     * {
@@ -238,6 +238,22 @@
       background: #fbfdff;
     }
 
+    tbody tr.today-booking {
+      background: var(--today-bg) !important;
+    }
+
+    tbody tr.today-booking:hover {
+      background: var(--today-hover) !important;
+    }
+
+    .today-fire {
+      display: inline-block;
+      margin-right: 5px;
+      font-size: 16px;
+      line-height: 1;
+      vertical-align: -1px;
+    }
+
     .date-cell {
       font-weight: 800;
       white-space: nowrap;
@@ -260,8 +276,7 @@
     }
 
     .site-badge,
-    .status-badge,
-    .event-badge {
+    .status-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -302,12 +317,6 @@
     .status-check {
       color: var(--neutral-text);
       background: var(--neutral-bg);
-    }
-
-    .event-badge {
-      color: var(--event-text);
-      background: var(--event-bg);
-      margin-right: 7px;
     }
 
     .book-btn {
@@ -416,7 +425,6 @@
       <div class="hero-top">
         <div>
           <h1>KBO 통합 예매 일정</h1>
-          <h1>KBO 통합 예매 일정(2번통합)</h1>
           <p>NOL 티켓과 티켓링크의 구단별 홈경기 일정을 한 화면에서 확인합니다.</p>
         </div>
 
@@ -501,7 +509,6 @@
               <th>바로가기</th>
             </tr>
           </thead>
-
           <tbody id="scheduleBody"></tbody>
         </table>
       </div>
@@ -543,7 +550,7 @@
       allEvents = Array.isArray(payload.events) ? payload.events : [];
 
       setMeta(payload);
-      populateTeams(allEvents);
+      populateTeams();
       renderSourceStatus(payload.sourceStatus || []);
       bindFilters();
       render();
@@ -563,7 +570,7 @@
         `전체 ${allEvents.length}건`;
     }
 
-    function populateTeams(events) {
+    function populateTeams() {
       const teams = [
         "두산 베어스",
         "LG 트윈스",
@@ -573,8 +580,6 @@
         "한화 이글스",
         "삼성 라이온즈",
         "KIA 타이거즈",
-        "NC 다이노스"
-        "NC 다이노스",
         "울산웨일즈"
       ];
 
@@ -629,7 +634,6 @@
         events.filter(event =>
           normalizeStatus(event.bookingStatus) === "예매예정"
         ).length;
-
     }
 
     function renderTable(events) {
@@ -641,20 +645,25 @@
 
       events.forEach(event => {
         const tr = document.createElement("tr");
-
-        const type = normalizeEventType(event);
         const matchName = getDisplayName(event);
         const status = normalizeStatus(event.bookingStatus);
+        const isTodayBooking = isBookingToday(event.bookingOpen);
+
+        if (isTodayBooking) {
+          tr.classList.add("today-booking");
+        }
 
         tr.innerHTML = `
-          <td class="date-cell">${escapeHtml(formatBookingOpen(event.bookingOpen))}</td>
+          <td class="date-cell">
+            ${isTodayBooking
+              ? '<span class="today-fire" aria-label="오늘 예매 시작">🔥</span>'
+              : ""}
+            ${escapeHtml(formatBookingOpen(event.bookingOpen))}
+          </td>
           <td class="date-cell">${escapeHtml(formatGameDateTime(event.date, event.time))}</td>
           <td>${escapeHtml(event.sourceTeam || "-")}</td>
           <td class="match-cell">
-            <div class="match-title">
-              
-              ${escapeHtml(matchName)}
-            </div>
+            <div class="match-title">${escapeHtml(matchName)}</div>
             ${event.title && event.title !== matchName
               ? `<div class="match-sub">${escapeHtml(event.title)}</div>`
               : ""}
@@ -705,10 +714,6 @@
       }
 
       return `${event.sourceTeam || "구단"} 경기`;
-    }
-
-    function normalizeEventType(event) {
-      return "경기";
     }
 
     function normalizeStatus(value) {
@@ -766,11 +771,7 @@
       const dateText = formatDate(dateValue);
       const timeText = String(timeValue || "").trim();
 
-      if (!timeText) {
-        return dateText;
-      }
-
-      return `${dateText} ${timeText}`;
+      return timeText ? `${dateText} ${timeText}` : dateText;
     }
 
     function formatDate(value) {
@@ -809,12 +810,29 @@
       }).format(date);
     }
 
+    function isBookingToday(value) {
+      if (!value) return false;
+
+      const digits = String(value).replace(/\D/g, "");
+      if (digits.length < 8) return false;
+
+      const bookingDate = digits.slice(0, 8);
+      const today = new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Seoul",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).format(new Date()).replaceAll("-", "");
+
+      return bookingDate === today;
+    }
+
     function formatBookingOpen(value) {
       if (!value) return "확인 필요";
 
       const text = String(value).trim();
-
       const digits = text.replace(/\D/g, "");
+
       if (digits.length >= 12) {
         return `${digits.slice(4, 6)}.${digits.slice(6, 8)} ${digits.slice(8, 10)}:${digits.slice(10, 12)}`;
       }
