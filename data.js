@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-15T09:50:02+09:00",
+  "updatedAt": "2026-07-15T09:59:19+09:00",
   "queryRange": {
     "startDate": "2026-07-15",
     "endDate": "2026-11-12"
@@ -41,6 +41,13 @@ window.SPORTS_DATA = {
       "message": "API 조회 성공"
     },
     {
+      "site": "티켓링크",
+      "team": "울산웨일즈",
+      "success": true,
+      "count": 9,
+      "message": "API 조회 성공"
+    },
+    {
       "site": "NOL 티켓",
       "team": "두산 베어스",
       "success": true,
@@ -59,7 +66,7 @@ window.SPORTS_DATA = {
     {
       "id": "TL-884281134",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "울산웨일즈",
       "date": "2026-07-15",
       "time": "18:30",
       "away": "삼성 라이온즈",
@@ -72,7 +79,7 @@ window.SPORTS_DATA = {
       "bookingStatus": "예매중",
       "scheduleId": "884281134",
       "productId": "62031",
-      "link": "https://www.ticketlink.co.kr/sports/137/57"
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
     },
     {
       "id": "TL-1216239156",
@@ -131,7 +138,7 @@ window.SPORTS_DATA = {
     {
       "id": "TL-1687955456",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "울산웨일즈",
       "date": "2026-07-16",
       "time": "18:30",
       "away": "삼성 라이온즈",
@@ -144,7 +151,7 @@ window.SPORTS_DATA = {
       "bookingStatus": "예매중",
       "scheduleId": "1687955456",
       "productId": "62031",
-      "link": "https://www.ticketlink.co.kr/sports/137/57"
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
     },
     {
       "id": "TL-689770931",
@@ -203,7 +210,7 @@ window.SPORTS_DATA = {
     {
       "id": "TL-1861124000",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "울산웨일즈",
       "date": "2026-07-17",
       "time": "18:00",
       "away": "삼성 라이온즈",
@@ -216,7 +223,7 @@ window.SPORTS_DATA = {
       "bookingStatus": "예매중",
       "scheduleId": "1861124000",
       "productId": "62031",
-      "link": "https://www.ticketlink.co.kr/sports/137/57"
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
     },
     {
       "id": "TL-2002252127",
@@ -736,6 +743,24 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
+      "id": "TL-1003212557",
+      "site": "티켓링크",
+      "sourceTeam": "울산웨일즈",
+      "date": "2026-07-25",
+      "time": "18:00",
+      "away": "두산베어스",
+      "home": "울산웨일즈",
+      "venue": "울산문수야구장",
+      "title": "퓨처스리그",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-18 14:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1003212557",
+      "productId": "62031",
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
+    },
+    {
       "id": "NOL-26004550",
       "site": "NOL 티켓",
       "sourceTeam": "두산 베어스",
@@ -787,6 +812,42 @@ window.SPORTS_DATA = {
       "scheduleId": "1439346579",
       "productId": "62036",
       "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
+      "id": "TL-1938926397",
+      "site": "티켓링크",
+      "sourceTeam": "울산웨일즈",
+      "date": "2026-07-26",
+      "time": "18:00",
+      "away": "두산베어스",
+      "home": "울산웨일즈",
+      "venue": "울산문수야구장",
+      "title": "퓨처스리그",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-19 14:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1938926397",
+      "productId": "62031",
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
+    },
+    {
+      "id": "TL-409049678",
+      "site": "티켓링크",
+      "sourceTeam": "울산웨일즈",
+      "date": "2026-07-27",
+      "time": "18:30",
+      "away": "두산베어스",
+      "home": "울산웨일즈",
+      "venue": "울산문수야구장",
+      "title": "퓨처스리그",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-20 14:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "409049678",
+      "productId": "62031",
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
     },
     {
       "id": "TL-374347366",
@@ -897,6 +958,24 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
+      "id": "TL-373000664",
+      "site": "티켓링크",
+      "sourceTeam": "울산웨일즈",
+      "date": "2026-07-29",
+      "time": "18:30",
+      "away": "롯데자이언츠",
+      "home": "울산웨일즈",
+      "venue": "울산문수야구장",
+      "title": "퓨처스리그",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-22 14:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "373000664",
+      "productId": "62031",
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
+    },
+    {
       "id": "TL-1346941619",
       "site": "티켓링크",
       "sourceTeam": "LG 트윈스",
@@ -951,6 +1030,24 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
+      "id": "TL-1887032155",
+      "site": "티켓링크",
+      "sourceTeam": "울산웨일즈",
+      "date": "2026-07-30",
+      "time": "18:30",
+      "away": "롯데자이언츠",
+      "home": "울산웨일즈",
+      "venue": "울산문수야구장",
+      "title": "퓨처스리그",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-23 14:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1887032155",
+      "productId": "62031",
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
+    },
+    {
       "id": "NOL-26004551",
       "site": "NOL 티켓",
       "sourceTeam": "두산 베어스",
@@ -1001,6 +1098,24 @@ window.SPORTS_DATA = {
       "scheduleId": "1869069870",
       "productId": "61322",
       "link": "https://www.ticketlink.co.kr/sports/137/62"
+    },
+    {
+      "id": "TL-1558003854",
+      "site": "티켓링크",
+      "sourceTeam": "울산웨일즈",
+      "date": "2026-07-31",
+      "time": "18:30",
+      "away": "롯데자이언츠",
+      "home": "울산웨일즈",
+      "venue": "울산문수야구장",
+      "title": "퓨처스리그",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-24 14:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1558003854",
+      "productId": "62031",
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
     },
     {
       "id": "NOL-26004552",
