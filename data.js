@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-15T13:05:06+09:00",
+  "updatedAt": "2026-07-15T16:31:28+09:00",
   "queryRange": {
     "startDate": "2026-07-15",
     "endDate": "2026-11-12"
@@ -471,7 +471,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-15T14:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004281",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
