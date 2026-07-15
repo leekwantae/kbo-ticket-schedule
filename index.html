@@ -407,23 +407,6 @@
         flex-direction: column;
       }
     }
-  
-    .today-booking {
-      background: #fff7c8 !important;
-    }
-
-    .today-booking:hover {
-      background: #ffe98a !important;
-    }
-
-    .today-fire {
-      display: inline-block;
-      margin-right: 5px;
-      font-size: 16px;
-      line-height: 1;
-      vertical-align: -1px;
-    }
-
   </style>
 </head>
 
@@ -589,7 +572,7 @@
         "한화 이글스",
         "삼성 라이온즈",
         "KIA 타이거즈",
-        "울산웨일즈"
+        "NC 다이노스"
       ];
 
       teams.forEach(team => {
@@ -659,17 +642,9 @@
         const type = normalizeEventType(event);
         const matchName = getDisplayName(event);
         const status = normalizeStatus(event.bookingStatus);
-        const isTodayBooking = isBookingToday(event.bookingOpen);
-
-        if (isTodayBooking) {
-          tr.classList.add("today-booking");
-        }
 
         tr.innerHTML = `
-          <td class="date-cell">
-            ${isTodayBooking ? '<span class="today-fire" aria-label="오늘 예매 시작">🔥</span>' : ""}
-            ${escapeHtml(formatBookingOpen(event.bookingOpen))}
-          </td>
+          <td class="date-cell">${escapeHtml(formatBookingOpen(event.bookingOpen))}</td>
           <td class="date-cell">${escapeHtml(formatGameDateTime(event.date, event.time))}</td>
           <td>${escapeHtml(event.sourceTeam || "-")}</td>
           <td class="match-cell">
@@ -829,30 +804,6 @@
         second: "2-digit",
         hour12: false
       }).format(date);
-    }
-
-
-    function isBookingToday(value) {
-      if (!value) return false;
-
-      const digits = String(value).replace(/\D/g, "");
-      if (digits.length < 8) return false;
-
-      const bookingDate = digits.slice(0, 8);
-
-      const parts = new Intl.DateTimeFormat("en-CA", {
-        timeZone: "Asia/Seoul",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit"
-      }).formatToParts(new Date());
-
-      const year = parts.find(part => part.type === "year")?.value || "";
-      const month = parts.find(part => part.type === "month")?.value || "";
-      const day = parts.find(part => part.type === "day")?.value || "";
-      const today = `${year}${month}${day}`;
-
-      return bookingDate === today;
     }
 
     function formatBookingOpen(value) {
