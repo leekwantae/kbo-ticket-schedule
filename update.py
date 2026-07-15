@@ -424,14 +424,44 @@ def collect_nol(now: datetime):
                 sport = game.get("sport") or {}
                 home = sport.get("homeOrganization") or {}
                 away = sport.get("awayOrganization") or {}
+
                 pre_sales = game.get("preSales") or []
-                first_pre = pre_sales[0] if pre_sales else {}
-                goods_code = str(game.get("goodsCode") or "")
-                booking_open = (
-                    first_pre.get("minBookingOpenTime")
-                    or game.get("bookingOpenTime")
-                    or ""
-                )
+
+                    # NOL에 등록된 모든 예매 시작 시간을 모읍니다.
+                    booking_candidates = []
+                    
+                    for pre_sale in pre_sales:
+                        if not isinstance(pre_sale, dict):
+                            continue
+                    
+                        value = (
+                            pre_sale.get("minBookingOpenTime")
+                            or pre_sale.get("bookingOpenTime")
+                            or pre_sale.get("openDateTime")
+                        )
+                    
+                        if value:
+                            booking_candidates.append(value)
+                    
+                    # 상품 자체에 일반예매 시간이 있으면 함께 비교합니다.
+                    game_booking_open = game.get("bookingOpenTime")
+                    if game_booking_open:
+                        booking_candidates.append(game_booking_open)
+                    
+                    # 선예매보다 일반예매가 늦게 시작하므로 가장 늦은 시간을 선택합니다.
+                    parsed_candidates = []
+                    
+                    for value in booking_candidates:
+                        parsed = parse_booking_open(value)
+                        if parsed is not None:
+                            parsed_candidates.append((parsed, value))
+                    
+                    if parsed_candidates:
+                        parsed_candidates.sort(key=lambda item: item[0])
+                        booking_open = parsed_candidates[-1][1]
+                    else:
+                        booking_open = game_booking_open or ""
+    
                 title = str(game.get("goodsName") or "").strip()
                 away_name = str(away.get("name") or "").strip()
                 home_name = str(home.get("name") or "").strip()
