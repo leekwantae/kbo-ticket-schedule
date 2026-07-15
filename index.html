@@ -504,13 +504,12 @@
         <table>
           <thead>
             <tr>
-              <th>날짜</th>
-              <th>시간</th>
+              <th>예매 시작</th>
+              <th>경기 일시</th>
               <th>구단</th>
               <th>경기·행사</th>
               <th>구장</th>
               <th>예매처</th>
-              <th>예매 시작</th>
               <th>상태</th>
               <th>바로가기</th>
             </tr>
@@ -579,11 +578,17 @@
     }
 
     function populateTeams(events) {
-      const teams = [...new Set(
-        events
-          .map(event => event.sourceTeam)
-          .filter(Boolean)
-      )].sort((a, b) => a.localeCompare(b, "ko"));
+      const teams = [
+        "두산 베어스",
+        "LG 트윈스",
+        "키움 히어로즈",
+        "SSG 랜더스",
+        "KT 위즈",
+        "한화 이글스",
+        "삼성 라이온즈",
+        "KIA 타이거즈",
+        "NC 다이노스"
+      ];
 
       teams.forEach(team => {
         const option = document.createElement("option");
@@ -663,8 +668,8 @@
         const status = normalizeStatus(event.bookingStatus);
 
         tr.innerHTML = `
-          <td class="date-cell">${escapeHtml(formatDate(event.date))}</td>
-          <td>${escapeHtml(event.time || "-")}</td>
+          <td class="date-cell">${escapeHtml(formatBookingOpen(event.bookingOpen))}</td>
+          <td class="date-cell">${escapeHtml(formatGameDateTime(event.date, event.time))}</td>
           <td>${escapeHtml(event.sourceTeam || "-")}</td>
           <td class="match-cell">
             <div class="match-title">
@@ -683,7 +688,6 @@
               ${escapeHtml(event.site || "-")}
             </span>
           </td>
-          <td>${escapeHtml(formatBookingOpen(event.bookingOpen))}</td>
           <td>
             <span class="status-badge ${getStatusClass(status)}">
               ${escapeHtml(status)}
@@ -799,6 +803,17 @@
 
         wrap.appendChild(card);
       });
+    }
+
+    function formatGameDateTime(dateValue, timeValue) {
+      const dateText = formatDate(dateValue);
+      const timeText = String(timeValue || "").trim();
+
+      if (!timeText) {
+        return dateText;
+      }
+
+      return `${dateText} ${timeText}`;
     }
 
     function formatDate(value) {
