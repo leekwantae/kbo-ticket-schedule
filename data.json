@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T09:14:54+09:00",
+  "updatedAt": "2026-07-15T09:22:48+09:00",
   "queryRange": {
     "startDate": "2026-07-15",
     "endDate": "2026-11-12"
@@ -9,7 +9,7 @@
       "site": "티켓링크",
       "team": "LG 트윈스",
       "success": true,
-      "count": 17,
+      "count": 23,
       "message": "API 조회 성공"
     },
     {
@@ -22,9 +22,9 @@
     {
       "site": "티켓링크",
       "team": "삼성 라이온즈",
-      "success": true,
-      "count": 23,
-      "message": "API 조회 성공"
+      "success": false,
+      "count": 0,
+      "message": "HTTP Error 500: Internal Server Error"
     },
     {
       "site": "티켓링크",
@@ -36,13 +36,6 @@
     {
       "site": "티켓링크",
       "team": "KIA 타이거즈",
-      "success": true,
-      "count": 22,
-      "message": "API 조회 성공"
-    },
-    {
-      "site": "티켓링크",
-      "team": "롯데 자이언츠",
       "success": false,
       "count": 0,
       "message": "HTTP Error 500: Internal Server Error"
@@ -52,13 +45,6 @@
       "team": "SSG 랜더스",
       "success": true,
       "count": 17,
-      "message": "API 조회 성공"
-    },
-    {
-      "site": "티켓링크",
-      "team": "NC 다이노스",
-      "success": true,
-      "count": 22,
       "message": "API 조회 성공"
     },
     {
@@ -80,7 +66,7 @@
     {
       "id": "TL-884281134",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-07-15",
       "time": "18:30",
       "away": "삼성 라이온즈",
@@ -93,25 +79,43 @@
       "bookingStatus": "예매중",
       "scheduleId": "884281134",
       "productId": "62031",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
-      "id": "TL-1216239156",
+      "id": "TL-1478324191",
       "site": "티켓링크",
-      "sourceTeam": "SSG 랜더스",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-07-16",
       "time": "18:30",
-      "away": "kt wiz",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
+      "away": "롯데자이언츠",
+      "home": "삼성 라이온즈",
+      "venue": "대구 삼성라이온즈파크",
+      "title": "화이트",
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-09 11:00",
       "bookingStatus": "예매중",
-      "scheduleId": "1216239156",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+      "scheduleId": "1478324191",
+      "productId": "62111",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
+    },
+    {
+      "id": "TL-1687955456",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-07-16",
+      "time": "18:30",
+      "away": "삼성 라이온즈",
+      "home": "울산웨일즈",
+      "venue": "울산문수야구장",
+      "title": "퓨처스리그",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-09 14:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "1687955456",
+      "productId": "62031",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-1929383091",
@@ -132,58 +136,58 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-1478324191",
-      "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
-      "date": "2026-07-16",
-      "time": "18:30",
-      "away": "롯데자이언츠",
-      "home": "삼성 라이온즈",
-      "venue": "대구 삼성라이온즈파크",
-      "title": "화이트",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-09 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "1478324191",
-      "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
-    },
-    {
-      "id": "TL-1687955456",
-      "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
-      "date": "2026-07-16",
-      "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "울산웨일즈",
-      "venue": "울산문수야구장",
-      "title": "퓨처스리그",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-09 14:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "1687955456",
-      "productId": "62031",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
-    },
-    {
-      "id": "TL-689770931",
+      "id": "TL-1216239156",
       "site": "티켓링크",
       "sourceTeam": "SSG 랜더스",
-      "date": "2026-07-17",
-      "time": "18:00",
+      "date": "2026-07-16",
+      "time": "18:30",
       "away": "kt wiz",
       "home": "LG트윈스",
       "venue": "잠실야구장",
       "title": "",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-10 11:00",
+      "bookingOpen": "2026-07-09 11:00",
       "bookingStatus": "예매중",
-      "scheduleId": "689770931",
+      "scheduleId": "1216239156",
       "productId": "61881",
       "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
+      "id": "TL-949486158",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-07-17",
+      "time": "18:00",
+      "away": "롯데자이언츠",
+      "home": "삼성 라이온즈",
+      "venue": "대구 삼성라이온즈파크",
+      "title": "블루",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-09 11:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "949486158",
+      "productId": "62111",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
+    },
+    {
+      "id": "TL-1861124000",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-07-17",
+      "time": "18:00",
+      "away": "삼성 라이온즈",
+      "home": "울산웨일즈",
+      "venue": "울산문수야구장",
+      "title": "퓨처스리그",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-10 14:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "1861124000",
+      "productId": "62031",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-610470827",
@@ -204,64 +208,10 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-949486158",
-      "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
-      "date": "2026-07-17",
-      "time": "18:00",
-      "away": "롯데자이언츠",
-      "home": "삼성 라이온즈",
-      "venue": "대구 삼성라이온즈파크",
-      "title": "블루",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-09 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "949486158",
-      "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
-    },
-    {
-      "id": "TL-1861124000",
-      "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
-      "date": "2026-07-17",
-      "time": "18:00",
-      "away": "삼성 라이온즈",
-      "home": "울산웨일즈",
-      "venue": "울산문수야구장",
-      "title": "퓨처스리그",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-10 14:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "1861124000",
-      "productId": "62031",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
-    },
-    {
-      "id": "TL-2002252127",
-      "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
-      "date": "2026-07-18",
-      "time": "14:00",
-      "away": "",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
-      "title": "광주-기아 챔피언스필드 팬투어",
-      "eventType": "행사",
-      "displayName": "광주-기아 챔피언스필드 팬투어",
-      "bookingOpen": "2026-07-11 12:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "2002252127",
-      "productId": "62005",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
-      "id": "TL-91828953",
+      "id": "TL-689770931",
       "site": "티켓링크",
       "sourceTeam": "SSG 랜더스",
-      "date": "2026-07-18",
+      "date": "2026-07-17",
       "time": "18:00",
       "away": "kt wiz",
       "home": "LG트윈스",
@@ -269,11 +219,29 @@
       "title": "",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-11 11:00",
+      "bookingOpen": "2026-07-10 11:00",
       "bookingStatus": "예매중",
-      "scheduleId": "91828953",
+      "scheduleId": "689770931",
       "productId": "61881",
       "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
+      "id": "TL-1103805968",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-07-18",
+      "time": "18:00",
+      "away": "롯데자이언츠",
+      "home": "삼성 라이온즈",
+      "venue": "대구 삼성라이온즈파크",
+      "title": "블루",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-11 11:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "1103805968",
+      "productId": "62111",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-445674601",
@@ -294,10 +262,28 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-1103805968",
+      "id": "TL-91828953",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "SSG 랜더스",
       "date": "2026-07-18",
+      "time": "18:00",
+      "away": "kt wiz",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-11 11:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "91828953",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
+      "id": "TL-2092438773",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-07-19",
       "time": "18:00",
       "away": "롯데자이언츠",
       "home": "삼성 라이온즈",
@@ -307,45 +293,9 @@
       "displayName": "",
       "bookingOpen": "2026-07-11 11:00",
       "bookingStatus": "예매중",
-      "scheduleId": "1103805968",
+      "scheduleId": "2092438773",
       "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
-    },
-    {
-      "id": "TL-892902635",
-      "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
-      "date": "2026-07-19",
-      "time": "14:00",
-      "away": "",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
-      "title": "광주-기아 챔피언스필드 팬투어",
-      "eventType": "행사",
-      "displayName": "광주-기아 챔피언스필드 팬투어",
-      "bookingOpen": "2026-07-12 12:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "892902635",
-      "productId": "62005",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
-      "id": "TL-1761717743",
-      "site": "티켓링크",
-      "sourceTeam": "SSG 랜더스",
-      "date": "2026-07-19",
-      "time": "18:00",
-      "away": "kt wiz",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-12 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "1761717743",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-1084816501",
@@ -366,22 +316,22 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-2092438773",
+      "id": "TL-1761717743",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "SSG 랜더스",
       "date": "2026-07-19",
       "time": "18:00",
-      "away": "롯데자이언츠",
-      "home": "삼성 라이온즈",
-      "venue": "대구 삼성라이온즈파크",
-      "title": "블루",
+      "away": "kt wiz",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-11 11:00",
+      "bookingOpen": "2026-07-12 11:00",
       "bookingStatus": "예매중",
-      "scheduleId": "2092438773",
-      "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+      "scheduleId": "1761717743",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
     },
     {
       "id": "NOL-26004280",
@@ -401,27 +351,9 @@
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
-      "id": "TL-1427853844",
-      "site": "티켓링크",
-      "sourceTeam": "SSG 랜더스",
-      "date": "2026-07-21",
-      "time": "18:30",
-      "away": "NC 다이노스",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-14 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "1427853844",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
-    },
-    {
       "id": "TL-1868753964",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "한화 이글스",
       "date": "2026-07-21",
       "time": "18:30",
       "away": "한화이글스",
@@ -434,7 +366,7 @@
       "bookingStatus": "예매중",
       "scheduleId": "1868753964",
       "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
       "id": "TL-438883549",
@@ -455,9 +387,27 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
+      "id": "TL-1427853844",
+      "site": "티켓링크",
+      "sourceTeam": "SSG 랜더스",
+      "date": "2026-07-21",
+      "time": "18:30",
+      "away": "NC 다이노스",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-14 11:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "1427853844",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
       "id": "TL-1266392222",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-07-22",
       "time": "18:00",
       "away": "두산베어스",
@@ -470,7 +420,7 @@
       "bookingStatus": "예매예정",
       "scheduleId": "1266392222",
       "productId": "64377",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "NOL-26004281",
@@ -490,27 +440,9 @@
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
-      "id": "TL-1998451860",
-      "site": "티켓링크",
-      "sourceTeam": "SSG 랜더스",
-      "date": "2026-07-22",
-      "time": "18:30",
-      "away": "NC 다이노스",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-15 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1998451860",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
-    },
-    {
       "id": "TL-687116646",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "한화 이글스",
       "date": "2026-07-22",
       "time": "18:30",
       "away": "한화이글스",
@@ -523,7 +455,7 @@
       "bookingStatus": "예매예정",
       "scheduleId": "687116646",
       "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
       "id": "TL-1626212921",
@@ -544,9 +476,27 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
+      "id": "TL-1998451860",
+      "site": "티켓링크",
+      "sourceTeam": "SSG 랜더스",
+      "date": "2026-07-22",
+      "time": "18:30",
+      "away": "NC 다이노스",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-15 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1998451860",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
       "id": "TL-440911961",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-07-23",
       "time": "18:00",
       "away": "두산베어스",
@@ -559,7 +509,7 @@
       "bookingStatus": "예매예정",
       "scheduleId": "440911961",
       "productId": "64377",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "NOL-26004282",
@@ -579,27 +529,9 @@
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
-      "id": "TL-1015088370",
-      "site": "티켓링크",
-      "sourceTeam": "SSG 랜더스",
-      "date": "2026-07-23",
-      "time": "18:30",
-      "away": "NC 다이노스",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-16 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1015088370",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
-    },
-    {
       "id": "TL-395628375",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "한화 이글스",
       "date": "2026-07-23",
       "time": "18:30",
       "away": "한화이글스",
@@ -612,7 +544,7 @@
       "bookingStatus": "예매예정",
       "scheduleId": "395628375",
       "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
       "id": "TL-1053533541",
@@ -633,9 +565,27 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
+      "id": "TL-1015088370",
+      "site": "티켓링크",
+      "sourceTeam": "SSG 랜더스",
+      "date": "2026-07-23",
+      "time": "18:30",
+      "away": "NC 다이노스",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-16 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1015088370",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
       "id": "TL-1483198008",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-07-24",
       "time": "18:00",
       "away": "두산베어스",
@@ -648,7 +598,7 @@
       "bookingStatus": "예매예정",
       "scheduleId": "1483198008",
       "productId": "64377",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "NOL-26004548",
@@ -686,24 +636,6 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/59"
     },
     {
-      "id": "TL-1648960784",
-      "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
-      "date": "2026-07-24",
-      "time": "18:30",
-      "away": "키움히어로즈",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-17 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1648960784",
-      "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
       "id": "NOL-26004549",
       "site": "NOL 티켓",
       "sourceTeam": "두산 베어스",
@@ -737,24 +669,6 @@
       "scheduleId": "475425227",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/baseball/59"
-    },
-    {
-      "id": "TL-343451874",
-      "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
-      "date": "2026-07-25",
-      "time": "18:00",
-      "away": "키움히어로즈",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-18 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "343451874",
-      "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
     },
     {
       "id": "NOL-26004550",
@@ -792,40 +706,22 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/59"
     },
     {
-      "id": "TL-1439346579",
+      "id": "TL-548248581",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
-      "date": "2026-07-26",
-      "time": "18:00",
-      "away": "키움히어로즈",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-19 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1439346579",
-      "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
-      "id": "TL-374347366",
-      "site": "티켓링크",
-      "sourceTeam": "SSG 랜더스",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-07-28",
       "time": "18:30",
-      "away": "키움히어로즈",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
+      "away": "KIA 타이거즈",
+      "home": "삼성 라이온즈",
+      "venue": "대구 삼성라이온즈파크",
+      "title": "그레이",
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-21 11:00",
       "bookingStatus": "예매예정",
-      "scheduleId": "374347366",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+      "scheduleId": "548248581",
+      "productId": "62111",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-116452509",
@@ -846,10 +742,28 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-548248581",
+      "id": "TL-374347366",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "SSG 랜더스",
       "date": "2026-07-28",
+      "time": "18:30",
+      "away": "키움히어로즈",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-21 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "374347366",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
+      "id": "TL-213692103",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-07-29",
       "time": "18:30",
       "away": "KIA 타이거즈",
       "home": "삼성 라이온즈",
@@ -859,27 +773,9 @@
       "displayName": "",
       "bookingOpen": "2026-07-21 11:00",
       "bookingStatus": "예매예정",
-      "scheduleId": "548248581",
+      "scheduleId": "213692103",
       "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
-      "id": "TL-599385555",
-      "site": "티켓링크",
-      "sourceTeam": "SSG 랜더스",
-      "date": "2026-07-29",
-      "time": "18:30",
-      "away": "키움히어로즈",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "문화가 있는 날",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-22 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "599385555",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-1783914210",
@@ -900,10 +796,28 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-213692103",
+      "id": "TL-599385555",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "SSG 랜더스",
       "date": "2026-07-29",
+      "time": "18:30",
+      "away": "키움히어로즈",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "문화가 있는 날",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-22 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "599385555",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
+      "id": "TL-317497217",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-07-30",
       "time": "18:30",
       "away": "KIA 타이거즈",
       "home": "삼성 라이온즈",
@@ -913,27 +827,9 @@
       "displayName": "",
       "bookingOpen": "2026-07-21 11:00",
       "bookingStatus": "예매예정",
-      "scheduleId": "213692103",
+      "scheduleId": "317497217",
       "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
-      "id": "TL-1346941619",
-      "site": "티켓링크",
-      "sourceTeam": "SSG 랜더스",
-      "date": "2026-07-30",
-      "time": "18:30",
-      "away": "키움히어로즈",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-23 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1346941619",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-766254153",
@@ -954,22 +850,22 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-317497217",
+      "id": "TL-1346941619",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "SSG 랜더스",
       "date": "2026-07-30",
       "time": "18:30",
-      "away": "KIA 타이거즈",
-      "home": "삼성 라이온즈",
-      "venue": "대구 삼성라이온즈파크",
-      "title": "그레이",
+      "away": "키움히어로즈",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-21 11:00",
+      "bookingOpen": "2026-07-23 11:00",
       "bookingStatus": "예매예정",
-      "scheduleId": "317497217",
-      "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "scheduleId": "1346941619",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
     },
     {
       "id": "NOL-26004551",
@@ -1147,7 +1043,7 @@
     {
       "id": "TL-1694245804",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "한화 이글스",
       "date": "2026-08-04",
       "time": "18:30",
       "away": "한화이글스",
@@ -1160,12 +1056,12 @@
       "bookingStatus": "예매예정",
       "scheduleId": "1694245804",
       "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
       "id": "TL-60041211",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "KT 위즈",
       "date": "2026-08-04",
       "time": "18:30",
       "away": "kt wiz",
@@ -1178,7 +1074,7 @@
       "bookingStatus": "예매예정",
       "scheduleId": "60041211",
       "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
       "id": "NOL-26004555",
@@ -1200,7 +1096,7 @@
     {
       "id": "TL-1777859835",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "한화 이글스",
       "date": "2026-08-05",
       "time": "18:30",
       "away": "한화이글스",
@@ -1213,12 +1109,12 @@
       "bookingStatus": "예매예정",
       "scheduleId": "1777859835",
       "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
       "id": "TL-1540989929",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "KT 위즈",
       "date": "2026-08-05",
       "time": "18:30",
       "away": "kt wiz",
@@ -1231,7 +1127,7 @@
       "bookingStatus": "예매예정",
       "scheduleId": "1540989929",
       "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
       "id": "NOL-26004556",
@@ -1253,7 +1149,7 @@
     {
       "id": "TL-1486151910",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "한화 이글스",
       "date": "2026-08-06",
       "time": "18:30",
       "away": "한화이글스",
@@ -1266,12 +1162,12 @@
       "bookingStatus": "예매예정",
       "scheduleId": "1486151910",
       "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
       "id": "TL-49693199",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "KT 위즈",
       "date": "2026-08-06",
       "time": "18:30",
       "away": "kt wiz",
@@ -1284,25 +1180,25 @@
       "bookingStatus": "예매예정",
       "scheduleId": "49693199",
       "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
-      "id": "TL-354131775",
+      "id": "TL-941878764",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-08-07",
       "time": "18:30",
-      "away": "KIA 타이거즈",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
+      "away": "두산베어스",
+      "home": "삼성 라이온즈",
+      "venue": "대구 삼성라이온즈파크",
+      "title": "블루",
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-31 11:00",
       "bookingStatus": "예매예정",
-      "scheduleId": "354131775",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "scheduleId": "941878764",
+      "productId": "62111",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-1785363685",
@@ -1323,24 +1219,6 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-941878764",
-      "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
-      "date": "2026-08-07",
-      "time": "18:30",
-      "away": "두산베어스",
-      "home": "삼성 라이온즈",
-      "venue": "대구 삼성라이온즈파크",
-      "title": "블루",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-31 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "941878764",
-      "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
-    },
-    {
       "id": "TL-352901675",
       "site": "티켓링크",
       "sourceTeam": "KT 위즈",
@@ -1359,40 +1237,40 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
-      "id": "TL-15485482",
+      "id": "TL-354131775",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
-      "date": "2026-08-08",
-      "time": "14:00",
-      "away": "",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
-      "title": "광주-기아 챔피언스필드 팬투어",
-      "eventType": "행사",
-      "displayName": "광주-기아 챔피언스필드 팬투어",
-      "bookingOpen": "2026-08-01 12:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "15485482",
-      "productId": "62005",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
-      "id": "TL-1826480015",
-      "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
-      "date": "2026-08-08",
-      "time": "18:00",
+      "sourceTeam": "SSG 랜더스",
+      "date": "2026-08-07",
+      "time": "18:30",
       "away": "KIA 타이거즈",
       "home": "LG트윈스",
       "venue": "잠실야구장",
       "title": "",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-08-01 11:00",
+      "bookingOpen": "2026-07-31 11:00",
       "bookingStatus": "예매예정",
-      "scheduleId": "1826480015",
+      "scheduleId": "354131775",
       "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
+      "id": "TL-1160563527",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-08-08",
+      "time": "18:00",
+      "away": "두산베어스",
+      "home": "삼성 라이온즈",
+      "venue": "대구 삼성라이온즈파크",
+      "title": "블루",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-31 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1160563527",
+      "productId": "62111",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-1268380871",
@@ -1413,24 +1291,6 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-1160563527",
-      "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
-      "date": "2026-08-08",
-      "time": "18:00",
-      "away": "두산베어스",
-      "home": "삼성 라이온즈",
-      "venue": "대구 삼성라이온즈파크",
-      "title": "블루",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-31 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1160563527",
-      "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
-    },
-    {
       "id": "TL-1834905027",
       "site": "티켓링크",
       "sourceTeam": "KT 위즈",
@@ -1449,10 +1309,10 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
-      "id": "TL-1751103249",
+      "id": "TL-1826480015",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
-      "date": "2026-08-09",
+      "sourceTeam": "SSG 랜더스",
+      "date": "2026-08-08",
       "time": "18:00",
       "away": "KIA 타이거즈",
       "home": "LG트윈스",
@@ -1460,11 +1320,29 @@
       "title": "",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-08-02 11:00",
+      "bookingOpen": "2026-08-01 11:00",
       "bookingStatus": "예매예정",
-      "scheduleId": "1751103249",
+      "scheduleId": "1826480015",
       "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+    },
+    {
+      "id": "TL-1811508524",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-08-09",
+      "time": "18:00",
+      "away": "두산베어스",
+      "home": "삼성 라이온즈",
+      "venue": "대구 삼성라이온즈파크",
+      "title": "블루",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-31 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1811508524",
+      "productId": "62111",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-1596681998",
@@ -1485,24 +1363,6 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
-      "id": "TL-1811508524",
-      "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
-      "date": "2026-08-09",
-      "time": "18:00",
-      "away": "두산베어스",
-      "home": "삼성 라이온즈",
-      "venue": "대구 삼성라이온즈파크",
-      "title": "블루",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-31 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1811508524",
-      "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
-    },
-    {
       "id": "TL-2105921082",
       "site": "티켓링크",
       "sourceTeam": "KT 위즈",
@@ -1519,6 +1379,24 @@
       "scheduleId": "2105921082",
       "productId": "61322",
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
+    },
+    {
+      "id": "TL-1751103249",
+      "site": "티켓링크",
+      "sourceTeam": "SSG 랜더스",
+      "date": "2026-08-09",
+      "time": "18:00",
+      "away": "KIA 타이거즈",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-02 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1751103249",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
     },
     {
       "id": "NOL-26004557",
@@ -1540,7 +1418,7 @@
     {
       "id": "TL-363115310",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-08-11",
       "time": "18:30",
       "away": "삼성 라이온즈",
@@ -1553,12 +1431,12 @@
       "bookingStatus": "예매예정",
       "scheduleId": "363115310",
       "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-1808847176",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-08-12",
       "time": "18:30",
       "away": "삼성 라이온즈",
@@ -1571,12 +1449,12 @@
       "bookingStatus": "예매예정",
       "scheduleId": "1808847176",
       "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-932132753",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "LG 트윈스",
       "date": "2026-08-13",
       "time": "18:30",
       "away": "삼성 라이온즈",
@@ -1589,30 +1467,12 @@
       "bookingStatus": "예매예정",
       "scheduleId": "932132753",
       "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
-    },
-    {
-      "id": "TL-786036050",
-      "site": "티켓링크",
-      "sourceTeam": "SSG 랜더스",
-      "date": "2026-08-14",
-      "time": "18:30",
-      "away": "SSG랜더스",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-07 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "786036050",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/57"
     },
     {
       "id": "TL-205736157",
       "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
+      "sourceTeam": "한화 이글스",
       "date": "2026-08-14",
       "time": "18:30",
       "away": "한화이글스",
@@ -1625,7 +1485,7 @@
       "bookingStatus": "예매예정",
       "scheduleId": "205736157",
       "productId": "62111",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/55"
+      "link": "https://www.ticketlink.co.kr/sports/baseball/63"
     },
     {
       "id": "TL-946427221",
@@ -1646,22 +1506,22 @@
       "link": "https://www.ticketlink.co.kr/sports/baseball/62"
     },
     {
-      "id": "TL-946447542",
+      "id": "TL-786036050",
       "site": "티켓링크",
-      "sourceTeam": "NC 다이노스",
+      "sourceTeam": "SSG 랜더스",
       "date": "2026-08-14",
       "time": "18:30",
-      "away": "두산베어스",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
+      "away": "SSG랜더스",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
       "title": "",
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-08-07 11:00",
       "bookingStatus": "예매예정",
-      "scheduleId": "946447542",
-      "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/baseball/58"
+      "scheduleId": "786036050",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/baseball/59"
     }
   ]
 }
