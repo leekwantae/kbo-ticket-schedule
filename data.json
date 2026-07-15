@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T12:41:02+09:00",
+  "updatedAt": "2026-07-15T12:50:36+09:00",
   "queryRange": {
     "startDate": "2026-07-15",
     "endDate": "2026-11-12"
@@ -381,7 +381,7 @@
       "title": "키움 vs 삼성 (7.21)",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-14 11:00:00",
+      "bookingOpen": "2026-07-14T14:00:00",
       "bookingStatus": "예매중",
       "goodsCode": "26004280",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
@@ -470,8 +470,8 @@
       "title": "키움 vs 삼성 (7.22)",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-15 11:00:00",
-      "bookingStatus": "예매중",
+      "bookingOpen": "2026-07-15T14:00:00",
+      "bookingStatus": "예매예정",
       "goodsCode": "26004281",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
@@ -559,7 +559,7 @@
       "title": "키움 vs 삼성 (7.23)",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-16 11:00:00",
+      "bookingOpen": "2026-07-16T14:00:00",
       "bookingStatus": "예매예정",
       "goodsCode": "26004282",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
@@ -1076,7 +1076,7 @@
       "title": "키움 vs SSG (7.31)",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-24 11:00:00",
+      "bookingOpen": "2026-07-24T14:00:00",
       "bookingStatus": "예매예정",
       "goodsCode": "26004283",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
@@ -1146,7 +1146,7 @@
       "title": "키움 vs SSG (8.1)",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-25 11:00:00",
+      "bookingOpen": "2026-07-25T14:00:00",
       "bookingStatus": "예매예정",
       "goodsCode": "26004284",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
@@ -1181,7 +1181,7 @@
       "title": "키움 vs SSG (8.2)",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-26 11:00:00",
+      "bookingOpen": "2026-07-26T14:00:00",
       "bookingStatus": "예매예정",
       "goodsCode": "26004285",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
