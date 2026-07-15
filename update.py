@@ -424,7 +424,7 @@ def collect_nol(now: datetime):
                 sport = game.get("sport") or {}
                 home = sport.get("homeOrganization") or {}
                 away = sport.get("awayOrganization") or {}
-               pre_sales = game.get("preSales") or []
+                pre_sales = game.get("preSales") or []
                 first_pre = pre_sales[0] if pre_sales else {}
                 goods_code = str(game.get("goodsCode") or "")
                 
