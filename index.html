@@ -833,26 +833,22 @@
 
 
     function isBookingToday(value) {
-      if (!value) return false;
+  if (!value) return false;
 
-      const digits = String(value).replace(/\D/g, "");
-      if (digits.length < 8) return false;
+  const digits = String(value).replace(/\D/g, "");
+  if (digits.length < 8) return false;
 
-      const bookingDate = digits.slice(0, 8);
+  const bookingDate = digits.substring(0, 8);
 
-      const parts = new Intl.DateTimeFormat("en-CA", {
-        timeZone: "Asia/Seoul",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit"
-      }).formatToParts(new Date());
+  const now = new Date();
 
-      const year = parts.find(part => part.type === "year")?.value || "";
-      const month = parts.find(part => part.type === "month")?.value || "";
-      const day = parts.find(part => part.type === "day")?.value || "";
+  const today =
+    now.getFullYear().toString() +
+    String(now.getMonth() + 1).padStart(2, "0") +
+    String(now.getDate()).padStart(2, "0");
 
-      return bookingDate === `${year}${month}${day}`;
-    }
+  return bookingDate === today;
+}
 
     function formatBookingOpen(value) {
       if (!value) return "확인 필요";
