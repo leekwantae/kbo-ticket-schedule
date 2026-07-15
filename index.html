@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -95,30 +95,6 @@
 
     .refresh-btn:hover {
       background: rgba(255,255,255,.22);
-      transform: translateY(-1px);
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .excel-btn {
-      flex: 0 0 auto;
-      border: 1px solid rgba(255,255,255,.34);
-      background: #16834a;
-      color: white;
-      border-radius: 12px;
-      padding: 11px 15px;
-      cursor: pointer;
-      font-weight: 800;
-      transition: .2s ease;
-    }
-
-    .excel-btn:hover {
-      background: #106b3b;
       transform: translateY(-1px);
     }
 
@@ -407,16 +383,6 @@
       .hero-top {
         flex-direction: column;
       }
-
-      .hero-actions {
-        width: 100%;
-        justify-content: stretch;
-      }
-
-      .refresh-btn,
-      .excel-btn {
-        flex: 1 1 180px;
-      }
     }
 
     @media (max-width: 560px) {
@@ -458,6 +424,94 @@
       vertical-align: -1px;
     }
 
+    @media (max-width: 768px) {
+  .page {
+    width: calc(100% - 12px);
+    margin: 8px auto 24px;
+  }
+
+  .hero {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .refresh-btn {
+    width: 100%;
+    min-height: 46px;
+    font-size: 15px;
+  }
+
+  .controls {
+    padding: 14px;
+  }
+
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control select {
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .summary {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .summary-card {
+    padding: 12px 8px;
+    text-align: center;
+  }
+
+  .summary-label {
+    font-size: 12px;
+  }
+
+  .summary-value {
+    font-size: 22px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 980px;
+  }
+
+  th,
+  td {
+    padding: 12px 9px;
+    font-size: 13px;
+  }
+
+  .match-cell {
+    min-width: 230px;
+  }
+
+  .book-btn {
+    min-width: 78px;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .site-badge,
+  .status-badge {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
+    
   </style>
 </head>
 
@@ -470,15 +524,9 @@
           <p>NOL 티켓과 티켓링크의 구단별 홈경기 일정을 한 화면에서 확인합니다.</p>
         </div>
 
-        <div class="hero-actions">
-          <button class="refresh-btn" type="button" onclick="strongRefresh()">
-            강력 새로고침
-          </button>
-
-          <button class="excel-btn" type="button" onclick="exportExcel()">
-            엑셀 저장
-          </button>
-        </div>
+        <button class="refresh-btn" type="button" onclick="strongRefresh()">
+          강력 새로고침
+        </button>
       </div>
 
       <div class="meta-row">
@@ -576,8 +624,6 @@
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-
   <script>
     const DATA_VERSION = Date.now();
     const dataScript = document.createElement("script");
@@ -591,7 +637,6 @@
     document.head.appendChild(dataScript);
 
     let allEvents = [];
-    let currentFilteredEvents = [];
 
     const teamFilter = document.getElementById("teamFilter");
     const siteFilter = document.getElementById("siteFilter");
@@ -666,8 +711,6 @@
 
         return teamMatch && siteMatch && statusMatch;
       });
-
-      currentFilteredEvents = [...filtered];
 
       renderSummary(filtered);
       renderTable(filtered);
@@ -878,26 +921,22 @@
 
 
     function isBookingToday(value) {
-      if (!value) return false;
+  if (!value) return false;
 
-      const digits = String(value).replace(/\D/g, "");
-      if (digits.length < 8) return false;
+  const digits = String(value).replace(/\D/g, "");
+  if (digits.length < 8) return false;
 
-      const bookingDate = digits.slice(0, 8);
+  const bookingDate = digits.substring(0, 8);
 
-      const parts = new Intl.DateTimeFormat("en-CA", {
-        timeZone: "Asia/Seoul",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit"
-      }).formatToParts(new Date());
+  const now = new Date();
 
-      const year = parts.find(part => part.type === "year")?.value || "";
-      const month = parts.find(part => part.type === "month")?.value || "";
-      const day = parts.find(part => part.type === "day")?.value || "";
+  const today =
+    now.getFullYear().toString() +
+    String(now.getMonth() + 1).padStart(2, "0") +
+    String(now.getDate()).padStart(2, "0");
 
-      return bookingDate === `${year}${month}${day}`;
-    }
+  return bookingDate === today;
+}
 
     function formatBookingOpen(value) {
       if (!value) return "확인 필요";
@@ -910,68 +949,6 @@
       }
 
       return text;
-    }
-
-    function exportExcel() {
-      if (typeof XLSX === "undefined") {
-        alert("엑셀 저장 기능을 불러오지 못했습니다. 인터넷 연결 후 다시 시도해 주세요.");
-        return;
-      }
-
-      if (!currentFilteredEvents.length) {
-        alert("저장할 일정이 없습니다.");
-        return;
-      }
-
-      const rows = currentFilteredEvents.map((event, index) => ({
-        "번호": index + 1,
-        "예매 시작": formatBookingOpen(event.bookingOpen),
-        "경기 일시": formatGameDateTime(event.date, event.time),
-        "구단": event.sourceTeam || "",
-        "경기": getDisplayName(event),
-        "부가 정보": event.title && event.title !== getDisplayName(event)
-          ? event.title
-          : "",
-        "구장": event.venue || "",
-        "예매처": event.site || "",
-        "상태": normalizeStatus(event.bookingStatus),
-        "예매 링크": event.link || ""
-      }));
-
-      const worksheet = XLSX.utils.json_to_sheet(rows);
-
-      worksheet["!cols"] = [
-        { wch: 7 },
-        { wch: 18 },
-        { wch: 22 },
-        { wch: 16 },
-        { wch: 34 },
-        { wch: 28 },
-        { wch: 24 },
-        { wch: 13 },
-        { wch: 13 },
-        { wch: 48 }
-      ];
-
-      worksheet["!autofilter"] = {
-        ref: worksheet["!ref"]
-      };
-
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, "예매 일정");
-
-      const now = new Date();
-      const yyyy = String(now.getFullYear());
-      const mm = String(now.getMonth() + 1).padStart(2, "0");
-      const dd = String(now.getDate()).padStart(2, "0");
-
-      const teamName =
-        teamFilter.value === "전체"
-          ? "전체구단"
-          : teamFilter.value.replace(/\s+/g, "");
-
-      const fileName = `KBO_예매일정_${teamName}_${yyyy}-${mm}-${dd}.xlsx`;
-      XLSX.writeFile(workbook, fileName);
     }
 
     function strongRefresh() {
