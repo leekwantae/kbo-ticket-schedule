@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>KBO 통합 예매 일정</title>
+  <title>KBO 통합 예매 일정(2번통합)</title>
 
   <style>
     :root {
@@ -124,7 +124,7 @@
 
     .controls-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      grid-template-columns: repeat(3, minmax(160px, 1fr));
       gap: 12px;
     }
 
@@ -155,7 +155,7 @@
     .summary {
       margin-top: 14px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
     }
 
@@ -416,7 +416,7 @@
       <div class="hero-top">
         <div>
           <h1>KBO 통합 예매 일정</h1>
-          <p>NOL 티켓과 티켓링크의 구단별 홈경기 및 행사 일정을 한 화면에서 확인합니다.</p>
+          <p>NOL 티켓과 티켓링크의 구단별 홈경기 일정을 한 화면에서 확인합니다.</p>
         </div>
 
         <button class="refresh-btn" type="button" onclick="strongRefresh()">
@@ -460,15 +460,6 @@
             <option value="확인 필요">확인 필요</option>
           </select>
         </div>
-
-        <div class="control">
-          <label for="typeFilter">일정 구분</label>
-          <select id="typeFilter">
-            <option value="전체">경기 + 행사</option>
-            <option value="경기">경기</option>
-            <option value="행사">행사</option>
-          </select>
-        </div>
       </div>
     </section>
 
@@ -487,11 +478,6 @@
         <div class="summary-label">예매예정</div>
         <div class="summary-value" id="summaryWait">0</div>
       </div>
-
-      <div class="summary-card">
-        <div class="summary-label">행사</div>
-        <div class="summary-value" id="summaryEvent">0</div>
-      </div>
     </section>
 
     <section class="section">
@@ -507,7 +493,7 @@
               <th>예매 시작</th>
               <th>경기 일시</th>
               <th>구단</th>
-              <th>경기·행사</th>
+              <th>경기</th>
               <th>구장</th>
               <th>예매처</th>
               <th>상태</th>
@@ -550,7 +536,6 @@
     const teamFilter = document.getElementById("teamFilter");
     const siteFilter = document.getElementById("siteFilter");
     const statusFilter = document.getElementById("statusFilter");
-    const typeFilter = document.getElementById("typeFilter");
 
     function init() {
       const payload = window.SPORTS_DATA || {};
@@ -579,14 +564,15 @@
 
     function populateTeams(events) {
       const teams = [
-        "LG 트윈스",
         "두산 베어스",
+        "LG 트윈스",
         "키움 히어로즈",
-        "KIA 타이거즈",
-        "삼성 라이온즈",
-        "한화 이글스",
+        "SSG 랜더스",
         "KT 위즈",
-        "SSG 랜더스"
+        "한화 이글스",
+        "삼성 라이온즈",
+        "KIA 타이거즈",
+        "NC 다이노스"
       ];
 
       teams.forEach(team => {
@@ -598,7 +584,7 @@
     }
 
     function bindFilters() {
-      [teamFilter, siteFilter, statusFilter, typeFilter]
+      [teamFilter, siteFilter, statusFilter]
         .forEach(element => element.addEventListener("change", render));
     }
 
@@ -606,7 +592,6 @@
       const selectedTeam = teamFilter.value;
       const selectedSite = siteFilter.value;
       const selectedStatus = statusFilter.value;
-      const selectedType = typeFilter.value;
 
       const filtered = allEvents.filter(event => {
         const teamMatch =
@@ -619,11 +604,7 @@
           selectedStatus === "전체" ||
           normalizeStatus(event.bookingStatus) === selectedStatus;
 
-        const typeMatch =
-          selectedType === "전체" ||
-          normalizeEventType(event) === selectedType;
-
-        return teamMatch && siteMatch && statusMatch && typeMatch;
+        return teamMatch && siteMatch && statusMatch;
       });
 
       renderSummary(filtered);
@@ -646,10 +627,6 @@
           normalizeStatus(event.bookingStatus) === "예매예정"
         ).length;
 
-      document.getElementById("summaryEvent").textContent =
-        events.filter(event =>
-          normalizeEventType(event) === "행사"
-        ).length;
     }
 
     function renderTable(events) {
@@ -672,7 +649,7 @@
           <td>${escapeHtml(event.sourceTeam || "-")}</td>
           <td class="match-cell">
             <div class="match-title">
-              ${type === "행사" ? '<span class="event-badge">행사</span>' : ""}
+              
               ${escapeHtml(matchName)}
             </div>
             ${event.title && event.title !== matchName
@@ -705,18 +682,8 @@
     }
 
     function getDisplayName(event) {
-      const type = normalizeEventType(event);
-
-      if (type === "행사") {
-        return (
-          event.displayName ||
-          event.title ||
-          `${event.sourceTeam || ""} 행사`
-        ).trim();
-      }
-
-      const away = (event.away || "").trim();
-      const home = (event.home || "").trim();
+      const away = String(event.away || "").trim();
+      const home = String(event.home || "").trim();
 
       if (away && home) {
         return `${away} vs ${home}`;
@@ -726,30 +693,18 @@
         return event.title;
       }
 
-      return [away, home].filter(Boolean).join(" vs ") || "경기 정보 확인";
+      if (home) {
+        return `${home} 경기`;
+      }
+
+      if (away) {
+        return `${away} 경기`;
+      }
+
+      return `${event.sourceTeam || "구단"} 경기`;
     }
 
     function normalizeEventType(event) {
-      if (event.eventType === "행사") {
-        return "행사";
-      }
-
-      const title = String(event.title || "");
-      const keywords = [
-        "팬투어",
-        "팬미팅",
-        "팬페스티벌",
-        "페스티벌",
-        "이벤트",
-        "투어",
-        "사인회",
-        "체험"
-      ];
-
-      if (keywords.some(keyword => title.includes(keyword))) {
-        return "행사";
-      }
-
       return "경기";
     }
 
