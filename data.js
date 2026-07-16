@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-16T05:17:58+09:00",
+  "updatedAt": "2026-07-16T16:48:58+09:00",
   "queryRange": {
     "startDate": "2026-07-16",
     "endDate": "2026-11-13"
@@ -9,43 +9,43 @@ window.SPORTS_DATA = {
       "site": "티켓링크",
       "team": "LG 트윈스",
       "success": true,
-      "count": 7,
-      "message": "API 0건 · 이전 정상 데이터 유지"
+      "count": 18,
+      "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "한화 이글스",
       "success": true,
-      "count": 13,
-      "message": "API 0건 · 이전 정상 데이터 유지"
+      "count": 25,
+      "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "삼성 라이온즈",
       "success": true,
-      "count": 14,
-      "message": "API 0건 · 이전 정상 데이터 유지"
+      "count": 23,
+      "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "KT 위즈",
       "success": true,
-      "count": 14,
-      "message": "API 0건 · 이전 정상 데이터 유지"
+      "count": 18,
+      "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "KIA 타이거즈",
       "success": true,
-      "count": 22,
-      "message": "API 0건 · 이전 정상 데이터 유지"
+      "count": 21,
+      "message": "API 조회 성공"
     },
     {
       "site": "티켓링크",
       "team": "울산웨일즈",
       "success": true,
       "count": 9,
-      "message": "API 0건 · 이전 정상 데이터 유지"
+      "message": "API 조회 성공"
     },
     {
       "site": "NOL 티켓",
@@ -58,28 +58,28 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 6,
+      "count": 9,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
   "events": [
     {
-      "id": "TL-884281134",
+      "id": "TL-1216239156",
       "site": "티켓링크",
-      "sourceTeam": "울산웨일즈",
-      "date": "2026-07-15",
+      "sourceTeam": "KT 위즈",
+      "date": "2026-07-16",
       "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "울산웨일즈",
-      "venue": "울산문수야구장",
-      "title": "퓨처스리그",
+      "away": "kt wiz",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-08 14:00",
+      "bookingOpen": "2026-07-09 11:00",
       "bookingStatus": "예매중",
-      "scheduleId": "884281134",
-      "productId": "62031",
-      "link": "https://www.ticketlink.co.kr/sports/137/721"
+      "scheduleId": "1216239156",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
       "id": "TL-1929383091",
@@ -118,24 +118,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/57"
     },
     {
-      "id": "TL-1216239156",
-      "site": "티켓링크",
-      "sourceTeam": "KT 위즈",
-      "date": "2026-07-16",
-      "time": "18:30",
-      "away": "kt wiz",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-09 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "1216239156",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/137/62"
-    },
-    {
       "id": "TL-1687955456",
       "site": "티켓링크",
       "sourceTeam": "울산웨일즈",
@@ -152,6 +134,24 @@ window.SPORTS_DATA = {
       "scheduleId": "1687955456",
       "productId": "62031",
       "link": "https://www.ticketlink.co.kr/sports/137/721"
+    },
+    {
+      "id": "TL-689770931",
+      "site": "티켓링크",
+      "sourceTeam": "KT 위즈",
+      "date": "2026-07-17",
+      "time": "18:00",
+      "away": "kt wiz",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-10 11:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "689770931",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
       "id": "TL-610470827",
@@ -190,24 +190,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/57"
     },
     {
-      "id": "TL-689770931",
-      "site": "티켓링크",
-      "sourceTeam": "KT 위즈",
-      "date": "2026-07-17",
-      "time": "18:00",
-      "away": "kt wiz",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-10 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "689770931",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/137/62"
-    },
-    {
       "id": "TL-1861124000",
       "site": "티켓링크",
       "sourceTeam": "울산웨일즈",
@@ -226,22 +208,22 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/721"
     },
     {
-      "id": "TL-2002252127",
+      "id": "TL-91828953",
       "site": "티켓링크",
-      "sourceTeam": "KIA 타이거즈",
+      "sourceTeam": "KT 위즈",
       "date": "2026-07-18",
-      "time": "14:00",
-      "away": "",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
-      "title": "광주-기아 챔피언스필드 팬투어",
-      "eventType": "행사",
-      "displayName": "광주-기아 챔피언스필드 팬투어",
-      "bookingOpen": "2026-07-11 12:00",
+      "time": "18:00",
+      "away": "kt wiz",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-11 11:00",
       "bookingStatus": "예매중",
-      "scheduleId": "2002252127",
-      "productId": "62005",
-      "link": "https://www.ticketlink.co.kr/sports/137/58"
+      "scheduleId": "91828953",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
       "id": "TL-445674601",
@@ -280,10 +262,10 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/57"
     },
     {
-      "id": "TL-91828953",
+      "id": "TL-1761717743",
       "site": "티켓링크",
       "sourceTeam": "KT 위즈",
-      "date": "2026-07-18",
+      "date": "2026-07-19",
       "time": "18:00",
       "away": "kt wiz",
       "home": "LG트윈스",
@@ -291,29 +273,11 @@ window.SPORTS_DATA = {
       "title": "",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-07-11 11:00",
+      "bookingOpen": "2026-07-12 11:00",
       "bookingStatus": "예매중",
-      "scheduleId": "91828953",
+      "scheduleId": "1761717743",
       "productId": "61881",
       "link": "https://www.ticketlink.co.kr/sports/137/62"
-    },
-    {
-      "id": "TL-892902635",
-      "site": "티켓링크",
-      "sourceTeam": "KIA 타이거즈",
-      "date": "2026-07-19",
-      "time": "14:00",
-      "away": "",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
-      "title": "광주-기아 챔피언스필드 팬투어",
-      "eventType": "행사",
-      "displayName": "광주-기아 챔피언스필드 팬투어",
-      "bookingOpen": "2026-07-12 12:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "892902635",
-      "productId": "62005",
-      "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
       "id": "TL-1084816501",
@@ -352,24 +316,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/57"
     },
     {
-      "id": "TL-1761717743",
-      "site": "티켓링크",
-      "sourceTeam": "KT 위즈",
-      "date": "2026-07-19",
-      "time": "18:00",
-      "away": "kt wiz",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-12 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "1761717743",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/137/62"
-    },
-    {
       "id": "NOL-26004280",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
@@ -405,24 +351,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/59"
     },
     {
-      "id": "TL-438883549",
-      "site": "티켓링크",
-      "sourceTeam": "KT 위즈",
-      "date": "2026-07-21",
-      "time": "18:30",
-      "away": "두산베어스",
-      "home": "kt wiz",
-      "venue": "수원 케이티위즈파크",
-      "title": "2026 KT 워터페스티벌",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-14 16:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "438883549",
-      "productId": "61322",
-      "link": "https://www.ticketlink.co.kr/sports/137/62"
-    },
-    {
       "id": "TL-1868753964",
       "site": "티켓링크",
       "sourceTeam": "KIA 타이거즈",
@@ -441,6 +369,24 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
+      "id": "TL-438883549",
+      "site": "티켓링크",
+      "sourceTeam": "KT 위즈",
+      "date": "2026-07-21",
+      "time": "18:30",
+      "away": "두산베어스",
+      "home": "kt wiz",
+      "venue": "수원 케이티위즈파크",
+      "title": "2026 KT 워터페스티벌",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-14 16:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "438883549",
+      "productId": "61322",
+      "link": "https://www.ticketlink.co.kr/sports/137/62"
+    },
+    {
       "id": "TL-1266392222",
       "site": "티켓링크",
       "sourceTeam": "삼성 라이온즈",
@@ -453,7 +399,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-15 11:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "scheduleId": "1266392222",
       "productId": "64377",
       "link": "https://www.ticketlink.co.kr/sports/137/57"
@@ -488,28 +434,10 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-15 11:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "scheduleId": "1998451860",
       "productId": "61881",
       "link": "https://www.ticketlink.co.kr/sports/137/59"
-    },
-    {
-      "id": "TL-1626212921",
-      "site": "티켓링크",
-      "sourceTeam": "KT 위즈",
-      "date": "2026-07-22",
-      "time": "18:30",
-      "away": "두산베어스",
-      "home": "kt wiz",
-      "venue": "수원 케이티위즈파크",
-      "title": "2026 KT 워터페스티벌",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-15 16:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1626212921",
-      "productId": "61322",
-      "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
       "id": "TL-687116646",
@@ -524,10 +452,28 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-15 11:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "scheduleId": "687116646",
       "productId": "62036",
       "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
+      "id": "TL-1626212921",
+      "site": "티켓링크",
+      "sourceTeam": "KT 위즈",
+      "date": "2026-07-22",
+      "time": "18:30",
+      "away": "두산베어스",
+      "home": "kt wiz",
+      "venue": "수원 케이티위즈파크",
+      "title": "2026 KT 워터페스티벌",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-15 16:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "1626212921",
+      "productId": "61322",
+      "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
       "id": "TL-440911961",
@@ -542,7 +488,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-15 11:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "scheduleId": "440911961",
       "productId": "64377",
       "link": "https://www.ticketlink.co.kr/sports/137/57"
@@ -560,7 +506,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-16T14:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004282",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
@@ -577,28 +523,10 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-16 11:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "scheduleId": "1015088370",
       "productId": "61881",
       "link": "https://www.ticketlink.co.kr/sports/137/59"
-    },
-    {
-      "id": "TL-1053533541",
-      "site": "티켓링크",
-      "sourceTeam": "KT 위즈",
-      "date": "2026-07-23",
-      "time": "18:30",
-      "away": "두산베어스",
-      "home": "kt wiz",
-      "venue": "수원 케이티위즈파크",
-      "title": "2026 KT 워터페스티벌",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-16 16:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1053533541",
-      "productId": "61322",
-      "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
       "id": "TL-395628375",
@@ -613,10 +541,28 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-16 11:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "scheduleId": "395628375",
       "productId": "62036",
       "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
+      "id": "TL-1053533541",
+      "site": "티켓링크",
+      "sourceTeam": "KT 위즈",
+      "date": "2026-07-23",
+      "time": "18:30",
+      "away": "두산베어스",
+      "home": "kt wiz",
+      "venue": "수원 케이티위즈파크",
+      "title": "2026 KT 워터페스티벌",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-16 16:00",
+      "bookingStatus": "예매중",
+      "scheduleId": "1053533541",
+      "productId": "61322",
+      "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
       "id": "TL-1483198008",
@@ -631,7 +577,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-15 11:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "scheduleId": "1483198008",
       "productId": "64377",
       "link": "https://www.ticketlink.co.kr/sports/137/57"
@@ -1381,6 +1327,24 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
+      "id": "TL-354131775",
+      "site": "티켓링크",
+      "sourceTeam": "KIA 타이거즈",
+      "date": "2026-08-07",
+      "time": "18:30",
+      "away": "KIA 타이거즈",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-07-31 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "354131775",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
       "id": "TL-1785363685",
       "site": "티켓링크",
       "sourceTeam": "한화 이글스",
@@ -1435,24 +1399,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
-      "id": "TL-354131775",
-      "site": "티켓링크",
-      "sourceTeam": "KIA 타이거즈",
-      "date": "2026-08-07",
-      "time": "18:30",
-      "away": "KIA 타이거즈",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-31 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "354131775",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/137/58"
-    },
-    {
       "id": "TL-15485482",
       "site": "티켓링크",
       "sourceTeam": "KIA 타이거즈",
@@ -1468,6 +1414,24 @@ window.SPORTS_DATA = {
       "bookingStatus": "예매예정",
       "scheduleId": "15485482",
       "productId": "62005",
+      "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
+      "id": "TL-1826480015",
+      "site": "티켓링크",
+      "sourceTeam": "KIA 타이거즈",
+      "date": "2026-08-08",
+      "time": "18:00",
+      "away": "KIA 타이거즈",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-01 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1826480015",
+      "productId": "61881",
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
@@ -1525,10 +1489,10 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
-      "id": "TL-1826480015",
+      "id": "TL-1751103249",
       "site": "티켓링크",
       "sourceTeam": "KIA 타이거즈",
-      "date": "2026-08-08",
+      "date": "2026-08-09",
       "time": "18:00",
       "away": "KIA 타이거즈",
       "home": "LG트윈스",
@@ -1536,9 +1500,9 @@ window.SPORTS_DATA = {
       "title": "",
       "eventType": "경기",
       "displayName": "",
-      "bookingOpen": "2026-08-01 11:00",
+      "bookingOpen": "2026-08-02 11:00",
       "bookingStatus": "예매예정",
-      "scheduleId": "1826480015",
+      "scheduleId": "1751103249",
       "productId": "61881",
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
@@ -1597,24 +1561,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
-      "id": "TL-1751103249",
-      "site": "티켓링크",
-      "sourceTeam": "KIA 타이거즈",
-      "date": "2026-08-09",
-      "time": "18:00",
-      "away": "KIA 타이거즈",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-02 11:00",
-      "bookingStatus": "예매예정",
-      "scheduleId": "1751103249",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/137/58"
-    },
-    {
       "id": "NOL-26004557",
       "site": "NOL 티켓",
       "sourceTeam": "두산 베어스",
@@ -1630,6 +1576,23 @@ window.SPORTS_DATA = {
       "bookingStatus": "예매예정",
       "goodsCode": "26004557",
       "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
+      "id": "NOL-26004286",
+      "site": "NOL 티켓",
+      "sourceTeam": "키움 히어로즈",
+      "date": "2026-08-11",
+      "time": "18:30",
+      "away": "LG 트윈스",
+      "home": "키움 히어로즈",
+      "venue": "고척스카이돔",
+      "title": "키움 vs LG (8.11)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-04T14:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004286",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "TL-363115310",
@@ -1650,6 +1613,23 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
+      "id": "NOL-26004287",
+      "site": "NOL 티켓",
+      "sourceTeam": "키움 히어로즈",
+      "date": "2026-08-12",
+      "time": "18:30",
+      "away": "LG 트윈스",
+      "home": "키움 히어로즈",
+      "venue": "고척스카이돔",
+      "title": "키움 vs LG (8.12)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-05T14:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004287",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
+    },
+    {
       "id": "TL-1808847176",
       "site": "티켓링크",
       "sourceTeam": "KIA 타이거즈",
@@ -1666,6 +1646,23 @@ window.SPORTS_DATA = {
       "scheduleId": "1808847176",
       "productId": "62036",
       "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
+      "id": "NOL-26004288",
+      "site": "NOL 티켓",
+      "sourceTeam": "키움 히어로즈",
+      "date": "2026-08-13",
+      "time": "18:30",
+      "away": "LG 트윈스",
+      "home": "키움 히어로즈",
+      "venue": "고척스카이돔",
+      "title": "키움 vs LG (8.13)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-06T14:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004288",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "TL-932132753",
@@ -1754,6 +1751,96 @@ window.SPORTS_DATA = {
       "bookingOpen": "2026-08-07 11:00",
       "bookingStatus": "예매예정",
       "scheduleId": "946447542",
+      "productId": "62036",
+      "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
+      "id": "TL-664917363",
+      "site": "티켓링크",
+      "sourceTeam": "LG 트윈스",
+      "date": "2026-08-15",
+      "time": "18:00",
+      "away": "SSG랜더스",
+      "home": "LG트윈스",
+      "venue": "잠실야구장",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-08 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "664917363",
+      "productId": "61881",
+      "link": "https://www.ticketlink.co.kr/sports/137/59"
+    },
+    {
+      "id": "TL-769472603",
+      "site": "티켓링크",
+      "sourceTeam": "삼성 라이온즈",
+      "date": "2026-08-15",
+      "time": "18:00",
+      "away": "한화이글스",
+      "home": "삼성 라이온즈",
+      "venue": "대구 삼성라이온즈파크",
+      "title": "블루",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-07 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "769472603",
+      "productId": "62111",
+      "link": "https://www.ticketlink.co.kr/sports/137/57"
+    },
+    {
+      "id": "TL-1623417765",
+      "site": "티켓링크",
+      "sourceTeam": "울산웨일즈",
+      "date": "2026-08-15",
+      "time": "18:00",
+      "away": "한화이글스",
+      "home": "울산웨일즈",
+      "venue": "울산문수야구장",
+      "title": "퓨처스리그",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-08 14:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1623417765",
+      "productId": "62031",
+      "link": "https://www.ticketlink.co.kr/sports/137/721"
+    },
+    {
+      "id": "TL-1205702873",
+      "site": "티켓링크",
+      "sourceTeam": "KT 위즈",
+      "date": "2026-08-15",
+      "time": "18:00",
+      "away": "키움히어로즈",
+      "home": "kt wiz",
+      "venue": "수원 케이티위즈파크",
+      "title": "2026 KT 워터페스티벌",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-08 16:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1205702873",
+      "productId": "61322",
+      "link": "https://www.ticketlink.co.kr/sports/137/62"
+    },
+    {
+      "id": "TL-1044801283",
+      "site": "티켓링크",
+      "sourceTeam": "KIA 타이거즈",
+      "date": "2026-08-15",
+      "time": "18:00",
+      "away": "두산베어스",
+      "home": "KIA 타이거즈",
+      "venue": "KIA 챔피언스필드",
+      "title": "",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-08 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1044801283",
       "productId": "62036",
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     }
