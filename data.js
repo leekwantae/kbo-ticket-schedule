@@ -1,8 +1,8 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-21T18:36:56+09:00",
+  "updatedAt": "2026-07-22T02:01:19+09:00",
   "queryRange": {
-    "startDate": "2026-07-21",
-    "endDate": "2026-11-18"
+    "startDate": "2026-07-22",
+    "endDate": "2026-11-19"
   },
   "sourceStatus": [
     {
@@ -58,7 +58,7 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 9,
+      "count": 8,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
@@ -314,23 +314,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1761717743",
       "productId": "61881",
       "link": "https://www.ticketlink.co.kr/sports/137/62"
-    },
-    {
-      "id": "NOL-26004280",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-07-21",
-      "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs 삼성 (7.21)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-14T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004280",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "TL-1427853844",
