@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-22T18:37:14+09:00",
+  "updatedAt": "2026-07-23T02:01:40+09:00",
   "queryRange": {
-    "startDate": "2026-07-22",
-    "endDate": "2026-11-19"
+    "startDate": "2026-07-23",
+    "endDate": "2026-11-20"
   },
   "sourceStatus": [
     {
@@ -23,7 +23,7 @@
       "site": "티켓링크",
       "team": "삼성 라이온즈",
       "success": true,
-      "count": 21,
+      "count": 20,
       "message": "API 조회 성공"
     },
     {
@@ -58,82 +58,11 @@
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 8,
+      "count": 7,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
   "events": [
-    {
-      "id": "TL-1266392222",
-      "site": "티켓링크",
-      "sourceTeam": "삼성 라이온즈",
-      "date": "2026-07-22",
-      "time": "18:00",
-      "away": "두산베어스",
-      "home": "삼성 라이온즈",
-      "venue": "대구 삼성라이온즈파크",
-      "title": "퓨처스리그",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-15 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "1266392222",
-      "productId": "64377",
-      "link": "https://www.ticketlink.co.kr/sports/137/57"
-    },
-    {
-      "id": "NOL-26004281",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-07-22",
-      "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs 삼성 (7.22)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-15T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004281",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
-    },
-    {
-      "id": "TL-1998451860",
-      "site": "티켓링크",
-      "sourceTeam": "LG 트윈스",
-      "date": "2026-07-22",
-      "time": "18:30",
-      "away": "NC 다이노스",
-      "home": "LG트윈스",
-      "venue": "잠실야구장",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-15 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "1998451860",
-      "productId": "61881",
-      "link": "https://www.ticketlink.co.kr/sports/137/59"
-    },
-    {
-      "id": "TL-687116646",
-      "site": "티켓링크",
-      "sourceTeam": "KIA 타이거즈",
-      "date": "2026-07-22",
-      "time": "18:30",
-      "away": "한화이글스",
-      "home": "KIA 타이거즈",
-      "venue": "KIA 챔피언스필드",
-      "title": "",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-15 11:00",
-      "bookingStatus": "예매중",
-      "scheduleId": "687116646",
-      "productId": "62036",
-      "link": "https://www.ticketlink.co.kr/sports/137/58"
-    },
     {
       "id": "TL-440911961",
       "site": "티켓링크",
@@ -1788,6 +1717,42 @@
       "bookingOpen": "2026-08-14 11:00",
       "bookingStatus": "예매예정",
       "scheduleId": "393065532",
+      "productId": "62162",
+      "link": "https://www.ticketlink.co.kr/sports/137/63"
+    },
+    {
+      "id": "TL-116942948",
+      "site": "티켓링크",
+      "sourceTeam": "KIA 타이거즈",
+      "date": "2026-08-22",
+      "time": "14:00",
+      "away": "",
+      "home": "KIA 타이거즈",
+      "venue": "KIA 챔피언스필드",
+      "title": "광주-기아 챔피언스필드 팬투어",
+      "eventType": "행사",
+      "displayName": "광주-기아 챔피언스필드 팬투어",
+      "bookingOpen": "2026-08-15 12:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "116942948",
+      "productId": "62005",
+      "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
+      "id": "TL-1644138620",
+      "site": "티켓링크",
+      "sourceTeam": "한화 이글스",
+      "date": "2026-08-22",
+      "time": "18:00",
+      "away": "LG트윈스",
+      "home": "한화이글스",
+      "venue": "대전 한화생명 볼파크",
+      "title": "4구간",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-15 11:00",
+      "bookingStatus": "예매예정",
+      "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
     }
