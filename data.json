@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-07-26T18:02:17+09:00",
+  "updatedAt": "2026-07-27T00:48:11+09:00",
   "queryRange": {
-    "startDate": "2026-07-26",
-    "endDate": "2026-11-23"
+    "startDate": "2026-07-27",
+    "endDate": "2026-11-24"
   },
   "sourceStatus": [
     {
@@ -242,23 +242,6 @@
       "scheduleId": "1003212557",
       "productId": "62031",
       "link": "https://www.ticketlink.co.kr/sports/137/721"
-    },
-    {
-      "id": "NOL-26004550",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-07-26",
-      "time": "18:00",
-      "away": "삼성 라이온즈",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 삼성 (7.26)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-19T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004550",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "TL-1075730823",
@@ -1684,6 +1667,23 @@
       "scheduleId": "144037248",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
+      "id": "NOL-26004560",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-08-21",
+      "time": "18:30",
+      "away": "롯데 자이언츠",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 롯데 (8.21)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-14T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004560",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "NOL-26004289",
