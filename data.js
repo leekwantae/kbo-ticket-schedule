@@ -1,8 +1,8 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-27T21:42:30+09:00",
+  "updatedAt": "2026-07-28T05:51:45+09:00",
   "queryRange": {
-    "startDate": "2026-07-27",
-    "endDate": "2026-11-24"
+    "startDate": "2026-07-28",
+    "endDate": "2026-11-25"
   },
   "sourceStatus": [
     {
