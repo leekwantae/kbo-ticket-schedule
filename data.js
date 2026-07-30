@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-30T08:44:06+09:00",
+  "updatedAt": "2026-07-30T18:42:33+09:00",
   "queryRange": {
     "startDate": "2026-07-30",
     "endDate": "2026-11-27"
@@ -806,7 +806,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-07-30T11:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004556",
       "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
