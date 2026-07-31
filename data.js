@@ -1,8 +1,8 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-07-31T19:10:24+09:00",
+  "updatedAt": "2026-08-01T02:13:46+09:00",
   "queryRange": {
-    "startDate": "2026-07-31",
-    "endDate": "2026-11-28"
+    "startDate": "2026-08-01",
+    "endDate": "2026-11-29"
   },
   "sourceStatus": [
     {
@@ -58,7 +58,7 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 9,
+      "count": 8,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
@@ -512,40 +512,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1887032155",
       "productId": "62031",
       "link": "https://www.ticketlink.co.kr/sports/137/721"
-    },
-    {
-      "id": "NOL-26004551",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-07-31",
-      "time": "18:30",
-      "away": "LG 트윈스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs LG (7.31)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-24T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004551",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
-      "id": "NOL-26004283",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-07-31",
-      "time": "18:30",
-      "away": "SSG 랜더스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs SSG (7.31)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-24T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004283",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "TL-1869069870",
@@ -1737,6 +1703,23 @@ window.SPORTS_DATA = {
       "scheduleId": "116942948",
       "productId": "62005",
       "link": "https://www.ticketlink.co.kr/sports/137/58"
+    },
+    {
+      "id": "NOL-26004561",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-08-22",
+      "time": "18:00",
+      "away": "롯데 자이언츠",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 롯데 (8.22)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-15T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004561",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "NOL-26004290",
