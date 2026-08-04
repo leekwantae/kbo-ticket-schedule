@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-08-04T05:44:26+09:00",
+  "updatedAt": "2026-08-04T19:18:03+09:00",
   "queryRange": {
     "startDate": "2026-08-04",
     "endDate": "2026-12-02"
@@ -586,23 +586,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/62"
     },
     {
-      "id": "NOL-26004554",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-08-04",
-      "time": "18:30",
-      "away": "NC 다이노스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs NC (8.4)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-07-28T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004554",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
       "id": "TL-1694245804",
       "site": "티켓링크",
       "sourceTeam": "삼성 라이온즈",
@@ -991,7 +974,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-08-04T11:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004557",
       "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
@@ -1008,7 +991,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-08-04T14:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004286",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
@@ -1788,6 +1771,23 @@ window.SPORTS_DATA = {
       "bookingOpen": "2026-08-21T11:00:00",
       "bookingStatus": "예매예정",
       "goodsCode": "26004563",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
+      "id": "NOL-26004564",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-08-29",
+      "time": "18:00",
+      "away": "키움 히어로즈",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 키움 (8.29)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-22T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004564",
       "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     }
   ]
