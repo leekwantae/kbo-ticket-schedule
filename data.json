@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T08:34:22+09:00",
+  "updatedAt": "2026-08-06T19:16:35+09:00",
   "queryRange": {
     "startDate": "2026-08-06",
     "endDate": "2026-12-04"
@@ -1044,7 +1044,7 @@
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-08-06T11:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004559",
       "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
@@ -1061,7 +1061,7 @@
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-08-06T14:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004288",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
