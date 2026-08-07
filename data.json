@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-07T09:55:14+09:00",
+  "updatedAt": "2026-08-07T14:49:36+09:00",
   "queryRange": {
     "startDate": "2026-08-07",
     "endDate": "2026-12-05"
@@ -58,7 +58,7 @@
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 9,
+      "count": 10,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
@@ -1789,6 +1789,23 @@
       "bookingStatus": "예매예정",
       "goodsCode": "26004566",
       "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
+      "id": "NOL-26004295",
+      "site": "NOL 티켓",
+      "sourceTeam": "키움 히어로즈",
+      "date": "2026-09-01",
+      "time": "19:00",
+      "away": "SSG 랜더스",
+      "home": "키움 히어로즈",
+      "venue": "고척스카이돔",
+      "title": "키움 vs SSG (9.1)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-25T14:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004295",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     }
   ]
 }
