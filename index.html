@@ -1,997 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <title>KBO 통합 예매 일정(2번통합)</title>
-
-  <style>
-    :root {
-      --bg: #f4f6f9;
-      --card: #ffffff;
-      --line: #dfe4ea;
-      --text: #1f2937;
-      --sub: #6b7280;
-      --primary: #0f4c81;
-      --primary-dark: #0a3559;
-      --success-bg: #e8f7ee;
-      --success-text: #157347;
-      --warning-bg: #fff4d6;
-      --warning-text: #9a6700;
-      --danger-bg: #fde8e8;
-      --danger-text: #b42318;
-      --neutral-bg: #eef2f6;
-      --neutral-text: #4b5563;
-      --nol: #7c3aed;
-      --ticketlink: #2563eb;
-      --event-bg: #fff0f5;
-      --event-text: #be185d;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family:
-        Pretendard, "Noto Sans KR", "Apple SD Gothic Neo",
-        "Malgun Gothic", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    button,
-    select {
-      font: inherit;
-    }
-
-    .page {
-      width: min(1480px, calc(100% - 28px));
-      margin: 24px auto 40px;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #123c63, #0f4c81);
-      color: white;
-      border-radius: 20px;
-      padding: 28px 30px;
-      box-shadow: 0 14px 36px rgba(15, 76, 129, 0.18);
-    }
-
-    .hero-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(26px, 4vw, 42px);
-      letter-spacing: -1.2px;
-    }
-
-    .hero p {
-      margin: 10px 0 0;
-      color: rgba(255,255,255,.82);
-      font-size: 15px;
-    }
-
-    .refresh-btn {
-      flex: 0 0 auto;
-      border: 1px solid rgba(255,255,255,.34);
-      background: rgba(255,255,255,.13);
-      color: white;
-      border-radius: 12px;
-      padding: 11px 15px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: .2s ease;
-    }
-
-    .refresh-btn:hover {
-      background: rgba(255,255,255,.22);
-      transform: translateY(-1px);
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .excel-btn {
-      flex: 0 0 auto;
-      border: 1px solid rgba(255,255,255,.34);
-      background: #16834a;
-      color: white;
-      border-radius: 12px;
-      padding: 11px 15px;
-      cursor: pointer;
-      font-weight: 800;
-      transition: .2s ease;
-    }
-
-    .excel-btn:hover {
-      background: #106b3b;
-      transform: translateY(-1px);
-    }
-
-    .meta-row {
-      margin-top: 20px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .meta-chip {
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 13px;
-      background: rgba(255,255,255,.14);
-      border: 1px solid rgba(255,255,255,.18);
-    }
-
-    .controls {
-      margin-top: 18px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 18px;
-      box-shadow: 0 8px 22px rgba(31,41,55,.05);
-    }
-
-    .controls-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(160px, 1fr));
-      gap: 12px;
-    }
-
-    .control label {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--sub);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .control select {
-      width: 100%;
-      height: 44px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 0 12px;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-    }
-
-    .control select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(15,76,129,.1);
-    }
-
-    .summary {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .summary-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    .summary-label {
-      color: var(--sub);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .summary-value {
-      margin-top: 6px;
-      font-size: 26px;
-      font-weight: 800;
-    }
-
-    .section {
-      margin-top: 18px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 22px rgba(31,41,55,.05);
-    }
-
-    .section-head {
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-size: 20px;
-    }
-
-    .section-head small {
-      color: var(--sub);
-    }
-
-    .table-wrap {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 1120px;
-    }
-
-    th,
-    td {
-      padding: 15px 14px;
-      border-bottom: 1px solid #edf0f3;
-      text-align: center;
-      vertical-align: middle;
-      font-size: 14px;
-    }
-
-    th {
-      background: #f8fafc;
-      color: #475569;
-      font-size: 13px;
-      font-weight: 800;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-
-    tbody tr:hover {
-      background: #fbfdff;
-    }
-
-    .date-cell {
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .match-cell {
-      text-align: left;
-      min-width: 280px;
-    }
-
-    .match-title {
-      font-weight: 800;
-      line-height: 1.4;
-    }
-
-    .match-sub {
-      margin-top: 4px;
-      color: var(--sub);
-      font-size: 12px;
-    }
-
-    .site-badge,
-    .status-badge,
-    .event-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 12px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .site-ticketlink {
-      color: var(--ticketlink);
-      background: #eaf1ff;
-    }
-
-    .site-nol {
-      color: var(--nol);
-      background: #f2ebff;
-    }
-
-    .status-sale {
-      color: var(--success-text);
-      background: var(--success-bg);
-    }
-
-    .status-wait {
-      color: var(--warning-text);
-      background: var(--warning-bg);
-    }
-
-    .status-soldout,
-    .status-end,
-    .status-cancel {
-      color: var(--danger-text);
-      background: var(--danger-bg);
-    }
-
-    .status-check {
-      color: var(--neutral-text);
-      background: var(--neutral-bg);
-    }
-
-    .event-badge {
-      color: var(--event-text);
-      background: var(--event-bg);
-      margin-right: 7px;
-    }
-
-    .book-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 84px;
-      height: 36px;
-      padding: 0 13px;
-      border-radius: 9px;
-      border: 0;
-      background: var(--primary);
-      color: white;
-      font-weight: 800;
-      text-decoration: none;
-      transition: .2s ease;
-    }
-
-    .book-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    .empty {
-      padding: 56px 20px;
-      text-align: center;
-      color: var(--sub);
-    }
-
-    .source-status {
-      padding: 16px 20px 20px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(170px, 1fr));
-      gap: 10px;
-    }
-
-    .source-card {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 13px;
-      background: #fafbfc;
-    }
-
-    .source-card strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .source-card span {
-      display: block;
-      color: var(--sub);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .source-ok {
-      color: var(--success-text);
-      font-weight: 800;
-    }
-
-    .source-fail {
-      color: var(--danger-text);
-      font-weight: 800;
-    }
-
-    @media (max-width: 920px) {
-      .controls-grid,
-      .summary,
-      .source-status {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-top {
-        flex-direction: column;
-      }
-
-      .hero-actions {
-        width: 100%;
-        justify-content: stretch;
-      }
-
-      .refresh-btn,
-      .excel-btn {
-        flex: 1 1 180px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .page {
-        width: min(100% - 16px, 1480px);
-        margin-top: 10px;
-      }
-
-      .hero {
-        border-radius: 14px;
-        padding: 22px 18px;
-      }
-
-      .controls-grid,
-      .summary,
-      .source-status {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    .today-booking {
-      background: #fff7c8 !important;
-    }
-
-    .today-booking:hover {
-      background: #ffe98a !important;
-    }
-
-    .today-fire {
-      display: inline-block;
-      margin-right: 5px;
-      font-size: 16px;
-      line-height: 1;
-      vertical-align: -1px;
-    }
-
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KBO 경기 / 예매 일정</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f3f4f6;color:#111827;font-family:Arial,"Malgun Gothic",sans-serif}
+  .wrap{max-width:1600px;margin:auto;padding:24px}
+  h1{margin:0;font-size:28px}
+  .sub{margin-top:7px;color:#6b7280}
+  .toolbar{margin-top:20px;background:#fff;padding:14px;border-radius:12px;display:flex;gap:10px;flex-wrap:wrap;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  select,input,button{padding:9px 12px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
+  button{cursor:pointer;font-weight:700}
+  .tablebox{margin-top:14px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  .scroll{overflow:auto}
+  table{width:100%;border-collapse:collapse;min-width:1150px}
+  thead{background:#111827;color:white}
+  th,td{padding:12px;text-align:left}
+  th.sort{cursor:pointer}
+  tr{border-top:1px solid #e5e7eb}
+  tr.today{background:#fff3a3}
+  .home{font-weight:800}
+  .status{font-weight:800}
+  a{color:#4f46e5}
+  .err{margin-top:20px;padding:14px;background:#fee2e2;border-radius:10px;color:#991b1b}
+</style>
 </head>
-
 <body>
-  <main class="page">
-    <section class="hero">
-      <div class="hero-top">
-        <div>
-          <h1>KBO 통합 예매 일정</h1>
-          <p>NOL 티켓과 티켓링크의 구단별 홈경기 일정을 한 화면에서 확인합니다.</p>
-        </div>
+<div class="wrap">
+  <h1>KBO 경기 / 예매 일정</h1>
+  <div id="summary" class="sub">데이터 불러오는 중...</div>
 
-        <div class="hero-actions">
-          <button class="refresh-btn" type="button" onclick="strongRefresh()">
-            강력 새로고침
-          </button>
+  <div class="toolbar">
+    <select id="team"><option value="">전체 구단</option></select>
+    <select id="site">
+      <option value="">전체 예매처</option>
+      <option value="티켓링크">티켓링크</option>
+      <option value="NOL 티켓">NOL 티켓</option>
+    </select>
+    <select id="status">
+      <option value="">전체 예매상태</option>
+      <option value="예매중">예매중</option>
+      <option value="예매예정">예매예정</option>
+      <option value="확인 필요">확인 필요</option>
+    </select>
+    <select id="sort">
+      <option value="openDate">예매예정일 빠른순</option>
+      <option value="gameDate">경기일 빠른순</option>
+      <option value="team">홈팀순</option>
+      <option value="site">예매처순</option>
+      <option value="status">예매상태순</option>
+    </select>
+    <input id="search" placeholder="팀명 / 경기장 검색">
+    <button id="reload">최신 파일 다시 읽기</button>
+  </div>
 
-          <button class="excel-btn" type="button" onclick="exportExcel()">
-            엑셀 저장
-          </button>
-        </div>
-      </div>
+  <div class="tablebox">
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th class="sort" data-sort="openDate">예매예정날짜 ↕</th>
+            <th class="sort" data-sort="gameDate">경기일시 ↕</th>
+            <th>경기장</th>
+            <th class="sort" data-sort="team">홈팀 ↕</th>
+            <th>원정팀</th>
+            <th class="sort" data-sort="status">예매상태 ↕</th>
+            <th class="sort" data-sort="site">예매처 ↕</th>
+            <th>바로가기</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
 
-      <div class="meta-row">
-        <div class="meta-chip" id="updatedAt">업데이트 시간 확인 중</div>
-        <div class="meta-chip" id="queryRange">조회 기간 확인 중</div>
-        <div class="meta-chip" id="dataCount">데이터 불러오는 중</div>
-      </div>
-    </section>
+  <div id="error"></div>
+</div>
 
-    <section class="controls">
-      <div class="controls-grid">
-        <div class="control">
-          <label for="teamFilter">구단</label>
-          <select id="teamFilter">
-            <option value="전체">전체 구단</option>
-          </select>
-        </div>
+<script>
+let DATA = [];
+let META = {};
+let sortDirection = 1;
 
-        <div class="control">
-          <label for="siteFilter">예매처</label>
-          <select id="siteFilter">
-            <option value="전체">전체 예매처</option>
-            <option value="티켓링크">티켓링크</option>
-            <option value="NOL 티켓">NOL 티켓</option>
-          </select>
-        </div>
+const $ = id => document.getElementById(id);
 
-        <div class="control">
-          <label for="statusFilter">예매 상태</label>
-          <select id="statusFilter">
-            <option value="전체">전체 상태</option>
-            <option value="예매중">예매중</option>
-            <option value="예매예정">예매예정</option>
-            <option value="매진">매진</option>
-            <option value="예매종료">예매종료</option>
-            <option value="확인 필요">확인 필요</option>
-          </select>
-        </div>
-      </div>
-    </section>
+function openSortValue(g){
+  const m = String(g.openDate || '').match(/(\d{4})[.\-/](\d{2})[.\-/](\d{2}).*?(\d{2}):(\d{2})/);
+  return m ? `${m[1]}-${m[2]}-${m[3]} ${m[4]}:${m[5]}` : '9999-99-99 99:99';
+}
 
-    <section class="summary">
-      <div class="summary-card">
-        <div class="summary-label">전체 일정</div>
-        <div class="summary-value" id="summaryTotal">0</div>
-      </div>
+function compare(mode,a,b){
+  let av='', bv='';
+  if(mode==='gameDate'){ av=`${a.date} ${a.time}`; bv=`${b.date} ${b.time}`; }
+  else if(mode==='openDate'){ av=openSortValue(a); bv=openSortValue(b); }
+  else if(mode==='team'){ av=a.homeTeam||''; bv=b.homeTeam||''; }
+  else if(mode==='site'){ av=a.platformName||''; bv=b.platformName||''; }
+  else if(mode==='status'){ av=a.status||''; bv=b.status||''; }
 
-      <div class="summary-card">
-        <div class="summary-label">예매중</div>
-        <div class="summary-value" id="summarySale">0</div>
-      </div>
+  const primary = av.localeCompare(bv,'ko') * sortDirection;
+  if(primary===0 && mode==='openDate'){
+    return (`${a.date} ${a.time}`).localeCompare(`${b.date} ${b.time}`,'ko');
+  }
+  return primary;
+}
 
-      <div class="summary-card">
-        <div class="summary-label">예매예정</div>
-        <div class="summary-value" id="summaryWait">0</div>
-      </div>
-    </section>
+function draw(){
+  const tf=$('team').value;
+  const sf=$('site').value;
+  const st=$('status').value;
+  const q=$('search').value.trim().toLowerCase();
+  const mode=$('sort').value;
 
-    <section class="section">
-      <div class="section-head">
-        <h2>예매 일정</h2>
-        <small id="resultText">데이터를 불러오는 중입니다.</small>
-      </div>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>예매 시작</th>
-              <th>경기 일시</th>
-              <th>구단</th>
-              <th>경기</th>
-              <th>구장</th>
-              <th>예매처</th>
-              <th>상태</th>
-              <th>바로가기</th>
-            </tr>
-          </thead>
-
-          <tbody id="scheduleBody"></tbody>
-        </table>
-      </div>
-
-      <div class="empty" id="emptyMessage" hidden>
-        조건에 맞는 일정이 없습니다.
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>데이터 수집 상태</h2>
-        <small>각 구단별 최신 수집 결과입니다.</small>
-      </div>
-      <div class="source-status" id="sourceStatus"></div>
-    </section>
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-
-  <script>
-    const DATA_VERSION = Date.now();
-    const dataScript = document.createElement("script");
-    dataScript.src = `data.js?v=${DATA_VERSION}`;
-    dataScript.onload = init;
-    dataScript.onerror = () => {
-      document.getElementById("resultText").textContent =
-        "data.js 파일을 불러오지 못했습니다.";
-      document.getElementById("emptyMessage").hidden = false;
-    };
-    document.head.appendChild(dataScript);
-
-    let allEvents = [];
-    let currentFilteredEvents = [];
-
-    const teamFilter = document.getElementById("teamFilter");
-    const siteFilter = document.getElementById("siteFilter");
-    const statusFilter = document.getElementById("statusFilter");
-
-    function init() {
-      const payload = window.SPORTS_DATA || {};
-      allEvents = Array.isArray(payload.events) ? payload.events : [];
-
-      setMeta(payload);
-      populateTeams(allEvents);
-      renderSourceStatus(payload.sourceStatus || []);
-      bindFilters();
-      render();
+  let rows = DATA.filter(g=>{
+    if(tf && g.homeTeam!==tf && g.awayTeam!==tf) return false;
+    if(sf && g.platformName!==sf) return false;
+    if(st && g.status!==st) return false;
+    if(q){
+      const hay=`${g.homeTeam} ${g.awayTeam} ${g.place} ${g.platformName}`.toLowerCase();
+      if(!hay.includes(q)) return false;
     }
-
-    function setMeta(payload) {
-      const updatedAt = formatDateTime(payload.updatedAt);
-      const range = payload.queryRange || {};
-
-      document.getElementById("updatedAt").textContent =
-        `최종 업데이트: ${updatedAt || "확인 불가"}`;
-
-      document.getElementById("queryRange").textContent =
-        `조회 기간: ${range.startDate || "-"} ~ ${range.endDate || "-"}`;
-
-      document.getElementById("dataCount").textContent =
-        `전체 ${allEvents.length}건`;
-    }
-
-    function populateTeams(events) {
-      const teams = [
-        "두산 베어스",
-        "LG 트윈스",
-        "키움 히어로즈",
-        "SSG 랜더스",
-        "KT 위즈",
-        "한화 이글스",
-        "삼성 라이온즈",
-        "KIA 타이거즈",
-        "울산웨일즈"
-      ];
-
-      teams.forEach(team => {
-        const option = document.createElement("option");
-        option.value = team;
-        option.textContent = team;
-        teamFilter.appendChild(option);
-      });
-    }
-
-    function bindFilters() {
-      [teamFilter, siteFilter, statusFilter]
-        .forEach(element => element.addEventListener("change", render));
-    }
-
-    function render() {
-      const selectedTeam = teamFilter.value;
-      const selectedSite = siteFilter.value;
-      const selectedStatus = statusFilter.value;
-
-      const filtered = allEvents.filter(event => {
-        const teamMatch =
-          selectedTeam === "전체" || event.sourceTeam === selectedTeam;
-
-        const siteMatch =
-          selectedSite === "전체" || event.site === selectedSite;
-
-        const statusMatch =
-          selectedStatus === "전체" ||
-          normalizeStatus(event.bookingStatus) === selectedStatus;
-
-        return teamMatch && siteMatch && statusMatch;
-      });
-
-      currentFilteredEvents = [...filtered];
-
-      renderSummary(filtered);
-      renderTable(filtered);
-
-      document.getElementById("resultText").textContent =
-        `${filtered.length}건 표시 중`;
-    }
-
-    function renderSummary(events) {
-      document.getElementById("summaryTotal").textContent = events.length;
-
-      document.getElementById("summarySale").textContent =
-        events.filter(event =>
-          normalizeStatus(event.bookingStatus) === "예매중"
-        ).length;
-
-      document.getElementById("summaryWait").textContent =
-        events.filter(event =>
-          normalizeStatus(event.bookingStatus) === "예매예정"
-        ).length;
-
-    }
-
-    function renderTable(events) {
-      const body = document.getElementById("scheduleBody");
-      const empty = document.getElementById("emptyMessage");
-
-      body.innerHTML = "";
-      empty.hidden = events.length !== 0;
-
-      events.forEach(event => {
-        const tr = document.createElement("tr");
-
-        const type = normalizeEventType(event);
-        const matchName = getDisplayName(event);
-        const status = normalizeStatus(event.bookingStatus);
-        const isTodayBooking = isBookingToday(event.bookingOpen);
-
-        if (isTodayBooking) {
-          tr.classList.add("today-booking");
-        }
-
-        tr.innerHTML = `
-          <td class="date-cell">
-            ${isTodayBooking ? '<span class="today-fire" aria-label="오늘 예매 시작">🔥</span>' : ""}
-            ${escapeHtml(formatBookingOpen(event.bookingOpen))}
-          </td>
-          <td class="date-cell">${escapeHtml(formatGameDateTime(event.date, event.time))}</td>
-          <td>${escapeHtml(event.sourceTeam || "-")}</td>
-          <td class="match-cell">
-            <div class="match-title">
-              
-              ${escapeHtml(matchName)}
-            </div>
-            ${event.title && event.title !== matchName
-              ? `<div class="match-sub">${escapeHtml(event.title)}</div>`
-              : ""}
-          </td>
-          <td>${escapeHtml(event.venue || "-")}</td>
-          <td>
-            <span class="site-badge ${event.site === "NOL 티켓"
-              ? "site-nol"
-              : "site-ticketlink"}">
-              ${escapeHtml(event.site || "-")}
-            </span>
-          </td>
-          <td>
-            <span class="status-badge ${getStatusClass(status)}">
-              ${escapeHtml(status)}
-            </span>
-          </td>
-          <td>
-            ${event.link
-              ? `<a class="book-btn" href="${escapeAttribute(event.link)}"
-                    target="_blank" rel="noopener noreferrer">예매하기</a>`
-              : "-"}
-          </td>
-        `;
-
-        body.appendChild(tr);
-      });
-    }
-
-    function getDisplayName(event) {
-      const away = String(event.away || "").trim();
-      const home = String(event.home || "").trim();
-
-      if (away && home) {
-        return `${away} vs ${home}`;
-      }
-
-      if (event.title) {
-        return event.title;
-      }
-
-      if (home) {
-        return `${home} 경기`;
-      }
-
-      if (away) {
-        return `${away} 경기`;
-      }
-
-      return `${event.sourceTeam || "구단"} 경기`;
-    }
-
-    function normalizeEventType(event) {
-      return "경기";
-    }
-
-    function normalizeStatus(value) {
-      const status = String(value || "").trim();
-
-      if (!status || status === "예매정보 확인" || status === "확인필요") {
-        return "확인 필요";
-      }
-
-      return status;
-    }
-
-    function getStatusClass(status) {
-      if (status === "예매중") return "status-sale";
-      if (status === "예매예정") return "status-wait";
-      if (status === "매진") return "status-soldout";
-      if (status === "예매종료") return "status-end";
-      if (status === "취소") return "status-cancel";
-      return "status-check";
-    }
-
-    function renderSourceStatus(statusList) {
-      const wrap = document.getElementById("sourceStatus");
-      wrap.innerHTML = "";
-
-      if (!Array.isArray(statusList) || statusList.length === 0) {
-        wrap.innerHTML = `
-          <div class="source-card">
-            <strong>수집 상태 없음</strong>
-            <span>data.js 안에 sourceStatus 정보가 없습니다.</span>
-          </div>
-        `;
-        return;
-      }
-
-      statusList.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "source-card";
-
-        card.innerHTML = `
-          <strong>${escapeHtml(item.team || "-")}</strong>
-          <span>${escapeHtml(item.site || "-")}</span>
-          <span class="${item.success ? "source-ok" : "source-fail"}">
-            ${item.success ? "수집 성공" : "수집 실패"}
-            · ${Number(item.count || 0)}건
-          </span>
-          <span>${escapeHtml(item.message || "")}</span>
-        `;
-
-        wrap.appendChild(card);
-      });
-    }
-
-    function formatGameDateTime(dateValue, timeValue) {
-      const dateText = formatDate(dateValue);
-      const timeText = String(timeValue || "").trim();
-
-      if (!timeText) {
-        return dateText;
-      }
-
-      return `${dateText} ${timeText}`;
-    }
-
-    function formatDate(value) {
-      if (!value) return "-";
-
-      const parts = String(value).split("-");
-      if (parts.length !== 3) return String(value);
-
-      const date = new Date(
-        Number(parts[0]),
-        Number(parts[1]) - 1,
-        Number(parts[2])
-      );
-
-      const weekday = ["일", "월", "화", "수", "목", "금", "토"][date.getDay()];
-      return `${parts[1]}.${parts[2]} (${weekday})`;
-    }
-
-    function formatDateTime(value) {
-      if (!value) return "";
-
-      const date = new Date(value);
-      if (Number.isNaN(date.getTime())) {
-        return String(value);
-      }
-
-      return new Intl.DateTimeFormat("ko-KR", {
-        timeZone: "Asia/Seoul",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false
-      }).format(date);
-    }
-
-
-    function isBookingToday(value) {
-      if (!value) return false;
-
-      const digits = String(value).replace(/\D/g, "");
-      if (digits.length < 8) return false;
-
-      const bookingDate = digits.slice(0, 8);
-
-      const parts = new Intl.DateTimeFormat("en-CA", {
-        timeZone: "Asia/Seoul",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit"
-      }).formatToParts(new Date());
-
-      const year = parts.find(part => part.type === "year")?.value || "";
-      const month = parts.find(part => part.type === "month")?.value || "";
-      const day = parts.find(part => part.type === "day")?.value || "";
-
-      return bookingDate === `${year}${month}${day}`;
-    }
-
-    function formatBookingOpen(value) {
-      if (!value) return "확인 필요";
-
-      const text = String(value).trim();
-
-      const digits = text.replace(/\D/g, "");
-      if (digits.length >= 12) {
-        return `${digits.slice(4, 6)}.${digits.slice(6, 8)} ${digits.slice(8, 10)}:${digits.slice(10, 12)}`;
-      }
-
-      return text;
-    }
-
-    function exportExcel() {
-      if (typeof XLSX === "undefined") {
-        alert("엑셀 저장 기능을 불러오지 못했습니다. 인터넷 연결 후 다시 시도해 주세요.");
-        return;
-      }
-
-      if (!currentFilteredEvents.length) {
-        alert("저장할 일정이 없습니다.");
-        return;
-      }
-
-      const rows = currentFilteredEvents.map((event, index) => ({
-        "번호": index + 1,
-        "예매 시작": formatBookingOpen(event.bookingOpen),
-        "경기 일시": formatGameDateTime(event.date, event.time),
-        "구단": event.sourceTeam || "",
-        "경기": getDisplayName(event),
-        "부가 정보": event.title && event.title !== getDisplayName(event)
-          ? event.title
-          : "",
-        "구장": event.venue || "",
-        "예매처": event.site || "",
-        "상태": normalizeStatus(event.bookingStatus),
-        "예매 링크": event.link || ""
-      }));
-
-      const worksheet = XLSX.utils.json_to_sheet(rows);
-
-      worksheet["!cols"] = [
-        { wch: 7 },
-        { wch: 18 },
-        { wch: 22 },
-        { wch: 16 },
-        { wch: 34 },
-        { wch: 28 },
-        { wch: 24 },
-        { wch: 13 },
-        { wch: 13 },
-        { wch: 48 }
-      ];
-
-      worksheet["!autofilter"] = {
-        ref: worksheet["!ref"]
-      };
-
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, "예매 일정");
-
-      const now = new Date();
-      const yyyy = String(now.getFullYear());
-      const mm = String(now.getMonth() + 1).padStart(2, "0");
-      const dd = String(now.getDate()).padStart(2, "0");
-
-      const teamName =
-        teamFilter.value === "전체"
-          ? "전체구단"
-          : teamFilter.value.replace(/\s+/g, "");
-
-      const fileName = `KBO_예매일정_${teamName}_${yyyy}-${mm}-${dd}.xlsx`;
-      XLSX.writeFile(workbook, fileName);
-    }
-
-    function strongRefresh() {
-      const url = new URL(window.location.href);
-      url.searchParams.set("refresh", Date.now());
-      window.location.replace(url.toString());
-    }
-
-    function escapeHtml(value) {
-      return String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-    function escapeAttribute(value) {
-      return escapeHtml(value);
-    }
-  </script>
+    return true;
+  });
+
+  rows=[...rows].sort((a,b)=>compare(mode,a,b));
+
+  const tl=DATA.filter(g=>g.platform==='ticketlink').length;
+  const nol=DATA.filter(g=>g.platform==='nol').length;
+
+  $('summary').textContent =
+    `마지막 업데이트: ${META.updatedAtLocal || META.updatedAt || '-'} · 전체 ${DATA.length}경기 · 티켓링크 ${tl} · NOL ${nol} · 현재 표시 ${rows.length}경기`;
+
+  $('tbody').innerHTML = rows.map(g=>{
+    const cls=g.isTodayOpen?'today':'';
+    const open=g.isTodayOpen?`🔥 ${g.openDate||'오늘 오픈'}`:(g.openDate||'-');
+    return `<tr class="${cls}">
+      <td style="font-weight:${g.isTodayOpen?'900':'700'};white-space:nowrap">${open}</td>
+      <td style="white-space:nowrap">${g.date} ${g.time||''}</td>
+      <td>${g.place||'-'}</td>
+      <td class="home">${g.homeTeam||'-'}</td>
+      <td>${g.awayTeam||'-'}</td>
+      <td class="status">${g.status||'-'}</td>
+      <td>${g.platformName||'-'}</td>
+      <td><a href="${g.pageUrl}" target="_blank" rel="noopener noreferrer">열기</a></td>
+    </tr>`;
+  }).join('');
+}
+
+async function load(){
+  $('error').innerHTML='';
+  try{
+    const r=await fetch(`kbo_live.json?t=${Date.now()}`,{cache:'no-store'});
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    const j=await r.json();
+    META=j;
+    DATA=Array.isArray(j.events)?j.events:[];
+    const teams=[...new Set(DATA.flatMap(g=>[g.homeTeam,g.awayTeam]).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ko'));
+    $('team').innerHTML='<option value="">전체 구단</option>'+teams.map(t=>`<option value="${t}">${t}</option>`).join('');
+    draw();
+  }catch(e){
+    $('error').innerHTML=`<div class="err">kbo_live.json을 읽지 못했습니다: ${e}</div>`;
+    $('summary').textContent='데이터 없음';
+  }
+}
+
+['team','site','status','sort'].forEach(id=>$(id).addEventListener('change',draw));
+$('search').addEventListener('input',draw);
+$('reload').onclick=load;
+
+document.querySelectorAll('th[data-sort]').forEach(th=>{
+  th.onclick=()=>{
+    const mode=th.dataset.sort;
+    if($('sort').value===mode) sortDirection*=-1;
+    else{ $('sort').value=mode; sortDirection=1; }
+    draw();
+  };
+});
+
+load();
+</script>
 </body>
 </html>
