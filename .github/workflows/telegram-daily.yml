@@ -1,0 +1,20 @@
+name: KBO 오늘 예매일정 텔레그램
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 23 * * *"   # KST 08:30
+
+jobs:
+  send-telegram:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 오늘 예매일정 전송
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/send_telegram_today.py
