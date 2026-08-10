@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-09T15:55:26.129Z",
-  "updatedAtLocal": "2026. 8. 10. 오전 12:55:26",
+  "updatedAt": "2026-08-10T12:03:47.518Z",
+  "updatedAtLocal": "2026. 8. 10. 오후 9:03:47",
   "events": [
     {
       "date": "2026-08-14",
@@ -750,8 +750,8 @@
       "homeTeam": "울산",
       "awayTeam": "한화",
       "place": "울산문수야구장",
-      "status": "예매예정",
-      "openDate": "2026.08.10(월) 14:00 오픈예정",
+      "status": "예매중",
+      "openDate": "오늘 오픈",
       "isTodayOpen": true,
       "platform": "ticketlink",
       "platformName": "티켓링크",
