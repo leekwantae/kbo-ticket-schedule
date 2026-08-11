@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T19:47:02+09:00",
+  "updatedAt": "2026-08-11T22:41:02+09:00",
   "queryRange": {
     "startDate": "2026-08-11",
     "endDate": "2026-12-09"
@@ -946,40 +946,6 @@
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
-      "id": "NOL-26004557",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-08-11",
-      "time": "19:00",
-      "away": "한화 이글스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 한화 (8.11)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-04T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004557",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
-      "id": "NOL-26004286",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-08-11",
-      "time": "19:00",
-      "away": "LG 트윈스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs LG (8.11)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-04T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004286",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
-    },
-    {
       "id": "TL-1808847176",
       "site": "티켓링크",
       "sourceTeam": "KIA 타이거즈",
@@ -1805,6 +1771,40 @@
       "bookingOpen": "2026-08-25T14:00:00",
       "bookingStatus": "예매예정",
       "goodsCode": "26004295",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
+    },
+    {
+      "id": "NOL-26004567",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-09-02",
+      "time": "19:00",
+      "away": "LG 트윈스",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs LG (9.2)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-26T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004567",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
+      "id": "NOL-26004296",
+      "site": "NOL 티켓",
+      "sourceTeam": "키움 히어로즈",
+      "date": "2026-09-02",
+      "time": "19:00",
+      "away": "SSG 랜더스",
+      "home": "키움 히어로즈",
+      "venue": "고척스카이돔",
+      "title": "키움 vs SSG (9.2)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-26T14:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004296",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     }
   ]
