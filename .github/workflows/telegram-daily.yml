@@ -3,7 +3,10 @@ name: KBO 오늘 예매일정 텔레그램
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 23 * * *"   # KST 08:30
+    # GitHub 예약 실행은 지연될 수 있으므로 KST 08:15에 미리 기동합니다.
+    # 예약 실행일 때 Python이 KST 08:30까지 기다렸다가 발송합니다.
+    # 수동 Run workflow는 기다리지 않고 즉시 발송합니다.
+    - cron: "15 23 * * *"
 
 jobs:
   send-telegram:
@@ -17,4 +20,5 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python scripts/send_telegram_today.py

@@ -1,12 +1,30 @@
-import json, os, re, urllib.parse, urllib.request
-from datetime import datetime
+import json, os, re, time, urllib.parse, urllib.request
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 DATA = Path("kbo_live.json")
 BOT = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT = os.environ["TELEGRAM_CHAT_ID"]
+EVENT = os.environ.get("GITHUB_EVENT_NAME", "")
 KST = ZoneInfo("Asia/Seoul")
+
+def wait_until_0830_if_scheduled():
+    if EVENT != "schedule":
+        print("수동 실행: 즉시 전송")
+        return
+
+    now = datetime.now(KST)
+    target = now.replace(hour=8, minute=30, second=0, microsecond=0)
+
+    if now < target:
+        sec = (target - now).total_seconds()
+        print(f"예약 실행: KST 08:30까지 {int(sec)}초 대기")
+        time.sleep(sec)
+    else:
+        print(f"예약 실행 시작 시각이 이미 08:30 이후({now:%H:%M:%S})이므로 즉시 전송")
+
+wait_until_0830_if_scheduled()
 
 with DATA.open("r", encoding="utf-8-sig") as f:
     payload = json.load(f)
@@ -40,7 +58,7 @@ if not rows:
 else:
     for i, g in enumerate(rows, 1):
         lines += [
-            f"🎫 {g['open']} 오픈",
+            f"🔥 🎫 {g['open']} 오픈",
             f"{g['home']} vs {g['away']}",
             f"🏟 {g['place']}",
             f"⚾ 경기: {g['date']} {g['time']}",
@@ -50,7 +68,7 @@ else:
             lines.append(g["url"])
         if i != len(rows):
             lines.append("")
-    lines += ["", f"오늘 예매 예정: {len(rows)}경기"]
+    lines += ["", f"🔥 오늘 예매 예정: {len(rows)}경기"]
 
 updated = payload.get("updatedAtLocal") or payload.get("updatedAt")
 if updated:
@@ -67,6 +85,8 @@ data = urllib.parse.urlencode({
 req = urllib.request.Request(url, data=data, method="POST")
 with urllib.request.urlopen(req, timeout=20) as r:
     res = json.loads(r.read().decode())
+
 if not res.get("ok"):
     raise SystemExit(res)
-print(f"전송 완료: {len(rows)}경기")
+
+print(f"전송 완료: {len(rows)}경기 / KST {datetime.now(KST):%Y-%m-%d %H:%M:%S}")
