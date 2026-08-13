@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T18:32:17+09:00",
+  "updatedAt": "2026-08-13T22:45:19+09:00",
   "queryRange": {
     "startDate": "2026-08-13",
     "endDate": "2026-12-11"
@@ -51,7 +51,7 @@
       "site": "NOL 티켓",
       "team": "두산 베어스",
       "success": true,
-      "count": 10,
+      "count": 9,
       "message": "페이지 내 경기 JSON 추출 성공"
     },
     {
@@ -982,40 +982,6 @@
       "link": "https://www.ticketlink.co.kr/sports/137/58"
     },
     {
-      "id": "NOL-26004559",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-08-13",
-      "time": "19:00",
-      "away": "한화 이글스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 한화 (8.13)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-06T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004559",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
-      "id": "NOL-26004288",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-08-13",
-      "time": "19:00",
-      "away": "LG 트윈스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs LG (8.13)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-06T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004288",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
-    },
-    {
       "id": "TL-786036050",
       "site": "티켓링크",
       "sourceTeam": "LG 트윈스",
@@ -1805,6 +1771,23 @@
       "bookingOpen": "2026-08-27T14:00:00",
       "bookingStatus": "예매예정",
       "goodsCode": "26004297",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
+    },
+    {
+      "id": "NOL-26004298",
+      "site": "NOL 티켓",
+      "sourceTeam": "키움 히어로즈",
+      "date": "2026-09-04",
+      "time": "19:00",
+      "away": "NC 다이노스",
+      "home": "키움 히어로즈",
+      "venue": "고척스카이돔",
+      "title": "키움 vs NC (9.4)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-28T14:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004298",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     }
   ]
