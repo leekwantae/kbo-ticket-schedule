@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-08-15T02:09:56+09:00",
+  "updatedAt": "2026-08-15T05:44:10+09:00",
   "queryRange": {
     "startDate": "2026-08-15",
     "endDate": "2026-12-13"
@@ -50,9 +50,9 @@ window.SPORTS_DATA = {
     {
       "site": "NOL 티켓",
       "team": "두산 베어스",
-      "success": false,
-      "count": 0,
-      "message": "페이지에서 경기정보를 찾지 못했습니다."
+      "success": true,
+      "count": 9,
+      "message": "페이지 내 경기 JSON 추출 성공"
     },
     {
       "site": "NOL 티켓",
@@ -1432,6 +1432,23 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/63"
     },
     {
+      "id": "NOL-26004560",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-08-21",
+      "time": "19:00",
+      "away": "롯데 자이언츠",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 롯데 (8.21)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-14T11:00:00",
+      "bookingStatus": "예매중",
+      "goodsCode": "26004560",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
       "id": "NOL-26004289",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
@@ -1502,6 +1519,23 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/63"
     },
     {
+      "id": "NOL-26004561",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-08-22",
+      "time": "19:00",
+      "away": "롯데 자이언츠",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 롯데 (8.22)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-15T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004561",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
       "id": "NOL-26004291",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
@@ -1517,6 +1551,23 @@ window.SPORTS_DATA = {
       "bookingStatus": "예매예정",
       "goodsCode": "26004291",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
+    },
+    {
+      "id": "NOL-26004562",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-08-23",
+      "time": "19:00",
+      "away": "롯데 자이언츠",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 롯데 (8.23)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-16T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004562",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "NOL-26004292",
@@ -1570,6 +1621,74 @@ window.SPORTS_DATA = {
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
+      "id": "NOL-26004563",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-08-28",
+      "time": "19:00",
+      "away": "키움 히어로즈",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 키움 (8.28)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-21T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004563",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
+      "id": "NOL-26004564",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-08-29",
+      "time": "19:00",
+      "away": "키움 히어로즈",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 키움 (8.29)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-22T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004564",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
+      "id": "NOL-26004565",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-08-30",
+      "time": "19:00",
+      "away": "키움 히어로즈",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 키움 (8.30)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-23T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004565",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
+      "id": "NOL-26004566",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-09-01",
+      "time": "19:00",
+      "away": "LG 트윈스",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs LG (9.1)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-25T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004566",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
       "id": "NOL-26004295",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
@@ -1587,6 +1706,23 @@ window.SPORTS_DATA = {
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
+      "id": "NOL-26004567",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-09-02",
+      "time": "19:00",
+      "away": "LG 트윈스",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs LG (9.2)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-26T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004567",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
       "id": "NOL-26004296",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
@@ -1602,6 +1738,23 @@ window.SPORTS_DATA = {
       "bookingStatus": "예매예정",
       "goodsCode": "26004296",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
+    },
+    {
+      "id": "NOL-26004568",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-09-03",
+      "time": "19:00",
+      "away": "LG 트윈스",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs LG (9.3)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-08-27T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26004568",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "NOL-26004297",
