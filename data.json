@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T11:44:15+09:00",
+  "updatedAt": "2026-08-14T14:44:58+09:00",
   "queryRange": {
     "startDate": "2026-08-14",
     "endDate": "2026-12-12"
@@ -1461,7 +1461,7 @@
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-08-14T14:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004289",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
