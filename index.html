@@ -178,6 +178,30 @@ let sortDirection = 1;
 
 const $ = id => document.getElementById(id);
 
+function kstTodayYmd(){
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone:'Asia/Seoul',
+    year:'numeric',
+    month:'2-digit',
+    day:'2-digit'
+  }).formatToParts(new Date());
+  const obj = Object.fromEntries(parts.map(p=>[p.type,p.value]));
+  return `${obj.year}.${obj.month}.${obj.day}`;
+}
+
+function openDateYmd(g){
+  const m = String(g.openDate || '').match(/(\d{4})[.\-/](\d{2})[.\-/](\d{2})/);
+  return m ? `${m[1]}.${m[2]}.${m[3]}` : '';
+}
+
+function isTodayOpenNow(g){
+  // 수집 당시 저장된 isTodayOpen 값은 사용하지 않고,
+  // 현재 한국 날짜와 openDate의 실제 날짜를 매번 비교한다.
+  const openYmd = openDateYmd(g);
+  if (!openYmd) return false;
+  return openYmd === kstTodayYmd();
+}
+
 function openSortValue(g){
   const m = String(g.openDate || '').match(/(\d{4})[.\-/](\d{2})[.\-/](\d{2}).*?(\d{2}):(\d{2})/);
   return m ? `${m[1]}-${m[2]}-${m[3]} ${m[4]}:${m[5]}` : '9999-99-99 99:99';
@@ -237,10 +261,11 @@ function draw(){
     `마지막 업데이트: ${META.updatedAtLocal || META.updatedAt || '-'} · 전체 ${DATA.length}경기 · 티켓링크 ${tl} · NOL ${nol} · 현재 표시 ${rows.length}경기`;
 
   $('tbody').innerHTML = rows.map(g=>{
-    const cls=g.isTodayOpen?'today':'';
-    const open=g.isTodayOpen?`🔥 ${g.openDate||'오늘 오픈'}`:(g.openDate||'-');
+    const isToday=isTodayOpenNow(g);
+    const cls=isToday?'today':'';
+    const open=isToday?`🔥 ${g.openDate||'오늘 오픈'}`:(g.openDate||'-');
     return `<tr class="${cls}">
-      <td style="font-weight:${g.isTodayOpen?'900':'700'};white-space:nowrap">${open}</td>
+      <td style="font-weight:${isToday?'900':'700'};white-space:nowrap">${open}</td>
       <td style="white-space:nowrap">${g.date} ${g.time||''}</td>
       <td>${g.place||'-'}</td>
       <td class="home">${g.homeTeam||'-'}</td>
@@ -251,20 +276,21 @@ function draw(){
     </tr>`;
   }).join('');
 
-  const todayRows=rows.filter(g=>g.isTodayOpen);
+  const todayRows=rows.filter(g=>isTodayOpenNow(g));
   $('todayCount').textContent = todayRows.length ? `🔥 오늘 예매오픈 ${todayRows.length}건` : '';
   $('visibleCount').textContent = `총 ${rows.length}경기`;
 
   $('cards').innerHTML = rows.length ? rows.map(g=>{
-    const open = g.isTodayOpen
+    const isToday = isTodayOpenNow(g);
+    const open = isToday
       ? `🔥 ${g.openDate || '오늘 오픈'}`
       : (g.openDate || '예매일 미정');
 
-    return `<article class="game-card ${g.isTodayOpen?'today':''}">
+    return `<article class="game-card ${isToday?'today':''}">
       <div class="card-main">
         <div class="card-open">
           <div class="open-text">${open}</div>
-          ${g.isTodayOpen?'<span class="today-badge">오늘 오픈</span>':''}
+          ${isToday?'<span class="today-badge">🔥 오늘 오픈</span>':''}
         </div>
 
         <div class="match-row">
