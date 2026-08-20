@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-20T01:56:12.920Z",
-  "updatedAtLocal": "2026. 8. 20. 오전 10:56:12",
+  "updatedAt": "2026-08-20T02:05:33.743Z",
+  "updatedAtLocal": "2026. 8. 20. 오전 11:05:33",
   "events": [
     {
       "date": "2026-08-20",
@@ -50,8 +50,8 @@
       "homeTeam": "LG",
       "awayTeam": "NC",
       "place": "잠실야구장",
-      "status": "예매예정",
-      "openDate": "2026.08.20(목) 11:00 오픈예정",
+      "status": "예매중",
+      "openDate": "오늘 오픈",
       "isTodayOpen": true,
       "platform": "ticketlink",
       "platformName": "티켓링크",
@@ -414,8 +414,8 @@
       "homeTeam": "KIA",
       "awayTeam": "롯데",
       "place": "KIA 챔피언스필드",
-      "status": "예매예정",
-      "openDate": "2026.08.20(목) 11:00 오픈예정",
+      "status": "예매중",
+      "openDate": "오늘 오픈",
       "isTodayOpen": true,
       "platform": "ticketlink",
       "platformName": "티켓링크",
