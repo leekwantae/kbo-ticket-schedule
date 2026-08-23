@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-08-23T13:50:52+09:00",
+  "updatedAt": "2026-08-23T17:46:48+09:00",
   "queryRange": {
     "startDate": "2026-08-23",
     "endDate": "2026-12-21"
@@ -58,7 +58,7 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 10,
+      "count": 9,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
@@ -1466,23 +1466,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
-    },
-    {
-      "id": "NOL-26004291",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-08-23",
-      "time": "14:00",
-      "away": "KIA 타이거즈",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs KIA (8.23)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-16T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004291",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "NOL-26004562",
