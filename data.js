@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-08-26T10:57:15+09:00",
+  "updatedAt": "2026-08-26T13:54:10+09:00",
   "queryRange": {
     "startDate": "2026-08-26",
     "endDate": "2026-12-24"
@@ -58,7 +58,7 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 8,
+      "count": 10,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
@@ -1599,7 +1599,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-08-26T11:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004567",
       "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
@@ -1703,6 +1703,40 @@ window.SPORTS_DATA = {
       "bookingOpen": "2026-08-30T14:00:00",
       "bookingStatus": "예매예정",
       "goodsCode": "26004300",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
+    },
+    {
+      "id": "NOL-26012598",
+      "site": "NOL 티켓",
+      "sourceTeam": "키움 히어로즈",
+      "date": "2026-09-12",
+      "time": "17:00",
+      "away": "롯데 자이언츠",
+      "home": "키움 히어로즈",
+      "venue": "고척스카이돔",
+      "title": "키움 vs 롯데 (9.12)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-09-05T14:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26012598",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
+    },
+    {
+      "id": "NOL-26012601",
+      "site": "NOL 티켓",
+      "sourceTeam": "키움 히어로즈",
+      "date": "2026-09-22",
+      "time": "18:30",
+      "away": "두산베어스",
+      "home": "키움 히어로즈",
+      "venue": "고척스카이돔",
+      "title": "키움 vs 두산 (9.22)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-09-15T14:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26012601",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     }
   ]
