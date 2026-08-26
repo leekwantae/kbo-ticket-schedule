@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-08-26T18:00:52+09:00",
+  "updatedAt": "2026-08-26T22:15:31+09:00",
   "queryRange": {
     "startDate": "2026-08-26",
     "endDate": "2026-12-24"
@@ -1468,23 +1468,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/63"
     },
     {
-      "id": "NOL-26004293",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-08-26",
-      "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs 삼성 (8.26)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-19T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004293",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
-    },
-    {
       "id": "NOL-26004294",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
@@ -1737,6 +1720,23 @@ window.SPORTS_DATA = {
       "bookingOpen": "2026-09-15T14:00:00",
       "bookingStatus": "예매예정",
       "goodsCode": "26012601",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
+    },
+    {
+      "id": "NOL-26012604",
+      "site": "NOL 티켓",
+      "sourceTeam": "키움 히어로즈",
+      "date": "2026-10-06",
+      "time": "18:30",
+      "away": "KT위즈",
+      "home": "키움 히어로즈",
+      "venue": "고척스카이돔",
+      "title": "키움 vs KT (10.6)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-09-29T14:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26012604",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     }
   ]
