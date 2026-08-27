@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-08-27T08:44:49+09:00",
+  "updatedAt": "2026-08-27T18:44:39+09:00",
   "queryRange": {
     "startDate": "2026-08-27",
     "endDate": "2026-12-25"
@@ -51,7 +51,7 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "두산 베어스",
       "success": true,
-      "count": 6,
+      "count": 10,
       "message": "페이지 내 경기 JSON 추출 성공"
     },
     {
@@ -1616,7 +1616,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-08-27T11:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004568",
       "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
@@ -1633,7 +1633,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-08-27T14:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26004297",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
@@ -1689,6 +1689,40 @@ window.SPORTS_DATA = {
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
+      "id": "NOL-26005448",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-09-09",
+      "time": "18:30",
+      "away": "SSG 랜더스",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs SSG (9.9)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-09-02T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26005448",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
+      "id": "NOL-26005449",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-09-12",
+      "time": "17:00",
+      "away": "NC 다이노스",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs NC (9.12)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-09-05T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26005449",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
       "id": "NOL-26012598",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
@@ -1704,6 +1738,40 @@ window.SPORTS_DATA = {
       "bookingStatus": "예매예정",
       "goodsCode": "26012598",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
+    },
+    {
+      "id": "NOL-26005450",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-09-13",
+      "time": "17:00",
+      "away": "NC 다이노스",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs NC (9.13)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-09-06T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26005450",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
+    },
+    {
+      "id": "NOL-26005451",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-09-16",
+      "time": "18:30",
+      "away": "삼성 라이온즈",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "두산 vs 삼성 (9.16)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-09-09T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26005451",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "NOL-26012601",
