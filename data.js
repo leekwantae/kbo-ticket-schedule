@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-08-28T07:14:38+09:00",
+  "updatedAt": "2026-08-28T13:16:52+09:00",
   "queryRange": {
     "startDate": "2026-08-28",
     "endDate": "2026-12-26"
@@ -1706,7 +1706,7 @@ window.SPORTS_DATA = {
       "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
-      "id": "NOL-26012598",
+      "id": "NOL-26012723",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
       "date": "2026-09-12",
@@ -1719,7 +1719,7 @@ window.SPORTS_DATA = {
       "displayName": "",
       "bookingOpen": "2026-09-05T14:00:00",
       "bookingStatus": "예매예정",
-      "goodsCode": "26012598",
+      "goodsCode": "26012723",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
@@ -1791,7 +1791,7 @@ window.SPORTS_DATA = {
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
-      "id": "NOL-26012607",
+      "id": "NOL-26012722",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
       "date": "2026-10-07",
@@ -1804,7 +1804,7 @@ window.SPORTS_DATA = {
       "displayName": "",
       "bookingOpen": "2026-09-30T14:00:00",
       "bookingStatus": "예매예정",
-      "goodsCode": "26012607",
+      "goodsCode": "26012722",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     }
   ]
