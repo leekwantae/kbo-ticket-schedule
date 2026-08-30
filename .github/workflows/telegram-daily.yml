@@ -6,7 +6,7 @@ on:
     # GitHub 예약 실행은 지연될 수 있으므로 KST 07:45에 미리 기동합니다.
     # 예약 실행일 때 Python이 KST 08:30까지 기다렸다가 발송합니다.
     # 수동 Run workflow는 기다리지 않고 즉시 발송합니다.
-    - cron: "45 22 * * *"
+    - cron: "0 18 * * *"
 
 jobs:
   send-telegram:
