@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T13:29:36+09:00",
+  "updatedAt": "2026-09-04T21:42:38+09:00",
   "queryRange": {
     "startDate": "2026-09-04",
     "endDate": "2027-01-02"
@@ -58,7 +58,7 @@
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 7,
+      "count": 6,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
@@ -1466,23 +1466,6 @@
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
-    },
-    {
-      "id": "NOL-26004298",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-09-04",
-      "time": "18:30",
-      "away": "NC 다이노스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs NC (9.4)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-28T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004298",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "NOL-26004299",
