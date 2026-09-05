@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-09-05T13:24:29+09:00",
+  "updatedAt": "2026-09-05T20:49:37+09:00",
   "queryRange": {
     "startDate": "2026-09-05",
     "endDate": "2027-01-03"
@@ -58,7 +58,7 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 6,
+      "count": 5,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
@@ -1468,23 +1468,6 @@ window.SPORTS_DATA = {
       "link": "https://www.ticketlink.co.kr/sports/137/63"
     },
     {
-      "id": "NOL-26004299",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-09-05",
-      "time": "17:00",
-      "away": "NC 다이노스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs NC (9.5)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-08-29T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26004299",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
-    },
-    {
       "id": "NOL-26004300",
       "site": "NOL 티켓",
       "sourceTeam": "키움 히어로즈",
@@ -1565,7 +1548,7 @@ window.SPORTS_DATA = {
       "eventType": "경기",
       "displayName": "",
       "bookingOpen": "2026-09-05T14:00:00",
-      "bookingStatus": "예매예정",
+      "bookingStatus": "예매중",
       "goodsCode": "26012723",
       "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
