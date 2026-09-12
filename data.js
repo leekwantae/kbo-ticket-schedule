@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-09-12T13:31:45+09:00",
+  "updatedAt": "2026-09-12T21:09:22+09:00",
   "queryRange": {
     "startDate": "2026-09-12",
     "endDate": "2027-01-10"
@@ -51,14 +51,14 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "두산 베어스",
       "success": true,
-      "count": 10,
+      "count": 9,
       "message": "페이지 내 경기 JSON 추출 성공"
     },
     {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 4,
+      "count": 3,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
@@ -1466,40 +1466,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
-    },
-    {
-      "id": "NOL-26012936",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-09-12",
-      "time": "17:00",
-      "away": "NC 다이노스",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs NC (9.12)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-09-05T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26012936",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
-    },
-    {
-      "id": "NOL-26012723",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-09-12",
-      "time": "17:00",
-      "away": "롯데 자이언츠",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs 롯데 (9.12)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-09-05T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26012723",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "NOL-26012937",
