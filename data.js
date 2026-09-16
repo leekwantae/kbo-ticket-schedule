@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-09-16T13:46:56+09:00",
+  "updatedAt": "2026-09-16T22:29:10+09:00",
   "queryRange": {
     "startDate": "2026-09-16",
     "endDate": "2027-01-14"
@@ -51,7 +51,7 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "두산 베어스",
       "success": true,
-      "count": 8,
+      "count": 7,
       "message": "페이지 내 경기 JSON 추출 성공"
     },
     {
@@ -1466,23 +1466,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
-    },
-    {
-      "id": "NOL-26005451",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-09-16",
-      "time": "18:30",
-      "away": "삼성 라이온즈",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 삼성 (9.16)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-09-09T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26005451",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "NOL-26005452",
