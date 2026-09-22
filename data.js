@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-09-22T13:52:24+09:00",
+  "updatedAt": "2026-09-22T22:23:41+09:00",
   "queryRange": {
     "startDate": "2026-09-22",
     "endDate": "2027-01-20"
@@ -58,7 +58,7 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": true,
-      "count": 3,
+      "count": 2,
       "message": "페이지 내 경기 JSON 추출 성공"
     }
   ],
@@ -1466,23 +1466,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
-    },
-    {
-      "id": "NOL-26012601",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-09-22",
-      "time": "18:30",
-      "away": "두산베어스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs 두산 (9.22)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-09-15T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26012601",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "NOL-26005453",
