@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-09-25T13:54:48+09:00",
+  "updatedAt": "2026-09-25T22:44:50+09:00",
   "queryRange": {
     "startDate": "2026-09-25",
     "endDate": "2027-01-23"
@@ -51,7 +51,7 @@ window.SPORTS_DATA = {
       "site": "NOL 티켓",
       "team": "두산 베어스",
       "success": true,
-      "count": 5,
+      "count": 4,
       "message": "페이지 내 경기 JSON 추출 성공"
     },
     {
@@ -1466,23 +1466,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
-    },
-    {
-      "id": "NOL-26005454",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-09-25",
-      "time": "17:00",
-      "away": "롯데 자이언츠",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 롯데 (9.25)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-09-18T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26005454",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "NOL-26005455",
