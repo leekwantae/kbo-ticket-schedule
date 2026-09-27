@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T14:16:09+09:00",
+  "updatedAt": "2026-09-27T22:56:25+09:00",
   "queryRange": {
     "startDate": "2026-09-27",
     "endDate": "2027-01-25"
@@ -51,7 +51,7 @@
       "site": "NOL 티켓",
       "team": "두산 베어스",
       "success": true,
-      "count": 4,
+      "count": 3,
       "message": "페이지 내 경기 JSON 추출 성공"
     },
     {
@@ -1466,23 +1466,6 @@
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
-    },
-    {
-      "id": "NOL-26005455",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-09-27",
-      "time": "17:00",
-      "away": "KT위즈",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs KT (9.27)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-09-20T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26005455",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     },
     {
       "id": "NOL-26012583",
