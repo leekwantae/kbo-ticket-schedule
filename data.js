@@ -1,8 +1,8 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-10-07T14:56:07+09:00",
+  "updatedAt": "2026-10-08T00:32:19+09:00",
   "queryRange": {
-    "startDate": "2026-10-07",
-    "endDate": "2027-02-04"
+    "startDate": "2026-10-08",
+    "endDate": "2027-02-05"
   },
   "sourceStatus": [
     {
@@ -57,9 +57,9 @@ window.SPORTS_DATA = {
     {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
-      "success": true,
-      "count": 1,
-      "message": "페이지 내 경기 JSON 추출 성공"
+      "success": false,
+      "count": 0,
+      "message": "페이지에서 경기정보를 찾지 못했습니다."
     }
   ],
   "events": [
@@ -1466,23 +1466,6 @@ window.SPORTS_DATA = {
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
-    },
-    {
-      "id": "NOL-26012722",
-      "site": "NOL 티켓",
-      "sourceTeam": "키움 히어로즈",
-      "date": "2026-10-07",
-      "time": "18:30",
-      "away": "한화 이글스",
-      "home": "키움 히어로즈",
-      "venue": "고척스카이돔",
-      "title": "키움 vs 한화 (10.7)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-09-30T14:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26012722",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/heroes"
     },
     {
       "id": "NOL-26014133",
