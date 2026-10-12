@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-12T14:53:24+09:00",
+  "updatedAt": "2026-10-13T02:52:25+09:00",
   "queryRange": {
-    "startDate": "2026-10-12",
-    "endDate": "2027-02-09"
+    "startDate": "2026-10-13",
+    "endDate": "2027-02-10"
   },
   "sourceStatus": [
     {
@@ -50,9 +50,9 @@
     {
       "site": "NOL 티켓",
       "team": "두산 베어스",
-      "success": true,
-      "count": 1,
-      "message": "페이지 내 경기 JSON 추출 성공"
+      "success": false,
+      "count": 0,
+      "message": "페이지에서 경기정보를 찾지 못했습니다."
     },
     {
       "site": "NOL 티켓",
@@ -1466,23 +1466,6 @@
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
-    },
-    {
-      "id": "NOL-26014133",
-      "site": "NOL 티켓",
-      "sourceTeam": "두산 베어스",
-      "date": "2026-10-12",
-      "time": "18:30",
-      "away": "롯데 자이언츠",
-      "home": "두산베어스",
-      "venue": "잠실야구장",
-      "title": "두산 vs 롯데 (10.12)",
-      "eventType": "경기",
-      "displayName": "",
-      "bookingOpen": "2026-10-05T11:00:00",
-      "bookingStatus": "예매중",
-      "goodsCode": "26014133",
-      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     }
   ]
 }
