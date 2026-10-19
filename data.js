@@ -1,8 +1,8 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-10-19T13:36:49+09:00",
+  "updatedAt": "2026-10-20T00:51:45+09:00",
   "queryRange": {
-    "startDate": "2026-10-19",
-    "endDate": "2027-02-16"
+    "startDate": "2026-10-20",
+    "endDate": "2027-02-17"
   },
   "sourceStatus": [
     {
@@ -52,14 +52,14 @@ window.SPORTS_DATA = {
       "team": "두산 베어스",
       "success": false,
       "count": 0,
-      "message": "페이지에서 경기정보를 찾지 못했습니다."
+      "message": "HTTP Error 403: Forbidden"
     },
     {
       "site": "NOL 티켓",
       "team": "키움 히어로즈",
       "success": false,
       "count": 0,
-      "message": "페이지에서 경기정보를 찾지 못했습니다."
+      "message": "HTTP Error 403: Forbidden"
     }
   ],
   "events": [
