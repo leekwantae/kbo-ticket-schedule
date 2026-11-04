@@ -1,5 +1,5 @@
 window.SPORTS_DATA = {
-  "updatedAt": "2026-11-04T04:29:04+09:00",
+  "updatedAt": "2026-11-04T09:36:05+09:00",
   "queryRange": {
     "startDate": "2026-11-04",
     "endDate": "2027-03-04"
