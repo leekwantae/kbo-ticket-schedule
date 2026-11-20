@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T08:01:46+09:00",
+  "updatedAt": "2026-11-20T16:10:01+09:00",
   "queryRange": {
     "startDate": "2026-11-20",
     "endDate": "2027-03-20"
@@ -50,9 +50,9 @@
     {
       "site": "NOL 티켓",
       "team": "두산 베어스",
-      "success": false,
-      "count": 0,
-      "message": "페이지에서 경기정보를 찾지 못했습니다."
+      "success": true,
+      "count": 1,
+      "message": "페이지 내 경기 JSON 추출 성공"
     },
     {
       "site": "NOL 티켓",
@@ -1466,6 +1466,23 @@
       "scheduleId": "1644138620",
       "productId": "62162",
       "link": "https://www.ticketlink.co.kr/sports/137/63"
+    },
+    {
+      "id": "NOL-26016551",
+      "site": "NOL 티켓",
+      "sourceTeam": "두산 베어스",
+      "date": "2026-11-28",
+      "time": "13:00",
+      "away": "",
+      "home": "두산베어스",
+      "venue": "잠실야구장",
+      "title": "2026 곰들의 모임(두파민 매치)",
+      "eventType": "경기",
+      "displayName": "",
+      "bookingOpen": "2026-11-21T11:00:00",
+      "bookingStatus": "예매예정",
+      "goodsCode": "26016551",
+      "link": "https://nol.yanolja.com/ticket/genre/sports/bears"
     }
   ]
 }
